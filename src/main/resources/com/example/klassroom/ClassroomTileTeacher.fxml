@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="124.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.ClassroomTileController">
+    <!-- Classroom Name Label -->
+    <Label fx:id="classroomLabel" prefHeight="55.0" prefWidth="330.0" text="" />
+
+    <!-- Classroom Code Label -->
+    <Label fx:id="classroomCodeLabel" prefHeight="56.0" prefWidth="356.0" text="" />
+
+    <!-- Subject Label -->
+    <Label fx:id="subjectLabel" prefHeight="51.0" prefWidth="292.0" text="" />
+   <AnchorPane prefHeight="74.0" prefWidth="418.0">
+      <children>
+         <Button mnemonicParsing="false" onAction="#tileClicked" onMouseClicked="#tileClicked" text="Go" />
+         <Button layoutX="346.0" layoutY="1.0" mnemonicParsing="false" text="Delete" />
+      </children>
+   </AnchorPane>
+
+
+    <!-- You can add more UI elements or customize the tile further if needed -->
+</VBox>

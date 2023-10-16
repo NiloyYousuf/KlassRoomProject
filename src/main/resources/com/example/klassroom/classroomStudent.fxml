@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="579.0" prefWidth="673.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.classroomStudentController">
+   <children>
+      <TextField fx:id="courseCodeTextField" layoutY="43.0" />
+      <TextField fx:id="subjectNameTextField" layoutY="80.0" />
+      <ScrollPane fx:id="scrollPane" layoutX="31.0" layoutY="219.0" prefHeight="310.0" prefWidth="591.0">
+         <content>
+            <VBox fx:id="postContainer" prefHeight="170.0" prefWidth="586.0" spacing="10.0" />
+         </content></ScrollPane>
+      <TextField fx:id="studentNameTextField" layoutX="1.0" layoutY="14.0" />
+   </children>
+</AnchorPane>

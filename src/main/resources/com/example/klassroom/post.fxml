@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.PostController">
+   <children>
+      <Label fx:id="Time" layoutX="79.0" layoutY="60.0" text="Time" />
+      <Label fx:id="Date" layoutX="377.0" layoutY="60.0" text="Date" />
+      <TextArea fx:id="Post" layoutX="62.0" layoutY="100.0" prefHeight="200.0" prefWidth="427.0" text="Post" />
+      <Button fx:id="Download" layoutX="268.0" layoutY="337.0" mnemonicParsing="false" text="Download Attachment" />
+      <TextField layoutX="106.0" layoutY="337.0" text="Attachment" />
+   </children>
+</AnchorPane>

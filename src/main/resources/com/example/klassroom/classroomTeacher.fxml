@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="442.0" prefWidth="643.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.ClassroomTeacherController">
+   <children>
+      <TextArea fx:id="post" layoutX="110.0" layoutY="131.0" prefHeight="52.0" prefWidth="364.0" text="WELCOME TO CLASSROOM" />
+      <TextField fx:id="teacherNameTextField" />
+      <TextField fx:id="courseCodeTextField" layoutY="43.0" />
+      <TextField fx:id="subjectNameTextField" layoutY="80.0" />
+      <ScrollPane fx:id="scrollPane" layoutX="31.0" layoutY="219.0" prefHeight="310.0" prefWidth="591.0">
+         <content>
+            <VBox fx:id="postContainer" prefHeight="170.0" prefWidth="586.0" spacing="10.0" />
+         </content>
+      </ScrollPane>
+      <Text layoutX="20.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make Post" />
+      <Button fx:id="Make_post_button" layoutX="499.0" layoutY="130.0" mnemonicParsing="false" onAction="#make_post_button_clicked" prefHeight="26.0" prefWidth="103.0" text="Post" />
+      <Button layoutX="499.0" layoutY="160.0" mnemonicParsing="false" text="Add Attachment" />
+      <Button fx:id="attendance" layoutX="489.0" layoutY="56.0" mnemonicParsing="false" onAction="#attendance_button_clicked" text="Take Attendance" />
+   </children>
+</AnchorPane>

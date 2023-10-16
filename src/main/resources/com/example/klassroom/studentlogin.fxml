@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.StudentLoginController">
+   <children>
+      <ImageView fitHeight="440.0" fitWidth="1010.0" layoutX="-155.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ok.jpg" />
+         </image></ImageView>
+      <TextArea fx:id="studentIDTextArea" layoutX="250.0" layoutY="215.0" prefHeight="30.0" prefWidth="200.0" />
+      <Text layoutX="164.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" />
+      <Text layoutX="168.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <Button fx:id="studentloginbutton" layoutX="307.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleStudentLoginButtonClick" prefHeight="30.0" prefWidth="86.0" text="Login" />
+      <Text fx:id="errorMessageText" fill="RED" layoutX="274.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="419.9999542236328">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <PasswordField fx:id="passwordTextArea" layoutX="250.0" layoutY="264.0" prefHeight="30.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
