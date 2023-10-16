@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.klassroom.CurrentClassroom;
 import com.example.klassroom.DatabaseConnection;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -71,13 +72,13 @@ public class StudentMonthlyAttendanceController extends JPanel {
         Connection connection = DatabaseConnection.getConnection();
         try {
             String sql = "SELECT student_username, COUNT(*) AS attendance_count FROM attendance " +
-                    "WHERE YEAR(Date) = ? AND MONTH(Date) = ? " +
+                    "WHERE YEAR(Date) = ? AND MONTH(Date) = ? AND classroom_code = ?" +
                     "GROUP BY student_username";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setInt(1, year);
             preparedStatement.setInt(2, month);
-
+            preparedStatement.setString(3, CurrentClassroom.getClassroomCode());
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 String studentUsername = resultSet.getString("student_username");

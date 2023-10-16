@@ -77,6 +77,8 @@ public class ClassroomAttendanceController {
 
 
 
+
+
     public static class StudentAttendance {
         private final SimpleStringProperty studentName;
         private final SimpleBooleanProperty attendance;
