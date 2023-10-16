@@ -4,31 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="220de450-cd4a-49eb-a59d-a64a8384d59b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/ClassroomStudentJunctionTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/ClassroomsTableSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/PostsTableSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/StudentsTableSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/TeachersTableSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/ViewDatabaseSchema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/hello-view.fxml" afterDir="false" />
+    <list default="true" id="220de450-cd4a-49eb-a59d-a64a8384d59b" name="Changes" comment="niloy">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/backup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/burger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/data.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/setting.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -70,14 +56,14 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_directory_selection": "C:/Users/yousu/IdeaProjects/KLASSROOM/src/main/java/com/example/klassroom",
-    "last_opened_file_path": "C:/Users/yousu/IdeaProjects/KLASSROOM/src/main/java/com/example/Database",
+    "last_opened_file_path": "C:/Users/yousu/Downloads/jcommon-1.0.24.jar",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.14367816",
     "vue.rearranger.settings.migration": "true"
   }
@@ -88,6 +74,11 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\resources\com\example\klassroom" />
+      <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\java\com\example\Database" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.klassroom" />
+      <recent name="com.example" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.klassroom" />
@@ -107,11 +98,23 @@
       <workItem from="1694084316680" duration="298000" />
       <workItem from="1694428252734" duration="21656000" />
       <workItem from="1695221273686" duration="8394000" />
-      <workItem from="1697451703579" duration="1981000" />
+      <workItem from="1697451703579" duration="5378000" />
     </task>
+    <task id="LOCAL-00001" summary="niloy">
+      <created>1697454145033</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697454145033</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="niloy" />
+    <option name="LAST_COMMIT_MESSAGE" value="niloy" />
   </component>
 </project>
