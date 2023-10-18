@@ -1,5 +1,6 @@
 package com.example.klassroom;
 
+import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,7 +13,7 @@ public class ClassroomPostsDAO {
 
 
     private static final String GET_POST_BY_ID = "SELECT * FROM posts WHERE post_id = ?";
-    private static Connection connection=DatabaseConnection.getConnection();
+
 
     // JDBC queries
     private static final String INSERT_POST = "INSERT INTO posts (classroom_id, post_time, post_date, post_text, attachment) VALUES (?, ?, ?, ?, ?)";
@@ -21,6 +22,7 @@ public class ClassroomPostsDAO {
 
     // Insert a new post into the database
     public static void insertPost(int classroomId, String postTime, String postDate, String postText, byte[] attachment) {
+        Connection connection=DatabaseConnection.getConnection();
         try (PreparedStatement statement = connection.prepareStatement(INSERT_POST)) {
             statement.setInt(1, classroomId);
             statement.setString(2, postTime);
@@ -37,6 +39,7 @@ public class ClassroomPostsDAO {
     // Get posts by classroom ID
     public static List<Post> getPostsByClassroom(int classroomId) {
         List<Post> posts = new ArrayList<>();
+        Connection connection =DatabaseConnection.getConnection();
         try (PreparedStatement statement = connection.prepareStatement(GET_POSTS_BY_CLASSROOM)) {
             statement.setInt(1, classroomId);
             ResultSet resultSet = statement.executeQuery();
@@ -70,6 +73,7 @@ public class ClassroomPostsDAO {
     }
 
     public static Post getPostById(int postId) {
+        Connection connection =DatabaseConnection.getConnection();
         try (PreparedStatement statement = connection.prepareStatement(GET_POST_BY_ID)) {
             statement.setInt(1, postId);
             ResultSet resultSet = statement.executeQuery();

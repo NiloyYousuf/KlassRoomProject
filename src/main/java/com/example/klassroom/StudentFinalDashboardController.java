@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class StudentDashboardController implements Initializable {
+public class StudentFinalDashboardController implements Initializable {
 
     @FXML
     private AnchorPane opacityPane,drawerPane;
@@ -82,23 +82,15 @@ public class StudentDashboardController implements Initializable {
 
     @FXML
     private void loadMyContent() {
-//        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("ManagerDashboard.fxml"));
-//            Parent content = loader.load();
-//            containerPane.getChildren().clear(); // Clear existing content (if any)
-//            containerPane.getChildren().add(content);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            // Handle any potential exceptions here
-//        }
+        load_classrooms_page();
     }
 
 
 
-    public void load_attendance_page()
+    public void load_classrooms_page()
     {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Student Attendance.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentMenu.fxml"));
             Parent content = loader.load();
             containerPane.getChildren().clear(); // Clear existing content (if any)
             containerPane.getChildren().add(content);
@@ -109,10 +101,10 @@ public class StudentDashboardController implements Initializable {
     }
 
 
-    public void load_assignedTask_page()
+    public void load_classroom_posts_page()
     {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/swe/EmployeeAssignedTasks.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ClassroomStudent.fxml"));
             Parent content = loader.load();
             containerPane.getChildren().clear(); // Clear existing content (if any)
             containerPane.getChildren().add(content);
@@ -120,6 +112,7 @@ public class StudentDashboardController implements Initializable {
             e.printStackTrace();
             // Handle any potential exceptions here
         }
+
     }
 
 

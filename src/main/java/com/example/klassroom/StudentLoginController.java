@@ -33,7 +33,7 @@ public class StudentLoginController {
         // Get the student ID and password from the text areas
         String student_username = studentIDTextArea.getText();
         String password = passwordTextArea.getText();
-        StudentMenuController.student_username=student_username;
+
         System.out.println(StudentMenuController.student_username);
 
         // Fetch student information from the database using the provided DatabaseConnection class
@@ -52,7 +52,9 @@ public class StudentLoginController {
                     // Student login successful
                     // You can proceed to the student's dashboard or perform other actions
                     errorMessageText.setText("Login successful"); // Clear any previous error message
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentMenu.fxml"));
+                    Current_User.is_student=true;
+                    CurrentStudent.CurrentStudentUsername=student_username;
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentFinalDashboard.fxml"));
                     Parent studentLogin = loader.load();
 
                     // Get the current scene and set the student login content

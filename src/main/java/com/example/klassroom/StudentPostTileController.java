@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 
-public class PostTileController {
+public class StudentPostTileController {
 
     public static Post current_post;
 
@@ -37,11 +37,11 @@ public class PostTileController {
 
     public  void see_full_post_clicked() throws IOException {
         current_post=ClassroomPostsDAO.getPostById(Integer.parseInt(Post_Id.getText()));
+        currentPost.currentPostId=Integer.parseInt(Post_Id.getText());
         System.out.println(Post_Id.getText());
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("post.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentPost.fxml"));
         Parent post = loader.load();
         // Get the current scene and set the student login content
-
         Scene currentScene =postTimeLabel.getScene();
         currentScene.setRoot(post);
     }

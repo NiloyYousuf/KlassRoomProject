@@ -25,6 +25,7 @@ public class TeacherMenuController {
 
     @FXML
     public void initialize() {
+        TeacherMenuController.teacher_username=CurrentTeacher.current_teacher_username;
         // Load and populate the classroom tiles for the logged-in teacher
         loadClassroomTiles();
     }
@@ -54,7 +55,7 @@ public class TeacherMenuController {
                         Node tileNode = loader.load();
 
                         // Access the controller for the loaded tile
-                        ClassroomTileController tileController = loader.getController();
+                        ClassroomTileTeacherController tileController = loader.getController();
 
                         // Initialize the tile with classroom data
                         String classroomCode = resultSet.getString("classroom_code");

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.StudentDashboardController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.StudentFinalDashboardController">
     <children>
         <AnchorPane prefHeight="46.0" prefWidth="800.0" style="-fx-background-color: #3A4C40;">
             <children>
@@ -69,6 +69,7 @@
         </AnchorPane>
         <AnchorPane fx:id="containerPane" layoutX="44.0" layoutY="46.0" prefHeight="454.0" prefWidth="756.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
+            <Button layoutX="648.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="98.0" text="Logout" />
                 <Pane layoutY="21.0" prefHeight="454.0" prefWidth="756.0" style="-fx-background-color: #d9ecf2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             </children>
         </AnchorPane>
@@ -77,17 +78,17 @@
             <children>
                 <VBox layoutY="18.0" prefHeight="416.0" prefWidth="178.0" spacing="5.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="18.0">
                     <children>
-                        <Button alignment="BASELINE_LEFT" onAction="#load_attendance_page" prefHeight="26.0" prefWidth="178.0" text="Give Attendance">
+                        <Button alignment="BASELINE_LEFT" onAction="#load_classroom_posts_page" prefHeight="26.0" prefWidth="178.0" text="View Posts">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" onAction="#load_assignedTask_page" prefHeight="38.0" prefWidth="179.0" text="Assigned Tasks">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="179.0" text="View Assignments">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="58.0" prefHeight="38.0" prefWidth="179.0" text="Due Tasks">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="58.0" prefHeight="38.0" prefWidth="179.0" text="Attendance Viewer">
                             <font>
                                 <Font size="16.0" />
                             </font>

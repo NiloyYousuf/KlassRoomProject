@@ -29,6 +29,8 @@ public class TeacherLoginController {
     @FXML
     private Text errorMessageText;
 
+
+
     @FXML
     private void handleTeacherLoginButtonClick() {
         // Get the teacher ID and password from the text areas
@@ -50,8 +52,10 @@ public class TeacherLoginController {
 
                 if (resultSet.next()) {
                     errorMessageText.setText("Login successful"); // Clear any previous error message
-                    TeacherMenuController.teacher_username=teacher_username;
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherMenu.fxml"));
+                    CurrentTeacher.current_teacher_username=teacher_username;
+                    System.out.println(CurrentTeacher.current_teacher_username);
+                    Current_User.is_student=false;
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherFinalDashboard.fxml"));
                     Parent studentLogin = loader.load();
                     // Get the current scene and set the student login content
                     Scene currentScene = teacherloginbutton.getScene();

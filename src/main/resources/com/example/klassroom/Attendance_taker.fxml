@@ -6,9 +6,9 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="359.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.ClassroomAttendanceController">
+<AnchorPane prefHeight="505.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.ClassroomAttendanceController">
     <children>
-        <TableView fx:id="studentTable" layoutX="20.0" layoutY="20.0" prefHeight="300.0" prefWidth="400.0">
+        <TableView fx:id="studentTable" layoutX="20.0" layoutY="70.0" prefHeight="250.0" prefWidth="498.0">
             <columns>
                 <TableColumn text="Student Name">
                     <cellValueFactory>
@@ -25,6 +25,7 @@
 
             </columns>
         </TableView>
-        <Button layoutX="20.0" layoutY="330.0" onAction="#markAttendance" text="Mark Attendance" />
+        <Button layoutX="20.0" layoutY="376.0" onAction="#markAttendance" text="Mark Attendance" />
+      <Button layoutX="22.0" layoutY="25.0" mnemonicParsing="false" text=" Back" />
     </children>
 </AnchorPane>

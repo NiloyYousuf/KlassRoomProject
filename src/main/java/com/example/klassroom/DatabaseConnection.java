@@ -3,9 +3,11 @@ package com.example.klassroom;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class DatabaseConnection {
-    // JDBC URL, username, and password of MySQL server
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/project";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "200041123";
@@ -13,23 +15,39 @@ public class DatabaseConnection {
     // Database connection instance
     private static Connection connection = null;
 
-    // Private constructor to prevent creating multiple instances
+    private static final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
+
+    private static final long CONNECTION_CHECK_INTERVAL = 1; // Adjust this interval as needed (in seconds)
+
     private DatabaseConnection() {
     }
 
-    // Get the database connection instance
     public static Connection getConnection() {
         if (connection == null) {
-            try {
-                // Create a new database connection if it doesn't exist
-                connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            establishConnection(); // Establish the initial connection
+            scheduleConnectionCheck(); // Schedule periodic connection checks
         }
         return connection;
     }
 
-    // Close the database connection
+    public static void establishConnection() {
+        try {
+            connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
+    private static void scheduleConnectionCheck() {
+        executorService.scheduleAtFixedRate(() -> {
+            try {
+                if (connection == null || connection.isClosed()) {
+                    System.out.println("Reconnecting to the database...");
+                    establishConnection();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }, 0, CONNECTION_CHECK_INTERVAL, TimeUnit.SECONDS);
+    }
 }

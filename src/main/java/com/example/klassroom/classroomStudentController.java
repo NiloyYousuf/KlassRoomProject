@@ -4,12 +4,13 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -51,19 +52,19 @@ public class classroomStudentController implements Initializable {
 
             // Clear existing items in the postContainer
             postContainer.getChildren().clear();
-            scheduler.scheduleAtFixedRate(this::refreshPostContainer, 0, 10, TimeUnit.SECONDS);
+           // scheduler.scheduleAtFixedRate(this::refreshPostContainer, 0, 5, TimeUnit.SECONDS);
             // Populate the VBox with post tiles
             for (Post post : posts) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("post_tile.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Student_post_tile.fxml"));
                 AnchorPane postTile;
                 try {
                     postTile = loader.load();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                // Set the post data in the post_tile.fxml controller
-                PostTileController postTileController = loader.getController();
-                postTileController.setPostData(post); // Implement this method in your PostTileController
+                // Set the post data in the Student_post_tile.fxml controller
+                StudentPostTileController postTileController = loader.getController();
+                postTileController.setPostData(post); // Implement this method in your StudentPostTileController
 
                 // Add the post tile to the VBox
                 postContainer.getChildren().add(postTile);
@@ -80,16 +81,16 @@ public class classroomStudentController implements Initializable {
 
         // Populate the VBox with post tiles
         for (Post post : posts) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("post_tile.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Student_post_tile.fxml"));
             AnchorPane postTile;
             try {
                 postTile = loader.load();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            // Set the post data in the post_tile.fxml controller
-            PostTileController postTileController = loader.getController();
-            postTileController.setPostData(post); // Implement this method in your PostTileController
+            // Set the post data in the Student_post_tile.fxml controller
+            StudentPostTileController postTileController = loader.getController();
+            postTileController.setPostData(post); // Implement this method in your StudentPostTileController
 
             // Add the post tile to the VBox
             postContainer.getChildren().add(postTile);
@@ -103,5 +104,23 @@ public class classroomStudentController implements Initializable {
     }
 
 
+    public void Go_back()
+    {
+        try {
+            // Load the new FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentFinalDashboard.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage (assuming you have a reference to the current stage)
+            Stage stage = (Stage)studentNameTextField.getScene().getWindow();
+
+            // Set the new FXML content on the current stage
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

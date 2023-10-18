@@ -1,13 +1,14 @@
 package com.example.klassroom;
 
-import com.example.klassroom.DatabaseConnection;
-import com.example.klassroom.StudentAttendance;
-import com.example.klassroom.StudentAttendanceCell;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,10 +18,12 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
+
 import java.util.List;
 import java.util.ArrayList;
 
-public class StudentListController implements Initializable {
+public class StudentAttendanceListController implements Initializable {
 
     @FXML
     private ListView<StudentAttendance> studentListView;
@@ -77,7 +80,7 @@ public class StudentListController implements Initializable {
 
     @FXML
     private void complete_button_clicked() throws SQLException {
-        String classroomCode = "C101"; // Replace with the actual classroom code
+        String classroomCode = CurrentClassroom.getClassroomCode(); // Replace with the actual classroom code
 
         // Get the items (StudentAttendance objects) from the ListView
         ObservableList<StudentAttendance> studentAttendances = studentListView.getItems();
@@ -139,7 +142,23 @@ public class StudentListController implements Initializable {
         }
     }
 
+    public void Go_Back()
+    {
+        try {
+            // Load the new FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("classroomTeacher.fxml"));
+            Parent root = loader.load();
 
+            // Get the current stage (assuming you have a reference to the current stage)
+            Stage stage = (Stage)studentListView.getScene().getWindow();
+            // Set the new FXML content on the current stage
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

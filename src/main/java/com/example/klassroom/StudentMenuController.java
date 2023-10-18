@@ -25,6 +25,7 @@ public class StudentMenuController {
     @FXML
     public void initialize() {
         // Load and populate the classroom tiles for the logged-in student
+        StudentMenuController.student_username=CurrentStudent.CurrentStudentUsername;
         loadClassroomTiles();
     }
 
