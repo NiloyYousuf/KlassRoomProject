@@ -78,7 +78,7 @@ public class StudentMonthlyAttendanceController extends JPanel {
 
             preparedStatement.setInt(1, year);
             preparedStatement.setInt(2, month);
-            preparedStatement.setString(3, CurrentClassroom.getClassroomCode());
+            preparedStatement.setString(3, CurrentClassroom.classroomCode);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 String studentUsername = resultSet.getString("student_username");

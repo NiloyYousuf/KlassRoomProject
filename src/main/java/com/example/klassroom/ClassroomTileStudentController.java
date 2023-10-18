@@ -20,8 +20,8 @@ public class ClassroomTileStudentController {
     int classroomId;
 
     public void initializeTile(String classroomCode, String subjectName,int classroomId) {
-        classroomCodeLabel.setText("Code: " + classroomCode);
-        subjectLabel.setText("Subject: " + subjectName);
+        classroomCodeLabel.setText(classroomCode);
+        subjectLabel.setText(subjectName);
         this.classroomId=classroomId;
         // You can customize the tile further if needed
     }

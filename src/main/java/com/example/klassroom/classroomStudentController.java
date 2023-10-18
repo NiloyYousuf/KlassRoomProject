@@ -43,11 +43,11 @@ public class classroomStudentController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Platform.runLater(() -> {
             studentNameTextField.setText(StudentMenuController.student_username);
-            courseCodeTextField.setText(CurrentClassroom.getClassroomCode());
+            courseCodeTextField.setText(CurrentClassroom.classroomCode);
             subjectNameTextField.setText(CurrentClassroom.getSubjectName());
             System.out.println(CurrentClassroom.getClassroomId());
 
-            ClassroomPostsDAO.printAllPosts(CurrentClassroom.getClassroomId());
+            //ClassroomPostsDAO.printAllPosts(CurrentClassroom.getClassroomId());
             List<Post> posts = ClassroomPostsDAO.getPostsByClassroom(CurrentClassroom.getClassroomId());
 
             // Clear existing items in the postContainer
@@ -121,6 +121,21 @@ public class classroomStudentController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void view_attendance_clicked() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Student Attendance.fxml"));
+        Parent root = loader.load();
+
+        // Get the current stage (assuming you have a reference to the current stage)
+        Stage stage = (Stage)studentNameTextField.getScene().getWindow();
+
+        // Set the new FXML content on the current stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 
 }

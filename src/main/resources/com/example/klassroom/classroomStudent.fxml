@@ -16,5 +16,6 @@
          </content></ScrollPane>
       <TextField fx:id="studentNameTextField" layoutX="14.0" layoutY="64.0" />
       <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#Go_back" text="Back" />
+      <Button layoutX="473.0" layoutY="52.0" mnemonicParsing="false" onAction="#view_attendance_clicked" text="View Attendance" />
    </children>
 </AnchorPane>

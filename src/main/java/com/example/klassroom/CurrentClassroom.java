@@ -3,7 +3,7 @@ package com.example.klassroom;
 public class CurrentClassroom {
     // Private fields
     private static int classroomId;
-    private static String classroomCode;
+    public static String classroomCode;
     private static String subjectName;
     private static String teacherUsername;
 
@@ -17,9 +17,7 @@ public class CurrentClassroom {
     }
 
     // Getter and Setter methods for classroomCode
-    public static String getClassroomCode() {
-        return classroomCode;
-    }
+
 
     public static void setClassroomCode(String code) {
         classroomCode = code;

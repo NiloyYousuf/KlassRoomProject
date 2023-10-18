@@ -80,7 +80,7 @@ public class StudentAttendanceListController implements Initializable {
 
     @FXML
     private void complete_button_clicked() throws SQLException {
-        String classroomCode = CurrentClassroom.getClassroomCode(); // Replace with the actual classroom code
+        String classroomCode = CurrentClassroom.classroomCode; // Replace with the actual classroom code
 
         // Get the items (StudentAttendance objects) from the ListView
         ObservableList<StudentAttendance> studentAttendances = studentListView.getItems();

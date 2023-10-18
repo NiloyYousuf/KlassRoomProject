@@ -45,7 +45,7 @@ public class ClassroomTeacherController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Platform.runLater(() -> {
             teacherNameTextField.setText(TeacherMenuController.teacher_username);
-            courseCodeTextField.setText(CurrentClassroom.getClassroomCode());
+            courseCodeTextField.setText(CurrentClassroom.classroomCode);
             subjectNameTextField.setText(CurrentClassroom.getSubjectName());
             System.out.println(CurrentClassroom.getClassroomId());
             ClassroomPostsDAO.printAllPosts(CurrentClassroom.getClassroomId());
@@ -120,9 +120,9 @@ private  Button attendance;
 
     @FXML
     private  void  attendance_button_clicked() throws IOException {
-        StudentAttendanceListController.classroomCode=CurrentClassroom.getClassroomCode();
+        StudentAttendanceListController.classroomCode=CurrentClassroom.classroomCode;
         System.out.println(StudentAttendanceListController.classroomCode);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("student_Attendance_list.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Teacher_taking_student_Attendance_list.fxml"));
         Parent studentLogin = loader.load();
         // Get the current scene and set the student login content
         Scene currentScene = attendance.getScene();

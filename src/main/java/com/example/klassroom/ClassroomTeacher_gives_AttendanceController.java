@@ -1,6 +1,5 @@
 package com.example.klassroom;
 
-import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
@@ -18,7 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClassroomAttendanceController {
+public class ClassroomTeacher_gives_AttendanceController {
 
     @FXML
     private TableView<StudentAttendance> studentTable;
