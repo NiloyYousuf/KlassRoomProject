@@ -28,8 +28,8 @@ public class ClassroomTileController {
 
     public void initializeTile(String classroomCode, String subjectName,int classroomId) {
 
-        classroomCodeLabel.setText("Code: " + classroomCode);
-        subjectLabel.setText("Subject: " + subjectName);
+        classroomCodeLabel.setText(classroomCode);
+        subjectLabel.setText(subjectName);
         this.classroomId=classroomId;
         this.classroomcode=classroomCode;
         this.subject_name=subjectName;
