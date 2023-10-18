@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox prefHeight="148.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.CommentController">
+   <AnchorPane prefHeight="148.0" prefWidth="414.0">
+      <children>
+          <Text fx:id="commentText" layoutX="81.0" layoutY="63.0" text="Comment Text :" wrappingWidth="233.60003519058228" />
+         <Text fx:id="commentDate" layoutX="81.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+         <Text fx:id="commentTime" layoutX="315.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
+         <ImageView fitHeight="55.0" fitWidth="53.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@images/user.png" />
+            </image>
+         </ImageView>
+      </children>
+   </AnchorPane>
+</HBox>
