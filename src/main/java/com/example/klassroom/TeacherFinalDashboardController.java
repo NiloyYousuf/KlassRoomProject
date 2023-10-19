@@ -115,6 +115,19 @@ public class TeacherFinalDashboardController implements Initializable {
 
     }
 
+    public void load_create_classroom()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("classroom.fxml"));
+            Parent content = loader.load();
+            containerPane.getChildren().clear(); // Clear existing content (if any)
+            containerPane.getChildren().add(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle any potential exceptions here
+        }
+
+    }
 
 
 

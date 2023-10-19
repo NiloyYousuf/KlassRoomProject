@@ -97,7 +97,7 @@
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="154.0" prefHeight="38.0" prefWidth="179.0">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="154.0" onAction="#load_create_classroom" prefHeight="38.0" prefWidth="179.0" text="ADD CLASSROOM">
                             <font>
                                 <Font size="16.0" />
                             </font>
