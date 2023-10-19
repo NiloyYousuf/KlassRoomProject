@@ -61,10 +61,15 @@ public class CommentSectionController {
                 String commentTime = currentTime.toString();
 
                 // Get the postID from the current post
-                int postID = StudentPostTileController.current_post.getPostId();
+
+                int postID ;
 
                 // Determine whether the comment is made by a student or teacher
                 boolean isStudent = Current_User.is_student; // Replace with your logic to determine the user
+                if(isStudent)
+                 postID = StudentPostTileController.current_post.getPostId();
+                else
+                    postID=TeacherPostTileController.current_post.getPostId();
 
                 // Insert a new comment record into the Comments table
                 insertComment(commentText, commentDate, commentTime, postID, isStudent);

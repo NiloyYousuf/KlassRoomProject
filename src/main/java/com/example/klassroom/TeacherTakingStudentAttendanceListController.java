@@ -15,6 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
@@ -23,7 +24,7 @@ import javafx.stage.Stage;
 import java.util.List;
 import java.util.ArrayList;
 
-public class StudentAttendanceListController implements Initializable {
+public class TeacherTakingStudentAttendanceListController implements Initializable {
 
     @FXML
     private ListView<StudentAttendance> studentListView;
@@ -34,6 +35,9 @@ public class StudentAttendanceListController implements Initializable {
 
     @FXML
     private Button complete;
+
+    @FXML
+    private Button generate_report;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -103,6 +107,7 @@ public class StudentAttendanceListController implements Initializable {
         boolean entryExists = false;
 
         try {
+            DatabaseConnection.establishConnection();
             PreparedStatement selectStatement = connection.prepareStatement(selectQuery);
             selectStatement.setString(1, studentUsername);
             selectStatement.setDate(2, java.sql.Date.valueOf(date));
@@ -124,6 +129,8 @@ public class StudentAttendanceListController implements Initializable {
         }
 
         try {
+
+            Connection connection = DatabaseConnection.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setBoolean(1, isPresent);
             preparedStatement.setString(2, studentUsername);
@@ -160,6 +167,18 @@ public class StudentAttendanceListController implements Initializable {
         }
     }
 
+    public void generate_report_button_clicked() {
+        String classroomCode = CurrentClassroom.classroomCode;
+
+        // Get the current year and month
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH) + 1; // Month is zero-based, so add 1
+
+        // Create the chart for the current year and month
+        StudentsMonthlyAttendanceChart chart = new StudentsMonthlyAttendanceChart(classroomCode, year, month);
+        chart.generateMonthlyAttendanceChart();
+    }
 
 
 }

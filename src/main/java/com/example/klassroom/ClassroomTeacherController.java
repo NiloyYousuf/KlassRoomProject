@@ -16,12 +16,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 public class ClassroomTeacherController implements Initializable {
 
@@ -120,8 +118,8 @@ private  Button attendance;
 
     @FXML
     private  void  attendance_button_clicked() throws IOException {
-        StudentAttendanceListController.classroomCode=CurrentClassroom.classroomCode;
-        System.out.println(StudentAttendanceListController.classroomCode);
+        TeacherTakingStudentAttendanceListController.classroomCode=CurrentClassroom.classroomCode;
+        System.out.println(TeacherTakingStudentAttendanceListController.classroomCode);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Teacher_taking_student_Attendance_list.fxml"));
         Parent studentLogin = loader.load();
         // Get the current scene and set the student login content
