@@ -116,6 +116,21 @@ public class StudentFinalDashboardController implements Initializable {
     }
 
 
+    public void load_join_new_classroom()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("JoinClassroom.fxml"));
+            Parent content = loader.load();
+            containerPane.getChildren().clear(); // Clear existing content (if any)
+            containerPane.getChildren().add(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle any potential exceptions here
+        }
+
+    }
+
+
 
 
 
