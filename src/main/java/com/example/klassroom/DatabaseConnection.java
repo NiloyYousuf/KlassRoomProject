@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class DatabaseConnection {
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/project";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "200041123";
+    private static final String PASSWORD = "200041116";
 
     // Database connection instance
     private static Connection connection = null;

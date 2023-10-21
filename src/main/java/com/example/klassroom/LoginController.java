@@ -34,7 +34,7 @@ public class LoginController implements Initializable {
     private void loginAsStudent() {
         try {
             // Load the student login FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentLogin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("studentlogin.fxml"));
             Parent studentLogin = loader.load();
 
             // Get the current scene and set the student login content
