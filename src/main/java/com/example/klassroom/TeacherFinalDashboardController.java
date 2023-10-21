@@ -82,7 +82,26 @@ public class TeacherFinalDashboardController implements Initializable {
 
     @FXML
     private void loadMyContent() {
-        load_classrooms_page();
+
+        try {
+            if(GlobalFxmlString.FXML_to_load!= null) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(GlobalFxmlString.FXML_to_load));
+                Parent content = loader.load();
+                containerPane.getChildren().clear(); // Clear existing content (if any)
+                containerPane.getChildren().add(content);
+            }
+            else
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherMenu.fxml"));
+                Parent content = loader.load();
+                containerPane.getChildren().clear(); // Clear existing content (if any)
+                containerPane.getChildren().add(content);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle any potential exceptions here
+        }
     }
 
 
@@ -101,19 +120,7 @@ public class TeacherFinalDashboardController implements Initializable {
     }
 
 
-    public void load_classroom_posts_page()
-    {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ClassroomTeacher.fxml"));
-            Parent content = loader.load();
-            containerPane.getChildren().clear(); // Clear existing content (if any)
-            containerPane.getChildren().add(content);
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Handle any potential exceptions here
-        }
 
-    }
 
     public void load_create_classroom()
     {

@@ -22,7 +22,7 @@ public class CreateTableAssignments {
                     "Assignment_Text TEXT, " +
                     "Assign_Date DATE, " +
                     "Deadline DATE, " +
-                    "Attachment BLOB, " + // Use BLOB data type for file attachments
+                    "Attachment LONGBLOB, " + // Use BLOB data type for file attachments
                     "Marks INT, " +
                     "Teacher_Username VARCHAR(50), " +
                     "Classroom_Code VARCHAR(10), " +

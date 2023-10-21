@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.StudentAssignmentsAppController">
+   <ScrollPane prefHeight="200.0" prefWidth="621.0">
+      <content>
+          <!-- Add any other layout or UI elements you need here -->
+          <VBox fx:id="assignmentTilesContainer" prefHeight="130.0" prefWidth="610.0" />
+      </content>
+   </ScrollPane>
+</VBox>

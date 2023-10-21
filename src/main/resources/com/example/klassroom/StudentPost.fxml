@@ -12,9 +12,10 @@
       <Label fx:id="Time" layoutX="79.0" layoutY="60.0" text="Time" />
       <Label fx:id="Date" layoutX="377.0" layoutY="60.0" text="Date" />
       <TextArea fx:id="Post" layoutX="62.0" layoutY="100.0" prefHeight="200.0" prefWidth="427.0" text="Post" />
-      <Button fx:id="Download" layoutX="268.0" layoutY="337.0" mnemonicParsing="false" text="Download Attachment" />
+      <Button fx:id="Download" layoutX="268.0" layoutY="337.0" mnemonicParsing="false" onAction="#downloadFile" text="Download Attachment" />
       <TextField layoutX="106.0" layoutY="337.0" text="Attachment" />
       <Button layoutX="27.0" layoutY="21.0" mnemonicParsing="false" onAction="#Go_back" text="Back" />
       <VBox fx:id="commentVBox" layoutX="53.0" layoutY="389.0" prefHeight="98.0" prefWidth="442.0" />
+      <Label fx:id="selectedPostIdLabel" layoutX="315.0" layoutY="372.0" text="Label" />
    </children>
 </AnchorPane>

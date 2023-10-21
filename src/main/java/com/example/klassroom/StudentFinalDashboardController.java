@@ -90,7 +90,7 @@ public class StudentFinalDashboardController implements Initializable {
     public void load_classrooms_page()
     {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentMenu.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentAllClassrooms.fxml"));
             Parent content = loader.load();
             containerPane.getChildren().clear(); // Clear existing content (if any)
             containerPane.getChildren().add(content);
@@ -101,10 +101,24 @@ public class StudentFinalDashboardController implements Initializable {
     }
 
 
-    public void load_classroom_posts_page()
+    public void load_view_assignments_page()
     {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ClassroomStudent.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentAssignmentsApp.fxml"));
+            Parent content = loader.load();
+            containerPane.getChildren().clear(); // Clear existing content (if any)
+            containerPane.getChildren().add(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle any potential exceptions here
+        }
+    }
+
+    public void load_Info_page()
+    {
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("student_profile.fxml"));
             Parent content = loader.load();
             containerPane.getChildren().clear(); // Clear existing content (if any)
             containerPane.getChildren().add(content);
@@ -114,6 +128,9 @@ public class StudentFinalDashboardController implements Initializable {
         }
 
     }
+
+
+
 
 
     public void load_join_new_classroom()

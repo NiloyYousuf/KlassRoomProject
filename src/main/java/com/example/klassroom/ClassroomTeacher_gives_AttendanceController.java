@@ -119,7 +119,8 @@ public class ClassroomTeacher_gives_AttendanceController {
     {
         try {
             // Load the new FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("classroomTeacher.fxml"));
+            GlobalFxmlString.FXML_to_load="classroomTeacher.fxml";
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherFinalDashboard.fxml"));
             Parent root = loader.load();
 
             // Get the current stage (assuming you have a reference to the current stage)

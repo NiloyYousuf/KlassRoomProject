@@ -20,8 +20,10 @@ public class CreateTableStudentAssignmentJunction {
                     "Submission_Date DATE, " +
                     "Submission_Status VARCHAR(50), " +
                     "Marks_Obtained INT, " +
-                    "Uploaded_Assignment BLOB, " + // Use BLOB data type for uploaded assignments
-                    "PRIMARY KEY (Assignment_ID, Student_Username), " +
+                    "Uploaded_Assignment LONGBLOB, " + // Use BLOB data type for uploaded assignments  ALTER TABLE assignments
+                                                                                                 //MODIFY COLUMN Attachment LONGBLOB;
+
+            "PRIMARY KEY (Assignment_ID, Student_Username), " +
                     "FOREIGN KEY (Assignment_ID) REFERENCES assignments(Assignment_ID), " +
                     "FOREIGN KEY (Student_Username) REFERENCES students(student_username)" +
                     ")";

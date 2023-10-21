@@ -28,7 +28,7 @@ public class StudentAssignmentsApp extends Application {
         this.primaryStage.setTitle("Student Assignments");
 
         // Load assignment tiles based on the student's ID (e.g., "student1")
-        loadAssignmentTiles("student3");
+        loadAssignmentTiles(CurrentStudent.CurrentStudentUsername);
 
         Scene scene = new Scene(assignmentTilesContainer, 800, 600);
         primaryStage.setScene(scene);
@@ -93,7 +93,7 @@ public class StudentAssignmentsApp extends Application {
                 byte[] uploadedAssignment = resultSet.getBytes("Uploaded_Assignment");
 
              //   controller.setAssignmentData(assignmentText, assignDate, deadline);
-                controller.setAssignmentData(assignmentText, assignDate, deadline,assignment_ID,assignment_submission_status,assignment_classroomcode);
+                controller.setAssignmentData(assignmentText, assignDate, deadline,assignment_ID,assignment_classroomcode);
 
               //  controller.setAssignmentData(assignmentText, assignDate, deadline, submissionDate, submissionStatus, marksObtained, uploadedAssignment);
 

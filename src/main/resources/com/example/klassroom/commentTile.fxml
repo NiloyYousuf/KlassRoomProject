@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Text?>
 
-<fx:root prefHeight="16.0" prefWidth="306.0" type="HBox" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.CommentTileController">
+<fx:root prefHeight="136.0" prefWidth="595.0" type="HBox" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.CommentTileController">
     <children>
         <Text fx:id="commentText" />
     </children>

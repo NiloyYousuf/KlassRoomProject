@@ -4,11 +4,11 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="500.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.TeacherTakingStudentAttendanceListController">
+<AnchorPane prefHeight="468.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.TeacherTakingStudentAttendanceListController">
     <children>
-        <ListView fx:id="studentListView" layoutX="27.0" layoutY="72.0" prefHeight="300.0" prefWidth="400.0" />
-      <Button layoutX="27.0" layoutY="389.0" mnemonicParsing="false" onAction="#complete_button_clicked" text="Complete" />
-      <Button layoutX="35.0" layoutY="25.0" mnemonicParsing="false" onAction="#Go_Back" text="Back" />
-      <Button fx:id="generate_report" layoutX="227.0" layoutY="389.0" mnemonicParsing="false" onAction="#generate_report_button_clicked" text="Generate Montly Attendance Report" />
+        <ListView fx:id="studentListView" layoutX="100.0" layoutY="62.0" prefHeight="300.0" prefWidth="470.0" />
+      <Button layoutX="297.0" layoutY="381.0" mnemonicParsing="false" onAction="#complete_button_clicked" text="Complete" />
+      <Button layoutX="27.0" layoutY="62.0" mnemonicParsing="false" onAction="#Go_Back" text="Back" />
+      <Button fx:id="generate_report" layoutX="239.0" layoutY="435.0" mnemonicParsing="false" onAction="#generate_report_button_clicked" text="Generate Montly Attendance Report" />
     </children>
 </AnchorPane>

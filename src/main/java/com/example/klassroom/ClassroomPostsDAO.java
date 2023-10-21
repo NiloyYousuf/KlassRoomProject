@@ -1,11 +1,9 @@
 package com.example.klassroom;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.net.ConnectException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,5 +91,45 @@ public class ClassroomPostsDAO {
     }
 
 
+    private static final String INSERT_POST2 = "INSERT INTO posts (classroom_id, post_time, post_date, post_text, attachment, original_filename) VALUES (?, ?, ?, ?, ?, ?)";
+
+    public static void insertPost(int classroomId, String postTime, String postDate, String postText, File selectedFile, String originalFilename) {
+        Connection connection = DatabaseConnection.getConnection();
+        FileInputStream fileInputStream = null;
+
+        try {
+            if (selectedFile != null) {
+                fileInputStream = new FileInputStream(selectedFile);
+            }
+
+            try (PreparedStatement statement = connection.prepareStatement(INSERT_POST2)) {
+                statement.setInt(1, classroomId);
+                statement.setString(2, postTime);
+                statement.setString(3, postDate);
+                statement.setString(4, postText);
+
+                if (fileInputStream != null) {
+                    statement.setBinaryStream(5, fileInputStream, (int) selectedFile.length());
+                } else {
+                    statement.setNull(5, Types.BLOB);
+                }
+
+                statement.setString(6, originalFilename);
+
+                statement.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to insert post into the database.");
+        } finally {
+            if (fileInputStream != null) {
+                try {
+                    fileInputStream.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 }

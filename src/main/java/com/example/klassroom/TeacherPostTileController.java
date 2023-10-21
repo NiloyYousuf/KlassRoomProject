@@ -39,7 +39,8 @@ public class TeacherPostTileController {
         current_post=ClassroomPostsDAO.getPostById(Integer.parseInt(Post_Id.getText()));
         currentPost.currentPostId=Integer.parseInt(Post_Id.getText());
         //System.out.println(Post_Id.getText());
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherPost.fxml"));
+        GlobalFxmlString.FXML_to_load="TeacherPost.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherFinalDashboard.fxml"));
         Parent post = loader.load();
         // Get the current scene and set the student login content
         Scene currentScene =postTimeLabel.getScene();

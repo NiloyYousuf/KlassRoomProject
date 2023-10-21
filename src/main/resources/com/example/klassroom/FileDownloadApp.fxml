@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.FileDownloadController">
+    <Button onAction="#downloadFile" text="Download File" />
+    <Label fx:id="selectedPostIdLabel" prefHeight="18.0" prefWidth="85.0" text="Selected ID label" />
+</VBox>

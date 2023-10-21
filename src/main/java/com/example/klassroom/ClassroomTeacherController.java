@@ -6,15 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -79,13 +77,19 @@ public class ClassroomTeacherController implements Initializable {
     @FXML
     private TextArea post;
     @FXML
-    private void make_post_button_clicked()
-    {
+    private void make_post_button_clicked() throws FileNotFoundException {
         long millis=System.currentTimeMillis();
         java.sql.Date date = new java.sql.Date(millis);
         System.out.println(date);
         String location = new String();
-        ClassroomPostsDAO.insertPost(CurrentClassroom.getClassroomId(),java.time.LocalTime.now().toString(),date.toString(),post.getText(), location.getBytes());
+
+        if (selectedFile != null) {
+            //FileInputStream fileInputStream = new FileInputStream(selectedFile);
+            ClassroomPostsDAO.insertPost(CurrentClassroom.getClassroomId(), java.time.LocalTime.now().toString(), date.toString(), post.getText(), selectedFile, originalFilename);
+        } else {
+            // Handle the case where no file is attached
+            ClassroomPostsDAO.insertPost(CurrentClassroom.getClassroomId(), java.time.LocalTime.now().toString(), date.toString(), post.getText(), null, originalFilename);
+        }
         refreshPostContainer();
     }
 
@@ -120,7 +124,20 @@ private  Button attendance;
     private  void  attendance_button_clicked() throws IOException {
         TeacherTakingStudentAttendanceListController.classroomCode=CurrentClassroom.classroomCode;
         System.out.println(TeacherTakingStudentAttendanceListController.classroomCode);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Teacher_taking_student_Attendance_list.fxml"));
+        GlobalFxmlString.FXML_to_load="Teacher_taking_student_Attendance_list.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherFinalDashboard.fxml"));
+        Parent studentLogin = loader.load();
+        // Get the current scene and set the student login content
+        Scene currentScene = attendance.getScene();
+        currentScene.setRoot(studentLogin);
+    }
+
+    @FXML
+    private  void  Post_assignment_button_clicked() throws IOException {
+        TeacherTakingStudentAttendanceListController.classroomCode=CurrentClassroom.classroomCode;
+        System.out.println(TeacherTakingStudentAttendanceListController.classroomCode);
+        GlobalFxmlString.FXML_to_load="AssignmentPostForm.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherFinalDashboard.fxml"));
         Parent studentLogin = loader.load();
         // Get the current scene and set the student login content
         Scene currentScene = attendance.getScene();
@@ -128,10 +145,29 @@ private  Button attendance;
     }
 
 
+
+    @FXML
+    private Label selectedFileLabel;
+
+    private File selectedFile;
+    private String originalFilename; // Add the original filename field
+
+    public void chooseFile() {
+        FileChooser fileChooser = new FileChooser();
+        File file = fileChooser.showOpenDialog(null);
+
+        if (file != null) {
+            selectedFile = file;
+            originalFilename = file.getName(); // Store the original filename
+            selectedFileLabel.setText("Selected File: " + originalFilename);
+        }
+    }
+
     public void Go_back()
     {
         try {
             // Load the new FXML file
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherFinalDashboard.fxml"));
             Parent root = loader.load();
 

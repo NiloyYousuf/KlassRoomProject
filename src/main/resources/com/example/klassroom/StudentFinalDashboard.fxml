@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -13,7 +14,7 @@
     <children>
         <AnchorPane prefHeight="46.0" prefWidth="800.0" style="-fx-background-color: #3A4C40;">
             <children>
-                <Label fx:id="drawerImage" layoutX="7.0" layoutY="7.0">
+                <Label fx:id="drawerImage" layoutX="7.0" layoutY="7.0" prefHeight="46.0" prefWidth="52.0">
                     <graphic>
                         <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -21,50 +22,15 @@
                             </image>
                         </ImageView>
                     </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Label>
                 <ImageView fx:id="exit" fitHeight="24.0" fitWidth="24.0" layoutX="762.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@images/exit.png" />
                     </image>
                 </ImageView>
-            </children>
-        </AnchorPane>
-        <AnchorPane layoutY="46.0" prefHeight="454.0" prefWidth="44.0" style="-fx-background-color: white;">
-            <children>
-                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="44.0" spacing="10.0" style="-fx-background-color: white;" AnchorPane.topAnchor="20.0">
-                    <children>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/home.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/add.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/data.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/user.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/setting.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/backup.png" />
-                            </image>
-                        </ImageView>
-                    </children>
-                </VBox>
             </children>
         </AnchorPane>
         <AnchorPane fx:id="containerPane" layoutX="44.0" layoutY="46.0" prefHeight="454.0" prefWidth="756.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -74,16 +40,16 @@
             </children>
         </AnchorPane>
         <AnchorPane fx:id="opacityPane" layoutX="-7.0" prefHeight="500.0" prefWidth="807.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-        <AnchorPane fx:id="drawerPane" prefHeight="454.0" prefWidth="178.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="40.0">
+        <AnchorPane fx:id="drawerPane" layoutX="3.0" prefHeight="442.0" prefWidth="215.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="3.0">
             <children>
                 <VBox layoutY="18.0" prefHeight="416.0" prefWidth="178.0" spacing="5.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="18.0">
                     <children>
-                        <Button alignment="BASELINE_LEFT" onAction="#load_classroom_posts_page" prefHeight="26.0" prefWidth="178.0" text="View Posts">
+                        <Button alignment="BASELINE_LEFT" onAction="#load_Info_page" prefHeight="26.0" prefWidth="178.0" text="Info">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="179.0" text="View Assignments">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" onAction="#load_view_assignments_page" prefHeight="38.0" prefWidth="179.0" text="View Assignments">
                             <font>
                                 <Font size="16.0" />
                             </font>
@@ -93,7 +59,7 @@
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="106.0" prefHeight="38.0" prefWidth="179.0" text="Submitted Tasks">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="106.0" prefHeight="38.0" prefWidth="179.0" text="Pending Assignments">
                             <font>
                                 <Font size="16.0" />
                             </font>
@@ -103,49 +69,11 @@
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="202.0" prefHeight="38.0" prefWidth="179.0">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="202.0" onAction="#load_classrooms_page" prefHeight="38.0" prefWidth="179.0" text="Classrooms">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                    </children>
-                </VBox>
-            </children>
-        </AnchorPane>
-        <AnchorPane prefHeight="454.0" prefWidth="44.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0">
-            <children>
-                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="44.0" spacing="10.0" style="-fx-background-color: white;" AnchorPane.topAnchor="20.0">
-                    <children>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/home.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/add.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/data.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/user.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/setting.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/backup.png" />
-                            </image>
-                        </ImageView>
                     </children>
                 </VBox>
             </children>

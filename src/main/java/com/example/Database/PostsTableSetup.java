@@ -11,12 +11,21 @@ public class PostsTableSetup {
             Connection connection =DatabaseConnection.getConnection();
 
             // Create the posts table
-            createPostsTable(connection);
-
+           // createPostsTable(connection);
+           addOriginalFilenameColumn(connection);
             // Close the database connection
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void addOriginalFilenameColumn(Connection connection) throws SQLException {
+        String alterTableSQL = "ALTER TABLE posts " +
+                "ADD COLUMN original_filename VARCHAR(255)"; // Define the new 'original_filename' column
+        try (PreparedStatement preparedStatement = connection.prepareStatement(alterTableSQL)) {
+            preparedStatement.execute();
+            System.out.println("Added the 'original_filename' column to the posts table.");
         }
     }
 

@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="279.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.CommentSectionController">
+<AnchorPane prefHeight="279.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.CommentSectionController">
     <!-- Add a TextArea for entering new comments -->
-    <TextArea fx:id="newCommentTextArea" layoutY="7.0" prefHeight="38.0" prefWidth="395.0" promptText="Enter your comment here" text="Make Comment" />
-   <ScrollPane layoutX="7.0" layoutY="53.0" prefHeight="200.0" prefWidth="495.0">
+    <TextArea fx:id="newCommentTextArea" layoutY="7.0" prefHeight="49.0" prefWidth="642.0" promptText="Enter your comment here" text="Make Comment" />
+   <ScrollPane layoutX="7.0" layoutY="72.0" prefHeight="200.0" prefWidth="731.0">
       <content>
       
                       <!-- The VBox for displaying existing comments -->
-          <VBox fx:id="commentVBox" prefHeight="194.0" prefWidth="492.0" spacing="10" />
+          <VBox fx:id="commentVBox" prefHeight="127.0" prefWidth="723.0" spacing="10" />
       </content>
    </ScrollPane>
-   <Button fx:id="postButton" layoutX="401.0" layoutY="13.0" mnemonicParsing="false" text="Post" />
+   <Button fx:id="postButton" layoutX="655.0" layoutY="13.0" mnemonicParsing="false" text="Post" />
 </AnchorPane>
