@@ -14,7 +14,7 @@ public class ClassroomStudentJunctionTable {
           //  deleteClassroomStudentJunctionTable(connection);
 
             // Create the classroom_student_junction table with both attributes as primary keys
-           // createClassroomStudentJunctionTable(connection);
+           createClassroomStudentJunctionTable(connection);
 //            insertDataIntoClassroomStudentJunction(connection, "C101", "student1");
 //            insertDataIntoClassroomStudentJunction(connection, "C101", "student2");
 //            insertDataIntoClassroomStudentJunction(connection, "C102", "student1");
