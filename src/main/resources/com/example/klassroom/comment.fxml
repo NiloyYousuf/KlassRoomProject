@@ -12,11 +12,12 @@
           <Text fx:id="commentText" layoutX="81.0" layoutY="63.0" text="Comment Text :" wrappingWidth="233.60003519058228" />
          <Text fx:id="commentDate" layoutX="81.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
          <Text fx:id="commentTime" layoutX="519.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
-         <ImageView fitHeight="55.0" fitWidth="53.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fx:id="Uploader_image" fitHeight="55.0" fitWidth="53.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@images/user.png" />
             </image>
          </ImageView>
+         <Text fx:id="user_name" layoutX="29.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       </children>
    </AnchorPane>
 </HBox>

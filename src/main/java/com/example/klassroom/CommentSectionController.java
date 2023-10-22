@@ -25,11 +25,9 @@ public class CommentSectionController {
     private Button postButton;
 
     public void initialize() {
-
-
-        try  {
+        try {
             // Fetch comments from the database based on the current post ID
-            String query = "SELECT commentText, commentDate, commentTime FROM comments WHERE postID = ?";
+            String query = "SELECT commentID, commentText, commentDate, commentTime, student_username, teacher_username FROM comments WHERE postID = ?";
             DatabaseConnection.establishConnection();
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -41,14 +39,23 @@ public class CommentSectionController {
                 String commentText = resultSet.getString("commentText");
                 String commentDate = resultSet.getString("commentDate");
                 String commentTime = resultSet.getString("commentTime");
-                addComment(commentText, commentDate, commentTime);
+                Blob userPhotoBlob = getUserPhotoBlob(resultSet);
+
+                // Determine the user's name
+                String userName = "";
+                String studentUsername = resultSet.getString("student_username");
+                String teacherUsername = resultSet.getString("teacher_username");
+                if (studentUsername != null) {
+                    userName = studentUsername;
+                } else if (teacherUsername != null) {
+                    userName = teacherUsername;
+                }
+
+                addComment(commentText, commentDate, commentTime, userName, userPhotoBlob);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-
         }
-
-
         postButton.setOnAction(event -> {
             // Get the comment text from the TextArea
             String commentText = newCommentTextArea.getText();
@@ -79,19 +86,22 @@ public class CommentSectionController {
             }
         });
     }
-    public void addComment(String commentText ,String commentDate , String commentTime) {
+    public void addComment(String commentText, String commentDate, String commentTime, String user_name, Blob userPhoto) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Comment.fxml"));
             HBox commentLayout = loader.load();
             CommentController commentController = loader.getController();
+            commentController.setCommentUsername(user_name);
             commentController.setCommentText(commentText);
             commentController.setCommentDateText(commentDate);
             commentController.setCommentTimeText(commentTime);
+            commentController.setUploaderImage(userPhoto); // Set the user's image
             commentVBox.getChildren().add(commentLayout);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     public void handleEnterPressed(KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.ENTER && !newCommentTextArea.getText().isEmpty()) {
@@ -133,11 +143,10 @@ public class CommentSectionController {
 
     private void refreshCommentSection() {
         commentVBox.getChildren().clear(); // Clear existing comments
-         DatabaseConnection.establishConnection();
-        // Fetch and display comments for the current post
+
         try {
-            // Fetch comments from the database based on the current post ID
-            String query = "SELECT commentText, commentDate, commentTime FROM comments WHERE postID = ?";
+            // Fetch and display comments for the current post
+            String query = "SELECT commentID, commentText, commentDate, commentTime, student_username, teacher_username FROM comments WHERE postID = ?";
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, currentPost.currentPostId);
@@ -148,7 +157,17 @@ public class CommentSectionController {
                 String commentText = resultSet.getString("commentText");
                 String commentDate = resultSet.getString("commentDate");
                 String commentTime = resultSet.getString("commentTime");
-                addComment(commentText, commentDate, commentTime);
+                String userName = "";
+                String studentUsername = resultSet.getString("student_username");
+                String teacherUsername = resultSet.getString("teacher_username");
+                if (studentUsername != null) {
+                    userName = studentUsername;
+                } else if (teacherUsername != null) {
+                    userName = teacherUsername;
+                }
+                Blob userPhotoBlob = getUserPhotoBlob(resultSet);
+
+                addComment(commentText, commentDate, commentTime,userName , userPhotoBlob);
             }
 
             connection.close();
@@ -156,5 +175,36 @@ public class CommentSectionController {
             e.printStackTrace();
         }
     }
+
+    private Blob getUserPhotoBlob(ResultSet resultSet) throws SQLException {
+        String studentUsername = resultSet.getString("student_username");
+        String teacherUsername = resultSet.getString("teacher_username");
+
+        // Determine whether the comment is made by a student or teacher
+        if (studentUsername != null) {
+            // Retrieve the user's photo Blob from the students table
+            String photoQuery = "SELECT photo FROM students WHERE student_username = ?";
+            return getUserPhotoBlobFromTable(photoQuery, studentUsername);
+        } else if (teacherUsername != null) {
+            // Retrieve the user's photo Blob from the teachers table
+            String photoQuery = "SELECT photo FROM teachers WHERE teacher_username = ?";
+            return getUserPhotoBlobFromTable(photoQuery, teacherUsername);
+        }
+
+        return null; // Return null if no user photo found
+    }
+
+    private Blob getUserPhotoBlobFromTable(String query, String username) throws SQLException {
+        Connection connection = DatabaseConnection.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, username);
+        ResultSet photoResultSet = preparedStatement.executeQuery();
+
+        if (photoResultSet.next()) {
+            return photoResultSet.getBlob("photo");
+        }
+        return null; // Return null if no user photo found
+    }
+
 
 }

@@ -5,38 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="220de450-cd4a-49eb-a59d-a64a8384d59b" name="Changes" comment="niloy">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/FileUploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/FileUploadMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/CreateTableAssignments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/CreateTableAssignments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/CreateTableStudentAssignmentJunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/CreateTableStudentAssignmentJunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/PostsTableSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/PostsTableSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/AssignmentTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/AssignmentTileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomPostsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomPostsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTeacher_gives_AttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTeacher_gives_AttendanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTileTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTileTeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentAssignmentsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentAssignmentsApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentFinalDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentFinalDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherFinalDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherFinalDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherPostTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherPostTileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherTakingStudentAttendanceListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherTakingStudentAttendanceListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/AssignmentTile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/AssignmentTile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentFinalDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentFinalDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentAllClassrooms.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherFinalDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherFinalDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Teacher_taking_student_Attendance_list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Teacher_taking_student_Attendance_list.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/classroomTeacher.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/classroomTeacher.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CommentSectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CommentSectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dev2/student_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Dev2/student_register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dev2/teacher_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Dev2/teacher_register.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/comment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/comment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/commentSection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/commentSection.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/commentTile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/commentTile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Dev2/register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +74,9 @@
       <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\resources\com\example\klassroom" />
       <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\java\com\example\Database" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\resources\com\example\Dev2" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.klassroom" />
       <recent name="com.example" />
@@ -123,7 +102,7 @@
       <workItem from="1697451703579" duration="25397000" />
       <workItem from="1697547730897" duration="30770000" />
       <workItem from="1697820893627" duration="139000" />
-      <workItem from="1697821046177" duration="29030000" />
+      <workItem from="1697821046177" duration="32891000" />
     </task>
     <task id="LOCAL-00001" summary="niloy">
       <created>1697454145033</created>
@@ -216,11 +195,29 @@
       <option name="project" value="LOCAL" />
       <updated>1697821129974</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="niloy">
+      <created>1697922678918</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1697922678918</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="niloy" />
