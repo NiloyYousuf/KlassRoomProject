@@ -51,10 +51,15 @@ public class StudentRegistrationController {
             showAlert("Password mismatch", "Password and confirm password do not match.");
             return;
         }
+        if (usernameExists(username)) {
+            showAlert("Username already in use", "This username has already been used.");
+            return;
+        }
         if (emailExists(email)) {
             showAlert("Email already in use", "This email has already been used.");
             return;
         }
+
         // Add database insertion logic
         if (insertDataToDatabase(username, email, password)) {
             showAlert("Success", "Registration successful!");
@@ -104,6 +109,23 @@ public class StudentRegistrationController {
             return false;
         }
     }
+    private boolean usernameExists(String username) {
+        try {
+            Connection connection = getConnection();
+            String query = "SELECT COUNT(*) FROM students WHERE student_username = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            int count = resultSet.getInt(1);
+            connection.close();
+            return count > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     private void showAlert(String title, String message) {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle(title);

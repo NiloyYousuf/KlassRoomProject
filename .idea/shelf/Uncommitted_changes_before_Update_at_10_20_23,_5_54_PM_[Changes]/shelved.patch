@@ -1,0 +1,220 @@
+Index: src/main/java/com/example/Database/ClassroomStudentJunctionTable.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Database;\n\nimport java.sql.Connection;\nimport java.sql.PreparedStatement;\nimport java.sql.ResultSet;\nimport java.sql.SQLException;\n\npublic class ClassroomStudentJunctionTable {\n\n    public static void main(String[] args) {\n        try {\n            Connection connection =DatabaseConnection.getConnection();\n            // Delete the existing classroom_student_junction table (if it exists)\n          //  deleteClassroomStudentJunctionTable(connection);\n\n            // Create the classroom_student_junction table with both attributes as primary keys\n           // createClassroomStudentJunctionTable(connection);\n//            insertDataIntoClassroomStudentJunction(connection, \"C101\", \"student1\");\n//            insertDataIntoClassroomStudentJunction(connection, \"C101\", \"student2\");\n//            insertDataIntoClassroomStudentJunction(connection, \"C102\", \"student1\");\n           displayAllDataInClassroomStudentJunction(connection);\n\n            // Close the database connection\n          //  connection.close();\n        } catch (SQLException e) {\n            e.printStackTrace();\n        }\n    }\n\n    private static void createClassroomStudentJunctionTable(Connection connection) throws SQLException {\n        // Define the table creation SQL with both attributes as primary keys\n        String createTableSQL = \"CREATE TABLE classroom_student_junction (\"\n                + \"classroom_code VARCHAR(10), \"\n                + \"student_username VARCHAR(50), \"\n                + \"PRIMARY KEY (classroom_code, student_username)\"\n                + \")\";\n\n        // Execute the SQL to create the table\n        try (PreparedStatement preparedStatement = connection.prepareStatement(createTableSQL)) {\n            preparedStatement.execute();\n            System.out.println(\"classroom_student_junction table created successfully.\");\n        }\n\n        // Add foreign key constraints\n        DatabaseUtil.addForeignKeyConstraint(connection, \"classroom_student_junction\", \"classroom_code\", \"classrooms\", \"classroom_code\");\n        DatabaseUtil.addForeignKeyConstraint(connection, \"classroom_student_junction\", \"student_username\", \"students\", \"student_username\");\n    }\n\n    private static void deleteClassroomStudentJunctionTable(Connection connection) throws SQLException {\n        // Define the SQL to delete the table if it exists\n        String deleteTableSQL = \"DROP TABLE IF EXISTS classroom_student_junction\";\n\n        // Execute the SQL to delete the table\n        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteTableSQL)) {\n            preparedStatement.execute();\n            System.out.println(\"classroom_student_junction table deleted successfully (if it existed).\");\n        }\n    }\n\n\n\n    private static void insertDataIntoClassroomStudentJunction(Connection connection, String classroomCode, String studentUsername) throws SQLException {\n        // Define the SQL to insert data into the table\n        String insertDataSQL = \"INSERT INTO classroom_student_junction (classroom_code, student_username) VALUES (?, ?)\";\n\n        // Execute the SQL to insert data\n        try (PreparedStatement preparedStatement = connection.prepareStatement(insertDataSQL)) {\n            preparedStatement.setString(1, classroomCode);\n            preparedStatement.setString(2, studentUsername);\n            preparedStatement.executeUpdate();\n            System.out.println(\"Data inserted into classroom_student_junction table.\");\n        }\n    }\n    private static void displayAllDataInClassroomStudentJunction(Connection connection) throws SQLException {\n        String selectDataSQL = \"SELECT * FROM classroom_student_junction\";\n\n        try (PreparedStatement preparedStatement = connection.prepareStatement(selectDataSQL);\n             ResultSet resultSet = preparedStatement.executeQuery()) {\n            System.out.println(\"Data in classroom_student_junction table:\");\n\n            while (resultSet.next()) {\n                String classroomCode = resultSet.getString(\"classroom_code\");\n                String studentUsername = resultSet.getString(\"student_username\");\n\n                System.out.println(\"Classroom Code: \" + classroomCode + \", Student Username: \" + studentUsername);\n            }\n        }\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/Database/ClassroomStudentJunctionTable.java b/src/main/java/com/example/Database/ClassroomStudentJunctionTable.java
+--- a/src/main/java/com/example/Database/ClassroomStudentJunctionTable.java	(revision 202569da77eb5a7d029b6de7daef075a778b58da)
++++ b/src/main/java/com/example/Database/ClassroomStudentJunctionTable.java	(date 1697548480371)
+@@ -14,7 +14,7 @@
+           //  deleteClassroomStudentJunctionTable(connection);
+ 
+             // Create the classroom_student_junction table with both attributes as primary keys
+-           // createClassroomStudentJunctionTable(connection);
++           createClassroomStudentJunctionTable(connection);
+ //            insertDataIntoClassroomStudentJunction(connection, "C101", "student1");
+ //            insertDataIntoClassroomStudentJunction(connection, "C101", "student2");
+ //            insertDataIntoClassroomStudentJunction(connection, "C102", "student1");
+Index: src/main/java/com/example/klassroom/DatabaseConnection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.klassroom;\n\nimport java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.SQLException;\n\npublic class DatabaseConnection {\n    // JDBC URL, username, and password of MySQL server\n    private static final String JDBC_URL = \"jdbc:mysql://localhost:3306/project\";\n    private static final String USERNAME = \"root\";\n    private static final String PASSWORD = \"200041123\";\n\n    // Database connection instance\n    private static Connection connection = null;\n\n    // Private constructor to prevent creating multiple instances\n    private DatabaseConnection() {\n    }\n\n    // Get the database connection instance\n    public static Connection getConnection() {\n        if (connection == null) {\n            try {\n                // Create a new database connection if it doesn't exist\n                connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);\n            } catch (SQLException e) {\n                e.printStackTrace();\n            }\n        }\n        return connection;\n    }\n\n    // Close the database connection\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/klassroom/DatabaseConnection.java b/src/main/java/com/example/klassroom/DatabaseConnection.java
+--- a/src/main/java/com/example/klassroom/DatabaseConnection.java	(revision 202569da77eb5a7d029b6de7daef075a778b58da)
++++ b/src/main/java/com/example/klassroom/DatabaseConnection.java	(date 1697548721386)
+@@ -8,7 +8,7 @@
+     // JDBC URL, username, and password of MySQL server
+     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/project";
+     private static final String USERNAME = "root";
+-    private static final String PASSWORD = "200041123";
++    private static final String PASSWORD = "200041116";
+ 
+     // Database connection instance
+     private static Connection connection = null;
+Index: src/main/java/com/example/klassroom/LoginController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.klassroom;\n\nimport javafx.fxml.FXML;\nimport javafx.fxml.FXMLLoader;\nimport javafx.fxml.Initializable;\nimport javafx.scene.Parent;\nimport javafx.scene.Scene;\nimport javafx.scene.control.Alert;\nimport javafx.scene.control.Button;\nimport javafx.scene.control.Alert.AlertType;\nimport javafx.scene.layout.AnchorPane;\nimport javafx.stage.Stage;\n\nimport java.net.URL;\nimport java.util.ResourceBundle;\n\npublic class LoginController implements Initializable {\n\n    @FXML\n    private Button studentButton;\n\n    @FXML\n    private Button teacherButton;\n\n    @Override\n    public void initialize(URL location, ResourceBundle resources) {\n        // Initialize any necessary code here\n    }\n    @FXML\n    private AnchorPane content;\n\n\n    @FXML\n    private void loginAsStudent() {\n        try {\n            // Load the student login FXML file\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"StudentLogin.fxml\"));\n            Parent studentLogin = loader.load();\n\n            // Get the current scene and set the student login content\n            Scene currentScene = studentButton.getScene();\n            currentScene.setRoot(studentLogin);\n        } catch (Exception e) {\n            e.printStackTrace(); // Handle any exceptions that may occur during loading\n        }\n    }\n    @FXML\n    private void loginAsTeacher() {\n        try {\n            // Load the student login FXML file\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"teacherlogin.fxml\"));\n            Parent studentLogin = loader.load();\n\n            // Get the current scene and set the student login content\n            Scene currentScene =teacherButton.getScene();\n            currentScene.setRoot(studentLogin);\n        } catch (Exception e) {\n            e.printStackTrace(); // Handle any exceptions that may occur during loading\n        }\n    }\n\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/klassroom/LoginController.java b/src/main/java/com/example/klassroom/LoginController.java
+--- a/src/main/java/com/example/klassroom/LoginController.java	(revision 202569da77eb5a7d029b6de7daef075a778b58da)
++++ b/src/main/java/com/example/klassroom/LoginController.java	(date 1697548946525)
+@@ -34,7 +34,7 @@
+     private void loginAsStudent() {
+         try {
+             // Load the student login FXML file
+-            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentLogin.fxml"));
++            FXMLLoader loader = new FXMLLoader(getClass().getResource("studentlogin.fxml"));
+             Parent studentLogin = loader.load();
+ 
+             // Get the current scene and set the student login content
+Index: src/main/java/com/example/Database/DatabaseConnection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Database;\n\nimport java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.SQLException;\n\npublic class DatabaseConnection {\n    private static final String JDBC_URL = \"jdbc:mysql://localhost:3306/project\";\n    private static final String USERNAME = \"root\";\n    private static final String PASSWORD = \"200041123\";\n    public static Connection  connection;\n\n DatabaseConnection() throws SQLException {connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);\n }\n    public static Connection getConnection() throws SQLException {\n        connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);\n        return connection;\n    }\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/Database/DatabaseConnection.java b/src/main/java/com/example/Database/DatabaseConnection.java
+--- a/src/main/java/com/example/Database/DatabaseConnection.java	(revision 202569da77eb5a7d029b6de7daef075a778b58da)
++++ b/src/main/java/com/example/Database/DatabaseConnection.java	(date 1697546513575)
+@@ -5,9 +5,9 @@
+ import java.sql.SQLException;
+ 
+ public class DatabaseConnection {
+-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/project";
++    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/Project";
+     private static final String USERNAME = "root";
+-    private static final String PASSWORD = "200041123";
++    private static final String PASSWORD = "200041116";
+     public static Connection  connection;
+ 
+  DatabaseConnection() throws SQLException {connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"220de450-cd4a-49eb-a59d-a64a8384d59b\" name=\"Changes\" comment=\"niloy\">\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/klassroom/jcommon-1.0.24.jar\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/klassroom/jfreechart.jar\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomAttendanceController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomAttendanceController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentMonthlyAttendanceController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentMonthlyAttendanceController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/klassroom/TileExample1.java\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/klassroom/Attendance_taker.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/klassroom/Attendance_taker.fxml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/klassroom/TileExample1.fxml\" beforeDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"CSS File\" />\n        <option value=\"FxmlFile\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"importingSettings\">\n      <MavenImportingSettings>\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\n      </MavenImportingSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"2UsatfNxkHkEuJhFOsRtSnbYMku\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"last_directory_selection\": \"C:/Users/yousu/IdeaProjects/KLASSROOM/src/main/java/com/example/klassroom\",\n    \"last_opened_file_path\": \"C:/Users/yousu/IdeaProjects/KLASSROOM/src/main/resources/com/example/klassroom\",\n    \"list.type.of.created.stylesheet\": \"CSS\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"project.structure.last.edited\": \"Modules\",\n    \"project.structure.proportion\": \"0.15\",\n    \"project.structure.side.proportion\": \"0.14367816\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateClassDialog.RecentsKey\">\n      <recent name=\"com.example.klassroom\" />\n    </key>\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"C:\\Users\\yousu\\IdeaProjects\\KLASSROOM\\src\\main\\resources\\com\\example\\klassroom\" />\n      <recent name=\"C:\\Users\\yousu\\IdeaProjects\\KLASSROOM\\src\\main\\java\\com\\example\\Database\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"com.example.klassroom\" />\n      <recent name=\"com.example\" />\n    </key>\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\n      <recent name=\"com.example.klassroom\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"220de450-cd4a-49eb-a59d-a64a8384d59b\" name=\"Changes\" comment=\"\" />\n      <created>1693730959629</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1693730959629</updated>\n      <workItem from=\"1693730960785\" duration=\"3022000\" />\n      <workItem from=\"1693734023633\" duration=\"25518000\" />\n      <workItem from=\"1694023069591\" duration=\"1733000\" />\n      <workItem from=\"1694084316680\" duration=\"298000\" />\n      <workItem from=\"1694428252734\" duration=\"21656000\" />\n      <workItem from=\"1695221273686\" duration=\"8394000\" />\n      <workItem from=\"1697451703579\" duration=\"7038000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"niloy\">\n      <created>1697454145033</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697454145033</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"niloy\">\n      <created>1697457837967</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697457837967</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"niloy\">\n      <created>1697457866593</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697457866593</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"4\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"niloy\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"niloy\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 202569da77eb5a7d029b6de7daef075a778b58da)
++++ b/.idea/workspace.xml	(date 1697802887867)
+@@ -5,15 +5,12 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="220de450-cd4a-49eb-a59d-a64a8384d59b" name="Changes" comment="niloy">
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/jcommon-1.0.24.jar" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/jfreechart.jar" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomAttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomAttendanceController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentMonthlyAttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentMonthlyAttendanceController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TileExample1.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Attendance_taker.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Attendance_taker.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TileExample1.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/ClassroomStudentJunctionTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/ClassroomStudentJunctionTable.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/DatabaseConnection.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/LoginController.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -35,38 +32,34 @@
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+-  <component name="MavenImportPreferences">
+-    <option name="importingSettings">
+-      <MavenImportingSettings>
+-        <option name="workspaceImportEnabled" value="true" />
+-      </MavenImportingSettings>
+-    </option>
+-  </component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 7
++}</component>
+   <component name="ProjectId" id="2UsatfNxkHkEuJhFOsRtSnbYMku" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "last_directory_selection": "C:/Users/yousu/IdeaProjects/KLASSROOM/src/main/java/com/example/klassroom",
+-    "last_opened_file_path": "C:/Users/yousu/IdeaProjects/KLASSROOM/src/main/resources/com/example/klassroom",
+-    "list.type.of.created.stylesheet": "CSS",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.14367816",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_directory_selection&quot;: &quot;C:/Users/yousu/IdeaProjects/KLASSROOM/src/main/java/com/example/klassroom&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/home/ifti/Downloads/mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar&quot;,
++    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.14367816&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CreateClassDialog.RecentsKey">
+       <recent name="com.example.klassroom" />
+@@ -97,7 +90,10 @@
+       <workItem from="1694084316680" duration="298000" />
+       <workItem from="1694428252734" duration="21656000" />
+       <workItem from="1695221273686" duration="8394000" />
+-      <workItem from="1697451703579" duration="7038000" />
++      <workItem from="1697451703579" duration="5378000" />
++      <workItem from="1697459831526" duration="2024000" />
++      <workItem from="1697546379102" duration="3486000" />
++      <workItem from="1697801382640" duration="1200000" />
+     </task>
+     <task id="LOCAL-00001" summary="niloy">
+       <created>1697454145033</created>
+@@ -106,21 +102,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1697454145033</updated>
+     </task>
+-    <task id="LOCAL-00002" summary="niloy">
+-      <created>1697457837967</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1697457837967</updated>
+-    </task>
+-    <task id="LOCAL-00003" summary="niloy">
+-      <created>1697457866593</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1697457866593</updated>
+-    </task>
+-    <option name="localTasksCounter" value="4" />
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_19\" default=\"true\" project-jdk-name=\"19\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 202569da77eb5a7d029b6de7daef075a778b58da)
++++ b/.idea/misc.xml	(date 1697459982055)
+@@ -1,4 +1,3 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="MavenProjectsManager">

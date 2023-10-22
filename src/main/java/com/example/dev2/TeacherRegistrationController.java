@@ -55,6 +55,10 @@ public class TeacherRegistrationController {
             showAlert("Password mismatch", "Password and confirm password do not match.");
             return;
         }
+        if (usernameExists(username)) {
+            showAlert("Username already in use", "This username has already been used.");
+            return;
+        }
         if (emailExists(email)) {
             showAlert("Email already in use", "This email has already been used.");
             return;
@@ -98,6 +102,22 @@ public class TeacherRegistrationController {
             String query = "SELECT COUNT(*) FROM teachers WHERE email = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            int count = resultSet.getInt(1);
+            connection.close();
+            return count > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    private boolean usernameExists(String username) {
+        try {
+            Connection connection = getConnection();
+            String query = "SELECT COUNT(*) FROM teachers WHERE teacher_username = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             int count = resultSet.getInt(1);

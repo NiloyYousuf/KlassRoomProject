@@ -10,7 +10,9 @@ public class CommentApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CommentSection.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("commentSection.fxml"));// In my project
+                                                //the fxml file was renamed to commentSection so this path was set
+                                                // but it was originally CommentSection in the path
             AnchorPane root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
