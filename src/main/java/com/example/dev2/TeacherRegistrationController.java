@@ -83,7 +83,7 @@ public class TeacherRegistrationController {
         stage.close();
 
         // Start the RegisterMain window
-        RegisterMain registerMain = new RegisterMain();
+        com.example.dev2.RegisterMain registerMain = new com.example.dev2.RegisterMain();
         try {
             registerMain.start(new Stage());
         } catch (Exception e) {
@@ -99,7 +99,7 @@ public class TeacherRegistrationController {
     private boolean emailExists(String email) {
         try {
             Connection connection = getConnection();
-            String query = "SELECT COUNT(*) FROM teachers WHERE email = ?";
+            String query = "SELECT COUNT(*) FROM teachers WHERE teacher_email = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery();

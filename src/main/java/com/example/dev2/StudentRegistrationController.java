@@ -80,7 +80,7 @@ public class StudentRegistrationController {
         stage.close();
 
         // Start the RegisterMain window
-        RegisterMain registerMain = new RegisterMain();
+        com.example.dev2.RegisterMain registerMain = new com.example.dev2.RegisterMain();
         try {
             registerMain.start(new Stage());
         } catch (Exception e) {
