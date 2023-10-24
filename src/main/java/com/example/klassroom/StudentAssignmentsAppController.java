@@ -62,7 +62,6 @@ public class StudentAssignmentsAppController {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("AssignmentTile.fxml"));
                     Parent assignmentTile = loader.load();
                     AssignmentTileController controller = loader.getController();
-
                     int assignment_ID = resultSet.getInt("Assignment_ID");
                     String assignmentText = resultSet.getString("Assignment_Text");
                     String assignDate = resultSet.getString("Assign_Date");

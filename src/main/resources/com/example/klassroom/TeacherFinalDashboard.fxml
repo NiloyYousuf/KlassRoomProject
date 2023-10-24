@@ -48,7 +48,7 @@
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="224.0" text="View Assignments">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" onAction="#load_view_assignments" prefHeight="38.0" prefWidth="224.0" text="View Assignments">
                             <font>
                                 <Font size="16.0" />
                             </font>

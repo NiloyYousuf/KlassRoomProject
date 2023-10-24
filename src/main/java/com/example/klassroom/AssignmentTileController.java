@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -45,7 +46,7 @@ public class AssignmentTileController {
         assignmentTextLabel.setText("Assignment Text: " + assignmentText);
         assignDateLabel.setText("Assign Date: " + assignDate);
         deadlineLabel.setText("Deadline: " + deadline);
-      assignmentIdLabel.setText("Assignment_ID: "+ assignment_ID);
+      assignmentIdLabel.setText(Integer.toString(assignment_ID));
       classroomCode.setText("Classroom Code: " +assignment_classroomcode);
       status.setText("Submission Status : " + getSubmissionStatus(CurrentStudent.CurrentStudentUsername,assignment_ID));
 
@@ -54,9 +55,12 @@ public class AssignmentTileController {
     }
 
     public void see_assignment_button_pressed() {
+        current_Assignment.current_assignment_ID=Integer.parseInt(assignmentIdLabel.getText());
+
         try {
             // Load the new FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentAssignmentDetails.fxml"));
+
+            FXMLLoader loader = new FXMLLoader(new File( "src/main/resources/com/example/klassroom/studentUploadAssignment/studentUploadAssignment.fxml").toURI().toURL());
             Parent newContent = loader.load();
 
             // Get the controller of the new FXML (if needed)
@@ -95,5 +99,7 @@ public class AssignmentTileController {
         }
         return "Not submitted";
     }
+
+
 
 }

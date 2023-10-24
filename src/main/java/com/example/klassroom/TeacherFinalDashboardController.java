@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -126,6 +127,21 @@ public class TeacherFinalDashboardController implements Initializable {
     {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("classroom.fxml"));
+            Parent content = loader.load();
+            containerPane.getChildren().clear(); // Clear existing content (if any)
+            containerPane.getChildren().add(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle any potential exceptions here
+        }
+
+    }
+
+
+    public void load_view_assignments()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader(new File( "src/main/resources/com/example/teacherassignment/TeacherFetchAssignment.fxml").toURI().toURL());
             Parent content = loader.load();
             containerPane.getChildren().clear(); // Clear existing content (if any)
             containerPane.getChildren().add(content);

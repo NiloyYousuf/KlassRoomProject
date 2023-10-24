@@ -46,7 +46,7 @@ public class StudentAssignmentsApp extends Application {
 //            try {
 //                FXMLLoader loader = new FXMLLoader(getClass().getResource("AssignmentTile.fxml"));
 //                Parent assignmentTile = loader.load();
-//                AssignmentTileController controller = loader.getController();
+//                TeacherAssignmentTileController controller = loader.getController();
 //
 //                // Load assignment data into the assignment tile
 //                loadAssignmentData(controller, studentId, assignmentId);
@@ -105,7 +105,7 @@ public class StudentAssignmentsApp extends Application {
     }
 
 
-//    private void loadAssignmentData(AssignmentTileController controller, String studentId, String assignmentId) {
+//    private void loadAssignmentData(TeacherAssignmentTileController controller, String studentId, String assignmentId) {
 //        // Replace this with code to retrieve assignment data for the student and assignment from the database
 //        // For now, we set dummy data
 //        controller.setAssignmentData("Assignment " + assignmentId, "2023-11-01", "2023-11-15");

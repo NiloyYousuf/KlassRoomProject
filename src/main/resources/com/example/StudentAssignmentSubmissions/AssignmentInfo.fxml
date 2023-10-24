@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+
+<AnchorPane id="AnchorPane" prefHeight="456.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.StudentAssignmentSubmissions.StudentsSubmissionController">
+    <children>
+        <ScrollPane layoutX="26.0" layoutY="21.0" prefHeight="390.0" prefWidth="715.0">
+            <content>
+                <TilePane fx:id="tilePane" hgap="10.0" prefColumns="1" vgap="10.0" />
+            </content>
+        </ScrollPane>
+
+    </children>
+</AnchorPane>

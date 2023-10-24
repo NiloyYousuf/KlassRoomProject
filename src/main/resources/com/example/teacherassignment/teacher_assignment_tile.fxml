@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox prefHeight="106.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacherassignment.TeacherAssignmentTileController">
+    <children>
+        <VBox prefHeight="84.0" prefWidth="430.0">
+            <children>
+                <Text fx:id="assignmentText" text="Assignment Text:" />
+                <Text fx:id="assignDate" text="Assign Date:" />
+                <Text fx:id="deadline" text="Deadline:" />
+                <Text fx:id="marks" text="Marks:" />
+                <Text fx:id="classroomCode" text="Classroom Code:" />
+            <Text fx:id="Assignment_ID" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment ID:" />
+            </children>
+        </VBox>
+      <Button mnemonicParsing="false" onAction="#view_submissions_buttonclicked" text="See Submissions" />
+    </children>
+</HBox>

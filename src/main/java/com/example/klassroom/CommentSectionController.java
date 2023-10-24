@@ -13,6 +13,7 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class CommentSectionController {
     @FXML
@@ -62,10 +63,16 @@ public class CommentSectionController {
 
             if (!commentText.isEmpty()) {
                 // Get the current date and time
+                // Format the current date
                 LocalDate currentDate = LocalDate.now();
+                DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                String commentDate = currentDate.format(dateFormatter);
+
+// Format the current time
                 LocalTime currentTime = LocalTime.now();
-                String commentDate = currentDate.toString();
-                String commentTime = currentTime.toString();
+                DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                String commentTime = currentTime.format(timeFormatter);
+
 
                 // Get the postID from the current post
 
@@ -79,6 +86,7 @@ public class CommentSectionController {
                     postID=TeacherPostTileController.current_post.getPostId();
 
                 // Insert a new comment record into the Comments table
+                DatabaseConnection.establishConnection();
                 insertComment(commentText, commentDate, commentTime, postID, isStudent);
 
                 // Clear the comment text area after posting
@@ -114,7 +122,8 @@ public class CommentSectionController {
     private void insertComment(String commentText, String commentDate, String commentTime, int postID, boolean isStudent) {
         try {
             Connection connection = DatabaseConnection.getConnection();
-            String sql = "INSERT INTO Comments (commentText, commentTime, CommentDate, postID, student_username, teacher_username) " +
+            DatabaseConnection.establishConnection();
+            String sql = "INSERT INTO comments (commentText, commentTime, CommentDate, postID, student_username, teacher_username) " +
                     "VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
@@ -148,6 +157,7 @@ public class CommentSectionController {
             // Fetch and display comments for the current post
             String query = "SELECT commentID, commentText, commentDate, commentTime, student_username, teacher_username FROM comments WHERE postID = ?";
             Connection connection = DatabaseConnection.getConnection();
+            DatabaseConnection.establishConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, currentPost.currentPostId);
 
