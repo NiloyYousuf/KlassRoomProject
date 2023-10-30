@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
@@ -82,13 +84,19 @@ public class ClassroomTeacherController implements Initializable {
         java.sql.Date date = new java.sql.Date(millis);
         System.out.println(date);
         String location = new String();
+// Get the current time
+        LocalTime currentTime = LocalTime.now();
+
+// Format the time to HH:MM:SS
+        String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+
 
         if (selectedFile != null) {
             //FileInputStream fileInputStream = new FileInputStream(selectedFile);
-            ClassroomPostsDAO.insertPost(CurrentClassroom.getClassroomId(), java.time.LocalTime.now().toString(), date.toString(), post.getText(), selectedFile, originalFilename);
+            ClassroomPostsDAO.insertPost(CurrentClassroom.getClassroomId(), formattedTime, date.toString(), post.getText(), selectedFile, originalFilename);
         } else {
             // Handle the case where no file is attached
-            ClassroomPostsDAO.insertPost(CurrentClassroom.getClassroomId(), java.time.LocalTime.now().toString(), date.toString(), post.getText(), null, originalFilename);
+            ClassroomPostsDAO.insertPost(CurrentClassroom.getClassroomId(), formattedTime, date.toString(), post.getText(), null, originalFilename);
         }
         refreshPostContainer();
     }

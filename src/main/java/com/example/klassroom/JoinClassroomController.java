@@ -18,6 +18,7 @@ public class JoinClassroomController {
     @FXML
     private TextField classroomPassword;
 
+
     @FXML
     private Label errorLabel;
 

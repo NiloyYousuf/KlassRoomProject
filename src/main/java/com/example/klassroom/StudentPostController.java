@@ -73,7 +73,8 @@ public class StudentPostController implements Initializable {
     {
         try {
             // Load the new FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ClassroomStudent.fxml"));
+            GlobalFxmlString.FXML_to_load="ClassroomStudent.fxml";
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentFinalDashboard.fxml"));
             Parent root = loader.load();
 
             // Get the current stage (assuming you have a reference to the current stage)

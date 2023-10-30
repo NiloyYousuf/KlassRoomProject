@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.JoinClassroomController">
+<VBox prefHeight="263.0" prefWidth="259.0" spacing="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.JoinClassroomController">
     <Label text="Join Classroom" />
     <TextField fx:id="classroomCode" promptText="Classroom Code" />
     <TextField fx:id="classroomPassword" promptText="Classroom Password" />
-    <Button text="Join Classroom" onAction="#joinClassroom" />
-    <Label fx:id="errorLabel" style="-fx-text-fill: red;" />
+    <Label fx:id="errorLabel" prefHeight="18.0" prefWidth="152.0" style="-fx-text-fill: red;" />
+    <Button onAction="#joinClassroom" text="Join Classroom" />
 </VBox>

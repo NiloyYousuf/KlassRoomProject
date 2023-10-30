@@ -10,7 +10,7 @@ public class MakeClassroomMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("classroom.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Createclassroom.fxml"));
         primaryStage.setTitle("Classroom Creator");
         primaryStage.setScene(new Scene(root, 300, 200));
         primaryStage.show();

@@ -2,21 +2,27 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-
 <?import javafx.scene.layout.VBox?>
+
 <HBox prefHeight="400.0" prefWidth="600.0" spacing="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentUploadAssignment.StudentUploadAssignmentController">
     <children>
-        <VBox spacing="10">
-            <Button mnemonicParsing="false" onAction="#uploadAssignment" text="Upload Assignment" />
-            <Label fx:id="statusLabel" text="Label" />
-        </VBox>
-        <VBox spacing="5">
-            <Label fx:id="assignmentTextLabel" text="Assignment Text: " />
-            <Label fx:id="assignDateLabel" text="Assign Date: " />
-            <Label fx:id="deadlineLabel" text="Deadline: " />
-            <Label fx:id="teacherUsernameLabel" text="Teacher's Username: " />
-            <Label fx:id="classroomCodeLabel" text="Classroom Code: " />
-        </VBox>
+      <AnchorPane prefHeight="400.0" prefWidth="620.0">
+         <children>
+              <VBox spacing="10" />
+              <VBox layoutX="31.0" layoutY="26.0" spacing="5">
+                  <Label fx:id="assignmentTextLabel" text="Assignment Text: " />
+                  <Label fx:id="assignDateLabel" text="Assign Date: " />
+                  <Label fx:id="deadlineLabel" text="Deadline: " />
+                  <Label fx:id="teacherUsernameLabel" text="Teacher's Username: " />
+                  <Label fx:id="classroomCodeLabel" text="Classroom Code: " />
+              </VBox>
+               <Button layoutX="27.0" layoutY="181.0" mnemonicParsing="false" onAction="#uploadAssignment" text="Upload Assignment" />
+               <Label fx:id="statusLabel" layoutX="59.0" layoutY="155.0" text="Label" />
+            <Button layoutX="396.0" layoutY="90.0" mnemonicParsing="false" onAction="#downloadAttachment" text="Download Attachment" />
+            <Label fx:id="attachmentStatusLabel" layoutX="407.0" layoutY="53.0" text="Available Attachment" />
+         </children>
+      </AnchorPane>
     </children>
 </HBox>

@@ -8,11 +8,11 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.StudentAttendanceController">
+<AnchorPane fx:id="rootAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="501.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.StudentAttendanceController">
     <children>
-        <Button layoutX="222.0" layoutY="36.0" mnemonicParsing="false" onAction="#loadAttendanceData" text="Load" />
-        <DatePicker fx:id="datePicker" layoutX="48.0" layoutY="36.0" prefHeight="26.0" prefWidth="148.0" />
-        <TableView fx:id="attendanceTable" layoutX="48.0" layoutY="89.0" prefHeight="296.0" prefWidth="370.0">
+        <Button layoutX="390.0" layoutY="106.0" mnemonicParsing="false" onAction="#loadAttendanceData" text="Load" />
+        <DatePicker fx:id="datePicker" layoutX="63.0" layoutY="106.0" prefHeight="26.0" prefWidth="148.0" />
+        <TableView fx:id="attendanceTable" layoutX="63.0" layoutY="163.0" prefHeight="296.0" prefWidth="370.0">
             <columns>
                 <TableColumn fx:id="dateColumn" prefWidth="200.7999267578125" text="Date">
                     <cellValueFactory>
@@ -27,5 +27,7 @@
             </columns>
         </TableView>
         <Label fx:id="errorLabel" layoutX="48.0" layoutY="450.0" textFill="red" />
+      <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#backbutton_clicked" text="Back" />
+      <Label layoutX="63.0" layoutY="75.0" text="SELECT A MONTH" />
     </children>
 </AnchorPane>

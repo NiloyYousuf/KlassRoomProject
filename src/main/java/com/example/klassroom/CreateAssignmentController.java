@@ -2,6 +2,9 @@
 package com.example.klassroom;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -26,14 +29,16 @@ public class CreateAssignmentController {
     private Label selectedFileLabel;
 
     private File selectedFile;
+    private String selectedFileName;
+
 
     public void chooseFile() {
         FileChooser fileChooser = new FileChooser();
-        File file = fileChooser.showOpenDialog(null);
+        selectedFile = fileChooser.showOpenDialog(null);
 
-        if (file != null) {
-            selectedFile = file;
-            selectedFileLabel.setText("Selected File: " + selectedFile.getName());
+        if (selectedFile != null) {
+            selectedFileName = selectedFile.getName();
+            selectedFileLabel.setText("Selected File: " + selectedFileName);
         }
     }
 
@@ -45,8 +50,8 @@ public class CreateAssignmentController {
 
         try {
             Connection connection = DatabaseConnection.getConnection();
-            String insertQuery = "INSERT INTO assignments (Assignment_Text, Assign_Date, Deadline, Attachment, Marks, Teacher_Username, Classroom_Code) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO assignments (Assignment_Text, Assign_Date, Deadline, Attachment, Original_Filename, Marks, Teacher_Username, Classroom_Code) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
 
             preparedStatement.setString(1, text);
@@ -56,13 +61,15 @@ public class CreateAssignmentController {
             if (selectedFile != null) {
                 byte[] fileContent = Files.readAllBytes(selectedFile.toPath());
                 preparedStatement.setBytes(4, fileContent);
+                preparedStatement.setString(5, selectedFileName); // Set the original filename
             } else {
                 preparedStatement.setNull(4, Types.BLOB);
+                preparedStatement.setNull(5, Types.VARCHAR);
             }
 
-            preparedStatement.setInt(5, Integer.parseInt(marksValue));
-            preparedStatement.setString(6, CurrentTeacher.current_teacher_username); // Replace with actual teacher username
-            preparedStatement.setString(7, CurrentClassroom.classroomCode); // Replace with actual classroom code
+            preparedStatement.setInt(6, Integer.parseInt(marksValue));
+            preparedStatement.setString(7, CurrentTeacher.current_teacher_username); // Replace with actual teacher username
+            preparedStatement.setString(8, CurrentClassroom.classroomCode); // Replace with actual classroom code
 
             int rowsAffected = preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -89,4 +96,19 @@ public class CreateAssignmentController {
         alert.showAndWait();
 
     }
+
+    public void back_button_clicked() throws IOException {
+        GlobalFxmlString.FXML_to_load="classroomTeacher.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherFinalDashboard.fxml"));
+        Parent root = loader.load();
+
+        // Get the current stage (assuming you have a reference to the current stage)
+        Stage stage = (Stage) assignDate.getScene().getWindow();
+
+        // Set the new FXML content on the current stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
+

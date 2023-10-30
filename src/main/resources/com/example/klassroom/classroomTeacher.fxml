@@ -5,26 +5,49 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="457.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.ClassroomTeacherController">
    <children>
-      <TextArea fx:id="post" layoutX="79.0" layoutY="100.0" prefHeight="74.0" prefWidth="472.0" text="WELCOME TO CLASSROOM" />
+      <TextArea fx:id="post" layoutX="79.0" layoutY="100.0" prefHeight="90.0" prefWidth="578.0" text="WELCOME TO CLASSROOM" />
       <TextField fx:id="teacherNameTextField" layoutX="266.0" layoutY="47.0" prefHeight="26.0" prefWidth="127.0" />
       <TextField fx:id="courseCodeTextField" layoutX="80.0" layoutY="47.0" prefHeight="26.0" prefWidth="143.0" />
       <TextField fx:id="subjectNameTextField" layoutX="435.0" layoutY="47.0" prefHeight="26.0" prefWidth="118.0" />
-      <ScrollPane fx:id="scrollPane" layoutX="80.0" layoutY="184.0" prefHeight="308.0" prefWidth="626.0">
+      <ScrollPane fx:id="scrollPane" layoutX="80.0" layoutY="198.0" prefHeight="294.0" prefWidth="626.0">
          <content>
             <VBox fx:id="postContainer" prefHeight="114.0" prefWidth="622.0" spacing="10.0" />
          </content>
       </ScrollPane>
       <Text layoutX="14.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make Post" />
-      <Button fx:id="Make_post_button" layoutX="583.0" layoutY="105.0" mnemonicParsing="false" onAction="#make_post_button_clicked" prefHeight="26.0" prefWidth="103.0" text="Post" />
-      <Button layoutX="583.0" layoutY="146.0" mnemonicParsing="false" onAction="#chooseFile" text="Add Attachment" />
-      <Button fx:id="attendance" layoutX="583.0" layoutY="39.0" mnemonicParsing="false" onAction="#attendance_button_clicked" text="Take Attendance" />
-      <Label fx:id="selectedFileLabel" layoutX="621.0" layoutY="131.0" text="Label" />
-      <Button layoutX="582.0" layoutY="72.0" mnemonicParsing="false" onAction="#Post_assignment_button_clicked" prefHeight="26.0" prefWidth="105.0" text="Assignment" />
+      <Button fx:id="Make_post_button" layoutX="667.0" layoutY="100.0" mnemonicParsing="false" onAction="#make_post_button_clicked" prefHeight="26.0" prefWidth="78.0" text="Post" />
+      <Button layoutX="677.0" layoutY="154.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="42.0" prefWidth="55.0">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Screenshot_2023-11-01_144110-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="attendance" layoutX="623.0" layoutY="20.0" mnemonicParsing="false" onAction="#attendance_button_clicked" prefHeight="63.0" prefWidth="62.0">
+         <graphic>
+            <ImageView fitHeight="51.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Screenshot_2023-11-01_144651-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label fx:id="selectedFileLabel" layoutX="667.0" layoutY="136.0" prefHeight="18.0" prefWidth="143.0" />
+      <Button layoutX="706.0" layoutY="20.0" mnemonicParsing="false" onAction="#Post_assignment_button_clicked" prefHeight="63.0" prefWidth="0.0">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Screenshot_2023-11-01_143657-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </AnchorPane>

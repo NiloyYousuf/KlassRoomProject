@@ -8,23 +8,21 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox prefHeight="157.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.ClassroomTileTeacherController">
-   <AnchorPane prefHeight="159.0" prefWidth="616.0">
+   <AnchorPane prefHeight="166.0" prefWidth="702.0">
       <children>
-         <ImageView fitHeight="184.0" fitWidth="728.0" layoutX="1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="184.0" fitWidth="300.0" layoutX="-15.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@6530.jpg" />
+               <Image url="@Screenshot_2023-10-30_141545-removebg-preview.png" />
             </image>
          </ImageView>
-         <Button layoutX="605.0" layoutY="35.0" mnemonicParsing="false" onAction="#tileClicked" onMouseClicked="#tileClicked" text="Go" />
-         <Button layoutX="596.0" layoutY="74.0" mnemonicParsing="false" text="Delete" />
+         <Button layoutX="551.0" layoutY="46.0" mnemonicParsing="false" onAction="#tileClicked" onMouseClicked="#tileClicked" text="Go" />
+         <Button layoutX="542.0" layoutY="83.0" mnemonicParsing="false" onAction="#deleteClicked" text="Delete" />
       
           <!-- Subject Label -->
-          <Label fx:id="subjectLabel" layoutX="14.0" layoutY="61.0" prefHeight="26.0" prefWidth="292.0" text="Subject Code" />
+          <Label fx:id="subjectLabel" layoutX="105.0" layoutY="46.0" prefHeight="26.0" prefWidth="292.0" text="Subject Code" />
       
           <!-- Classroom Code Label -->
-          <Label fx:id="classroomCodeLabel" layoutX="14.0" layoutY="87.0" prefHeight="26.0" prefWidth="356.0" text="Classroom Code" />
-          <!-- Classroom Name Label -->
-          <Label fx:id="classroomLabel" layoutX="13.0" layoutY="35.0" prefHeight="26.0" prefWidth="330.0" text="Classroom Label" />
+          <Label fx:id="classroomCodeLabel" layoutX="105.0" layoutY="83.0" prefHeight="26.0" prefWidth="356.0" text="Classroom Code" />
       </children>
    </AnchorPane>
 

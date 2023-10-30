@@ -5,13 +5,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class StudentFinalDashboardController implements Initializable {
@@ -31,7 +36,32 @@ public class StudentFinalDashboardController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         exit.setOnMouseClicked(event -> {
-            System.exit(0);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Are you sure you want to log out?");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                GlobalFxmlString.FXML_to_load=null;
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+                Parent root = null;
+                try {
+                    root = loader.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                // Get the current stage (assuming you have a reference to the current stage)
+                Stage stage = (Stage) exit.getScene().getWindow();
+
+                // Set the new FXML content on the current stage
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+                // If 'Yes' is pressed, navigate to another FXML file
+                // For example:
+                // loadAnotherFXML();
+            }
         });
 
         opacityPane.setVisible(false);
@@ -82,7 +112,25 @@ public class StudentFinalDashboardController implements Initializable {
 
     @FXML
     private void loadMyContent() {
-        load_classrooms_page();
+        try {
+            if(GlobalFxmlString.FXML_to_load!= null) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(GlobalFxmlString.FXML_to_load));
+                Parent content = loader.load();
+                containerPane.getChildren().clear(); // Clear existing content (if any)
+                containerPane.getChildren().add(content);
+            }
+            else
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentAllClassrooms.fxml"));
+                Parent content = loader.load();
+                containerPane.getChildren().clear(); // Clear existing content (if any)
+                containerPane.getChildren().add(content);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle any potential exceptions here
+        }
     }
 
 

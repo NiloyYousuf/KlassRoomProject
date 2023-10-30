@@ -5,15 +5,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox alignment="CENTER" prefHeight="479.0" prefWidth="578.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.CreateAssignmentController">
-    <Label text="Create Assignment" />
-    <DatePicker fx:id="assignDate" promptText="Assign Date" />
-    <DatePicker fx:id="deadline" promptText="Deadline" />
-    <TextField fx:id="marks" promptText="Marks" />
-    <TextArea fx:id="assignmentText" prefHeight="111.0" prefWidth="478.0" promptText="Assignment Text" />
-    <Label fx:id="selectedFileLabel" text="Selected File" />
-    <Button onAction="#chooseFile" text="Add Attachment" />
-    <Button onAction="#postAssignment" text="Post Assignment" />
+   <AnchorPane prefHeight="530.0" prefWidth="578.0">
+      <children>
+         <Label layoutX="229.0" layoutY="55.0" text="Create Assignment" />
+         <DatePicker fx:id="assignDate" layoutX="350.0" layoutY="92.0" promptText="Assign Date" />
+         <DatePicker fx:id="deadline" layoutX="175.0" layoutY="259.0" promptText="Deadline" />
+         <TextField fx:id="marks" layoutX="50.0" layoutY="92.0" promptText="Marks" />
+         <TextArea fx:id="assignmentText" layoutX="50.0" layoutY="128.0" prefHeight="111.0" prefWidth="478.0" promptText="Assignment Text" />
+         <Label fx:id="selectedFileLabel" layoutX="229.0" layoutY="291.0" />
+         <Button layoutX="217.0" layoutY="317.0" onAction="#chooseFile" text="Add Attachment" />
+         <Button layoutX="217.0" layoutY="368.0" onAction="#postAssignment" text="Post Assignment" />
+         <Button layoutX="41.0" layoutY="30.0" mnemonicParsing="false" onAction="#back_button_clicked" text="Back" />
+      </children>
+   </AnchorPane>
 </VBox>

@@ -82,4 +82,14 @@ public class TeacherLoginController {
             errorMessageText.setText("Failed to obtain a database connection.");
         }
     }
+
+
+    public  void Back_button_clicked() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+        Parent post = loader.load();
+        // Get the current scene and set the student login content
+        Scene currentScene =teacherIDTextArea.getScene();
+        currentScene.setRoot(post);
+    }
+
 }

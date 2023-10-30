@@ -57,7 +57,7 @@ public class TeacherPostController implements Initializable {
     public void loadCommentSection() {
         try {
             // Load the CommentSection.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CommentSection.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("commentSection.fxml"));
             AnchorPane commentSection = loader.load();
 
             // Add the CommentSection to the commentVBox
@@ -100,7 +100,7 @@ public class TeacherPostController implements Initializable {
             // Replace with your database connection details
             Connection connection = DatabaseConnection.getConnection();
             // SQL query to fetch comments for the given postID
-            String sql = "SELECT commentID, commentText, commentTime, CommentDate, student_username, teacher_username FROM Comments WHERE postID = ?";
+            String sql = "SELECT commentID, commentText, commentTime, CommentDate, student_username, teacher_username FROM comments WHERE postID = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, postId);
 

@@ -30,7 +30,8 @@ public class ClassroomTileStudentController {
     @FXML
     private void tileClicked() throws IOException {
         // Load the student login FXML file
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("classroomStudent.fxml"));
+        GlobalFxmlString.FXML_to_load="classroomStudent.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentFinalDashboard.fxml"));
         Parent studentLogin = loader.load();
         // Get the current scene and set the student login content
         Scene currentScene = classroomLabel.getScene();

@@ -3,10 +3,15 @@ package com.example.klassroom;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -106,5 +111,22 @@ public class StudentAttendanceController {
         public boolean isStatus() {
             return status;
         }
+    }
+
+
+    public void backbutton_clicked() throws IOException {
+
+        GlobalFxmlString.FXML_to_load="classroomStudent.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentFinalDashboard.fxml"));
+        Parent root = loader.load();
+
+        // Get the current stage (assuming you have a reference to the current stage)
+        Stage stage = (Stage)errorLabel.getScene().getWindow();
+
+        // Set the new FXML content on the current stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 }

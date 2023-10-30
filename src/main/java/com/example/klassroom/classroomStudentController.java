@@ -125,7 +125,8 @@ public class classroomStudentController implements Initializable {
 
 
     public void view_attendance_clicked() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Student Attendance.fxml"));
+        GlobalFxmlString.FXML_to_load="Student Attendance.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentFinalDashboard.fxml"));
         Parent root = loader.load();
 
         // Get the current stage (assuming you have a reference to the current stage)
