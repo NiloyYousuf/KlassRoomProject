@@ -155,9 +155,15 @@ public class TeacherRegistrationController {
     }
 
     private Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/Project";
-        String username = "root";
-        String password = "200041123";
+//        String url = "jdbc:mysql://localhost:3306/Project";
+//        String username = "root";
+//        String password = "200041123";
+
+//this is for online database
+        String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12655925";
+        String username = "sql12655925";
+        String password = "W45fwGDgsK";
+
         return DriverManager.getConnection(url, username, password);
     }
 }
