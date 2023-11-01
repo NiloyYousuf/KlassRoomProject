@@ -12,7 +12,7 @@ public class RegisterMain extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
         primaryStage.setTitle("Register");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 

@@ -2,6 +2,9 @@ package com.example.dev2;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -9,6 +12,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -32,7 +37,7 @@ public class TeacherRegistrationController {
     @FXML
     private Button signUpButton;
 
-    public void handleSignUp(ActionEvent event) {
+    public void handleSignUp(ActionEvent event) throws IOException {
         String username = usernameField.getText();
         String email = emailField.getText();
         String password = passwordField.getText();
@@ -65,6 +70,12 @@ public class TeacherRegistrationController {
         }
         // Add database insertion logic for teachers
         if (insertDataToDatabase(username, email, password)) {
+            FXMLLoader loader = new FXMLLoader(new File( "src/main/resources/com/example/klassroom/hello-view.fxml").toURI().toURL());// was changed in the fxml file
+            Parent studentLogin = loader.load();
+
+            // Get the current scene and set the student login content
+            Scene currentScene =usernameField.getScene();
+            currentScene.setRoot(studentLogin);
             showAlert("Success", "Registration successful!");
         } else {
             showAlert("Database Error", "Failed to insert data into the database.");

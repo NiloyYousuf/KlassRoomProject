@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.File;
 import java.io.IOException;
 
 public class RegistrationController {
@@ -17,7 +19,7 @@ public class RegistrationController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("student_register.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root, 600, 400));
+            stage.setScene(new Scene(root));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -30,9 +32,23 @@ public class RegistrationController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacher_register.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root, 600, 400));
+            stage.setScene(new Scene(root));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void backbuttonRegistration(ActionEvent event) {
+        // Handle redirection to the teacher registration page
+        try {
+            FXMLLoader loader = new FXMLLoader(new File( "src/main/resources/com/example/klassroom/hello-view.fxml").toURI().toURL());
+            Parent root = loader.load();
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

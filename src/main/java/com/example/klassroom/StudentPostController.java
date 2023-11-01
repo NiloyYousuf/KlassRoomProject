@@ -45,12 +45,14 @@ public class StudentPostController implements Initializable {
     @FXML
     private VBox commentVBox;
 
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Date.setText(StudentPostTileController.current_post.getPostDate());
         Time.setText(StudentPostTileController.current_post.getPostTime());
         Post.setText(StudentPostTileController.current_post.getPostText());
-        System.out.println(StudentPostTileController.current_post.getPostText()+ " this was written");
+       // System.out.println(StudentPostTileController.current_post.getPostText()+ " this was written");
         loadCommentSection();
     }
 

@@ -11,6 +11,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -58,6 +59,23 @@ public class LoginController implements Initializable {
             e.printStackTrace(); // Handle any exceptions that may occur during loading
         }
     }
+    @FXML
+    private void LoadRegisterPage() {
+        try {
+            // Load the student login FXML file
+            FXMLLoader loader = new FXMLLoader(new File( "src/main/resources/com/example/Dev2/register.fxml").toURI().toURL());// was changed in the fxml file
+            Parent studentLogin = loader.load();
+
+            // Get the current scene and set the student login content
+            Scene currentScene =teacherButton.getScene();
+            currentScene.setRoot(studentLogin);
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle any exceptions that may occur during loading
+        }
+    }
+
+
+
 
 
 

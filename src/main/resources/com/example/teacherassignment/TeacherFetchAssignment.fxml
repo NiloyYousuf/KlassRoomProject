@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox prefHeight="414.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacherassignment.TeacherFetchAssignmentController">
     <children>
-        <ScrollPane prefHeight="416.0" prefWidth="679.0">
+      <Button mnemonicParsing="false" styleClass="back-button" stylesheets="@../klassroom/styles.css" text="Back" />
+        <ScrollPane prefHeight="410.0" prefWidth="679.0">
             <content>
                 <VBox fx:id="assignmentsVBox" />
             </content>

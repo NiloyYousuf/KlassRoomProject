@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
@@ -23,6 +25,8 @@ public class StudentPostTileController {
     @FXML
     private Label postTextLabel;
 
+    @FXML
+    private TextField Postfield;
 
     @FXML
     private  Label Post_Id;
@@ -30,7 +34,7 @@ public class StudentPostTileController {
     public void setPostData(Post post) {
         postTimeLabel.setText(post.getPostTime());
         postDateLabel.setText(post.getPostDate());
-        postTextLabel.setText(post.getPostText());
+        Postfield.setText(post.getPostText());
         Post_Id.setText(post.getPostId().toString());
         // Set other elements if needed
     }

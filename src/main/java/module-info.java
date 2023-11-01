@@ -14,4 +14,5 @@ module com.example.klassroom {
     opens com.example.teacherassignment to javafx.fxml;
     opens com.example.studentUploadAssignment to javafx.fxml;
     exports com.example.klassroom;
+    opens com.example to javafx.fxml;
 }

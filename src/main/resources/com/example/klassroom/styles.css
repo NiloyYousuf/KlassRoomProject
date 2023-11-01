@@ -18,3 +18,69 @@
     -fx-border-color: #555555;
     -fx-cursor: hand;
 }
+
+
+/* styles.css */
+
+.button-gradient {
+    -fx-background-color: linear-gradient(to bottom, #9B51E0, #FF6B8B); /* Gradient background */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-padding: 10px 20px; /* Padding */
+    -fx-background-radius: 20px; /* Rounded corners */
+}
+
+.button-gradient:hover {
+    -fx-background-color: linear-gradient(to bottom, #6A3880, #E64D73); /* Darker hover gradient */
+}
+
+
+
+.button-gradient-square {
+    -fx-background-color: linear-gradient(to bottom, #885ed1, #56379e); /* Gradient background */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-padding: 10px 20px; /* Padding */
+    -fx-background-radius: 5px; /* Rounded corners */
+}
+
+.button-gradient-square:hover {
+    -fx-background-color: linear-gradient(to bottom, #774dc0, #45268d); /* Darker hover gradient */
+}
+
+
+
+
+/* styles.css */
+.back-button {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+.back-button:hover {
+    -fx-background-color: #333; /* Darker color on hover */
+}
+
+
+
+
+
+.root {
+    -fx-background-color: #f0f0f0;
+}
+
+.custom-text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8px;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #FFFFFF;
+    -fx-focus-color: derive(#002E99, -20%);
+    -fx-faint-focus-color: #002E99;
+}

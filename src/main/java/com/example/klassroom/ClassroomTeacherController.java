@@ -45,8 +45,8 @@ public class ClassroomTeacherController implements Initializable {
             teacherNameTextField.setText(TeacherMenuController.teacher_username);
             courseCodeTextField.setText(CurrentClassroom.classroomCode);
             subjectNameTextField.setText(CurrentClassroom.getSubjectName());
-            System.out.println(CurrentClassroom.getClassroomId());
-            ClassroomPostsDAO.printAllPosts(CurrentClassroom.getClassroomId());
+           // System.out.println(CurrentClassroom.getClassroomId());
+           // ClassroomPostsDAO.printAllPosts(CurrentClassroom.getClassroomId());
             List<Post> posts = ClassroomPostsDAO.getPostsByClassroom(CurrentClassroom.getClassroomId());
            // scheduler.scheduleAtFixedRate(this::refreshPostContainer, 0, 5, TimeUnit.SECONDS);
             // Clear existing items in the postContainer
@@ -131,7 +131,7 @@ private  Button attendance;
     @FXML
     private  void  attendance_button_clicked() throws IOException {
         TeacherTakingStudentAttendanceListController.classroomCode=CurrentClassroom.classroomCode;
-        System.out.println(TeacherTakingStudentAttendanceListController.classroomCode);
+        //System.out.println(TeacherTakingStudentAttendanceListController.classroomCode);
         GlobalFxmlString.FXML_to_load="Teacher_taking_student_Attendance_list.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource("TeacherFinalDashboard.fxml"));
         Parent studentLogin = loader.load();

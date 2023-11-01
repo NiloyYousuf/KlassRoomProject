@@ -11,26 +11,26 @@
 
 <AnchorPane prefHeight="535.0" prefWidth="844.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.TeacherLoginController">
    <children>
-      <ImageView fitHeight="528.0" fitWidth="1093.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="426.0" fitWidth="549.0" layoutX="14.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@nicee.jpg" />
+            <Image url="@nicee-removebg-preview.png" />
          </image>
       </ImageView>
-      <Text layoutX="407.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TeacherID">
+      <Text layoutX="438.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TeacherID">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Text>
-      <Text layoutX="408.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+      <Text layoutX="439.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Text>
-      <Button fx:id="teacherloginbutton" layoutX="555.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleTeacherLoginButtonClick" prefHeight="26.0" prefWidth="53.0" text="Login" />
-      <Text fx:id="errorMessageText" fill="RED" layoutX="571.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0">
+      <Button fx:id="teacherloginbutton" layoutX="569.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleTeacherLoginButtonClick" prefHeight="41.0" prefWidth="108.0" styleClass="button-gradient" stylesheets="@styles.css" text="Login" />
+      <Text fx:id="errorMessageText" fill="RED" layoutX="546.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="210.4000000000001">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Text>
-      <PasswordField fx:id="passwordTextArea" layoutX="487.0" layoutY="165.0" prefHeight="34.0" prefWidth="210.0" />
-      <TextField fx:id="teacherIDTextArea" layoutX="487.0" layoutY="117.0" prefHeight="34.0" prefWidth="210.0" />
-      <Button layoutX="30.0" layoutY="42.0" mnemonicParsing="false" onAction="#Back_button_clicked" text="Back" />
+      <PasswordField fx:id="passwordTextArea" layoutX="518.0" layoutY="165.0" prefHeight="34.0" prefWidth="210.0" />
+      <TextField fx:id="teacherIDTextArea" layoutX="518.0" layoutY="117.0" prefHeight="34.0" prefWidth="210.0" />
+      <Button layoutX="30.0" layoutY="42.0" mnemonicParsing="false" onAction="#Back_button_clicked" styleClass="back-button" stylesheets="@styles.css" text="Back" />
    </children>
 </AnchorPane>

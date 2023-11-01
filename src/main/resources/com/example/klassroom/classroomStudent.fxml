@@ -6,16 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="579.0" prefWidth="673.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.classroomStudentController">
+<AnchorPane prefHeight="579.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.classroomStudentController">
    <children>
-      <TextField fx:id="courseCodeTextField" layoutX="14.0" layoutY="104.0" />
-      <TextField fx:id="subjectNameTextField" layoutX="14.0" layoutY="142.0" />
-      <ScrollPane fx:id="scrollPane" layoutX="31.0" layoutY="219.0" prefHeight="310.0" prefWidth="591.0">
+      <TextField fx:id="courseCodeTextField" layoutX="112.0" layoutY="105.0" />
+      <TextField fx:id="subjectNameTextField" layoutX="112.0" layoutY="143.0" />
+      <ScrollPane fx:id="scrollPane" layoutX="112.0" layoutY="191.0" prefHeight="342.0" prefWidth="666.0">
          <content>
-            <VBox fx:id="postContainer" prefHeight="142.0" prefWidth="586.0" spacing="10.0" />
+            <VBox fx:id="postContainer" prefHeight="142.0" prefWidth="652.0" spacing="10.0" />
          </content></ScrollPane>
-      <TextField fx:id="studentNameTextField" layoutX="14.0" layoutY="64.0" />
-      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#Go_back" text="Back" />
-      <Button layoutX="473.0" layoutY="52.0" mnemonicParsing="false" onAction="#view_attendance_clicked" text="View Attendance" />
+      <TextField fx:id="studentNameTextField" layoutX="112.0" layoutY="65.0" />
+      <Button layoutX="666.0" layoutY="92.0" mnemonicParsing="false" onAction="#view_attendance_clicked" text="View Attendance" />
    </children>
 </AnchorPane>

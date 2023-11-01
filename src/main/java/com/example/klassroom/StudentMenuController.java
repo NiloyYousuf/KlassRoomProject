@@ -36,6 +36,7 @@ public class StudentMenuController {
 
         // Fetch classroom data from the database based on the student's username
         Connection connection = DatabaseConnection.getConnection();
+        DatabaseConnection.establishConnection();
         if (connection != null) {
             try {
                 // Define the SQL query to retrieve classroom information for the student

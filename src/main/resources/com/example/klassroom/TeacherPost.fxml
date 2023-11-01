@@ -8,16 +8,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="263.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.TeacherPostController">
+<AnchorPane prefHeight="303.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.TeacherPostController">
    <children>
       <Label fx:id="Time" layoutX="82.0" layoutY="63.0" text="Time" />
       <Label fx:id="Date" layoutX="676.0" layoutY="63.0" text="Date" />
-      <TextArea fx:id="Post" layoutX="82.0" layoutY="87.0" prefHeight="94.0" prefWidth="629.0" text="Post" />
-      <Button fx:id="Download" layoutX="372.0" layoutY="198.0" mnemonicParsing="false" text="Download Attachment" />
-      <TextField layoutX="203.0" layoutY="198.0" text="Attachment" />
-      <Button layoutX="75.0" layoutY="26.0" mnemonicParsing="false" onAction="#Go_back" text="Back" />
+      <TextArea fx:id="Post" editable="false" layoutX="82.0" layoutY="87.0" prefHeight="81.0" prefWidth="630.0" text="Post" />
+      <Button fx:id="Download" layoutX="405.0" layoutY="185.0" mnemonicParsing="false" text="Download Attachment" />
+      <TextField layoutX="216.0" layoutY="185.0" text="Attachment" />
+      <Button layoutX="75.0" layoutY="26.0" mnemonicParsing="false" onAction="#Go_back" styleClass="back-button" stylesheets="@styles.css" text="Back" />
       <!-- Add a new VBox for comments -->
-      <VBox fx:id="commentVBox" layoutX="95.0" layoutY="237.0" prefHeight="66.0" prefWidth="620.0">
+      <VBox fx:id="commentVBox" layoutX="85.0" layoutY="229.0" prefHeight="74.0" prefWidth="590.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Comments : " />
          </children></VBox>

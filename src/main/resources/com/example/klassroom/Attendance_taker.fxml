@@ -26,6 +26,6 @@
             </columns>
         </TableView>
         <Button layoutX="20.0" layoutY="376.0" onAction="#markAttendance" text="Mark Attendance" />
-      <Button layoutX="22.0" layoutY="25.0" mnemonicParsing="false" text=" Back" />
+      <Button layoutX="22.0" layoutY="25.0" mnemonicParsing="false" text=" Back" styleClass="back-button" stylesheets="@styles.css" />
     </children>
 </AnchorPane>

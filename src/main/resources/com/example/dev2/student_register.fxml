@@ -7,21 +7,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dev2.StudentRegistrationController">
+<AnchorPane prefHeight="584.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dev2.StudentRegistrationController">
     <children>
-        <Text layoutX="200.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register as a student">
+        <Text layoutX="266.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register as a student">
             <font>
                 <Font size="24.0" />
             </font>
         </Text>
-        <TextField fx:id="usernameField" layoutX="200.0" layoutY="100.0" promptText="Enter your name" />
-        <TextField fx:id="emailField" layoutX="200.0" layoutY="150.0" promptText="Enter your email" />
-        <PasswordField fx:id="passwordField" layoutX="200.0" layoutY="200.0" promptText="Password" />
-        <PasswordField fx:id="confirmPasswordField" layoutX="200.0" layoutY="250.0" promptText="Confirm password" />
+        <TextField fx:id="usernameField" layoutX="302.0" layoutY="195.0" promptText="Enter your name" />
+        <TextField fx:id="emailField" layoutX="302.0" layoutY="245.0" promptText="Enter your email" />
+        <PasswordField fx:id="passwordField" layoutX="302.0" layoutY="295.0" promptText="Password" />
+        <PasswordField fx:id="confirmPasswordField" layoutX="302.0" layoutY="345.0" promptText="Confirm password" />
 <!--        <Button layoutX="200.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleSignUp" text="Sign Up" />-->
 <!--        <Button layoutX="300.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleBackToRegistration" text="Back to Registration" />-->
-        <Button fx:id="signUpButton" layoutX="200.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleSignUp" text="Sign Up" />
-        <Button layoutX="300.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleBackToRegistration" text="Back to Registration" />
+        <Button fx:id="signUpButton" layoutX="332.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleSignUp" styleClass="button-gradient" stylesheets="@../klassroom/styles.css" text="Sign Up" />
+        <Button layoutX="24.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleBackToRegistration" styleClass="back-button" stylesheets="@../klassroom/styles.css" text="Back to Registration" />
 
     </children>
 </AnchorPane>

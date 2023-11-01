@@ -44,10 +44,10 @@ public class TeacherPostController implements Initializable {
         Date.setText(TeacherPostTileController.current_post.getPostDate());
         Time.setText(TeacherPostTileController.current_post.getPostTime());
         Post.setText(TeacherPostTileController.current_post.getPostText());
-        System.out.println(TeacherPostTileController.current_post.getPostText() + " This is the text of the comment");
-        System.out.println("Debug current post ID  " + currentPost.currentPostId + TeacherPostTileController.current_post.getPostId());
+       // System.out.println(TeacherPostTileController.current_post.getPostText() + " This is the text of the comment");
+        //System.out.println("Debug current post ID  " + currentPost.currentPostId + TeacherPostTileController.current_post.getPostId());
         // Fetch and print comments for the current post
-        printCommentsForPost(TeacherPostTileController.current_post.getPostId());
+      //  printCommentsForPost(TeacherPostTileController.current_post.getPostId());
         loadCommentSection();
 
 

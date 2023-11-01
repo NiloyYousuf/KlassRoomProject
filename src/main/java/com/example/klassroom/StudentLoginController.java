@@ -56,7 +56,10 @@ public class StudentLoginController {
                     CurrentStudent.CurrentStudentUsername=student_username;
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentFinalDashboard.fxml"));
                     Parent studentLogin = loader.load();
-
+                    // Start the notification checker for the logged-in student
+                    NotificationChecker notificationChecker = new NotificationChecker();
+                    Thread notificationThread = new Thread(() -> notificationChecker.startCheckingNotifications());
+                    notificationThread.start();
                     // Get the current scene and set the student login content
                     Scene currentScene = studentloginbutton.getScene();
                     currentScene.setRoot(studentLogin);

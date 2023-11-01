@@ -27,7 +27,7 @@
             </columns>
         </TableView>
         <Label fx:id="errorLabel" layoutX="48.0" layoutY="450.0" textFill="red" />
-      <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#backbutton_clicked" text="Back" />
+      <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#backbutton_clicked" text="Back" styleClass="back-button" stylesheets="@styles.css" />
       <Label layoutX="63.0" layoutY="75.0" text="SELECT A MONTH" />
     </children>
 </AnchorPane>

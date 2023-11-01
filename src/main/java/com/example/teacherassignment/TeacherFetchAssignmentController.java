@@ -96,4 +96,10 @@ public class TeacherFetchAssignmentController implements Initializable {
             e.printStackTrace();
         }
     }
+
+
+    public void backbuttonclicked()
+    {
+
+    }
 }
