@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<fx:root prefHeight="136.0" prefWidth="595.0" type="HBox" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Comment.CommentTileController">
+    <children>
+        <Text fx:id="commentText" />
+    </children>
+</fx:root>

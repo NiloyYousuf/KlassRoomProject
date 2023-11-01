@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+
+<VBox prefHeight="495.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.StudentAssignmentsAppController">
+    <ComboBox fx:id="statusFilterComboBox" prefWidth="150.0" promptText="Filter Status" />
+    <ScrollPane prefHeight="506.0" prefWidth="802.0">
+        <content>
+            <!-- Add any other layout or UI elements you need here -->
+            <VBox fx:id="assignmentTilesContainer" prefHeight="164.0" prefWidth="798.0" />
+        </content>
+    </ScrollPane>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+</VBox>

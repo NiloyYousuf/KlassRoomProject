@@ -1,4 +1,5 @@
 package com.example.klassroom;
+import com.example.Current_Variables.currentPost;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -17,7 +18,7 @@ public class FileDownloadController {
     @FXML
     private Label selectedPostIdLabel;
 
-    private int selectedPostId=37; // The post_id to download
+    private int selectedPostId= currentPost.currentPostId; // The post_id to download
 
     // ...
 

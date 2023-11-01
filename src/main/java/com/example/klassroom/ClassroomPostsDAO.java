@@ -15,7 +15,8 @@ public class ClassroomPostsDAO {
 
     // JDBC queries
     private static final String INSERT_POST = "INSERT INTO posts (classroom_id, post_time, post_date, post_text, attachment) VALUES (?, ?, ?, ?, ?)";
-    private static final String GET_POSTS_BY_CLASSROOM = "SELECT * FROM posts WHERE classroom_id = ?";
+    private static final String GET_POSTS_BY_CLASSROOM = "SELECT * FROM posts WHERE classroom_id = ? ORDER BY post_date DESC, post_time DESC";
+
 
 
     // Insert a new post into the database
@@ -57,18 +58,7 @@ public class ClassroomPostsDAO {
         return posts;
     }
 
-    public static void printAllPosts(int classroomId) {
-        List<Post> posts = getPostsByClassroom(classroomId);
-        System.out.println("Posts for Classroom ID " + classroomId + ":");
-        for (Post post : posts) {
-            System.out.println("Post ID: " + post.getPostId());
-            System.out.println("Post Time: " + post.getPostTime());
-            System.out.println("Post Date: " + post.getPostDate());
-            System.out.println("Post Text: " + post.getPostText());
-            // You can handle attachments here if needed
-            System.out.println("---------------");
-        }
-    }
+
 
     public static Post getPostById(int postId) {
         Connection connection =DatabaseConnection.getConnection();

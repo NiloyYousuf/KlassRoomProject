@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="279.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Comment.CommentSectionController">
+    <!-- Add a TextArea for entering new comments -->
+    <TextArea fx:id="newCommentTextArea" layoutX="8.0" layoutY="7.0" prefHeight="50.0" prefWidth="634.0" promptText="Enter your comment here" />
+   <ScrollPane layoutX="7.0" layoutY="72.0" prefHeight="200.0" prefWidth="731.0">
+      <content>
+      
+                      <!-- The VBox for displaying existing comments -->
+          <VBox fx:id="commentVBox" prefHeight="127.0" prefWidth="723.0" spacing="10" />
+      </content>
+   </ScrollPane>
+   <Button fx:id="postButton" layoutX="655.0" layoutY="13.0" mnemonicParsing="false" styleClass="button-gradient" stylesheets="@../styles.css" text="Post" />
+</AnchorPane>

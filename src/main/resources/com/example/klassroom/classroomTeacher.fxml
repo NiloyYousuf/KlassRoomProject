@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.ClassroomTeacherController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacher.ClassroomTeacherController">
    <children>
       <ImageView fitHeight="628.0" fitWidth="895.0" layoutX="-38.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,15 +19,15 @@
          </image>
       </ImageView>
       <TextArea fx:id="post" layoutX="85.0" layoutY="103.0" prefHeight="81.0" prefWidth="632.0" promptText="Make a Post" wrapText="true" />
-      <TextField fx:id="teacherNameTextField" editable="false" layoutX="78.0" layoutY="-1.0" prefHeight="34.0" prefWidth="343.0" styleClass="custom-text-field" stylesheets="@styles.css" text="Teacher's Name:">
+      <TextField fx:id="teacherNameTextField" editable="false" layoutX="78.0" layoutY="-1.0" prefHeight="34.0" prefWidth="343.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Teacher's Name:">
          <font>
             <Font name="System Bold" size="25.0" />
          </font></TextField>
-      <TextField fx:id="courseCodeTextField" editable="false" layoutX="79.0" layoutY="35.0" prefHeight="34.0" prefWidth="312.0" styleClass="custom-text-field" stylesheets="@styles.css" text="Couse Code:">
+      <TextField fx:id="courseCodeTextField" editable="false" layoutX="79.0" layoutY="35.0" prefHeight="34.0" prefWidth="312.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Couse Code:">
          <font>
             <Font name="System Bold" size="25.0" />
          </font></TextField>
-      <TextField fx:id="subjectNameTextField" editable="false" layoutX="82.0" layoutY="69.0" prefHeight="34.0" prefWidth="299.0" styleClass="custom-text-field" stylesheets="@styles.css" text="Subject Name:">
+      <TextField fx:id="subjectNameTextField" editable="false" layoutX="82.0" layoutY="69.0" prefHeight="34.0" prefWidth="299.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Subject Name:">
          <font>
             <Font name="System Bold" size="25.0" />
          </font></TextField>
@@ -36,38 +36,38 @@
             <VBox fx:id="postContainer" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="623.0" spacing="10.0" />
          </content>
       </ScrollPane>
-      <Button fx:id="Make_post_button" layoutX="727.0" layoutY="114.0" mnemonicParsing="false" onAction="#make_post_button_clicked" prefHeight="6.0" prefWidth="78.0" styleClass="button-gradient" stylesheets="@styles.css" text="Post" />
-      <Button layoutX="736.0" layoutY="159.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="41.0" prefWidth="43.0" styleClass="button-gradient-square" stylesheets="@styles.css">
+      <Button fx:id="Make_post_button" layoutX="727.0" layoutY="114.0" mnemonicParsing="false" onAction="#make_post_button_clicked" prefHeight="6.0" prefWidth="78.0" styleClass="button-gradient" stylesheets="@../styles.css" text="Post" />
+      <Button layoutX="736.0" layoutY="159.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="41.0" prefWidth="43.0" styleClass="button-gradient-square" stylesheets="@../styles.css">
          <graphic>
             <ImageView fitHeight="16.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Screenshot_2023-11-01_144110-removebg-preview.png" />
+                  <Image url="@images/ImageAddAttachment.png" />
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="attendance" layoutX="509.0" layoutY="16.0" mnemonicParsing="false" onAction="#attendance_button_clicked" prefHeight="72.0" prefWidth="72.0" styleClass="button-gradient-square" stylesheets="@styles.css">
+      <Button fx:id="attendance" layoutX="509.0" layoutY="16.0" mnemonicParsing="false" onAction="#attendance_button_clicked" prefHeight="72.0" prefWidth="72.0" styleClass="button-gradient-square" stylesheets="@../styles.css">
          <graphic>
             <ImageView fitHeight="51.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Screenshot_2023-11-01_144651-removebg-preview.png" />
+                  <Image url="@images/ImageAttendanceViewerIcon.png" />
                </image>
             </ImageView>
          </graphic></Button>
       <Label fx:id="selectedFileLabel" layoutX="227.0" layoutY="185.0" prefHeight="18.0" prefWidth="328.0" textFill="WHITE" />
-      <Button layoutX="630.0" layoutY="16.0" mnemonicParsing="false" onAction="#Post_assignment_button_clicked" prefHeight="63.0" prefWidth="0.0" styleClass="button-gradient-square" stylesheets="@styles.css">
+      <Button layoutX="630.0" layoutY="16.0" mnemonicParsing="false" onAction="#Post_assignment_button_clicked" prefHeight="63.0" prefWidth="0.0" styleClass="button-gradient-square" stylesheets="@../styles.css">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Screenshot_2023-11-01_143657-removebg-preview.png" />
+                  <Image url="@images/ImageUploadAssignmentSign.png" />
                </image>
             </ImageView>
          </graphic></Button>
-      <TextField fx:id="teacherNameTextField1" blendMode="SOFT_LIGHT" editable="false" layoutX="507.0" layoutY="79.0" prefHeight="34.0" prefWidth="94.0" styleClass="custom-text-field" stylesheets="@styles.css" text="Attendance">
+      <TextField fx:id="teacherNameTextField1" blendMode="SOFT_LIGHT" editable="false" layoutX="507.0" layoutY="79.0" prefHeight="34.0" prefWidth="94.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Attendance">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </TextField>
-      <TextField fx:id="teacherNameTextField11" blendMode="SOFT_LIGHT" editable="false" layoutX="626.0" layoutY="79.0" prefHeight="34.0" prefWidth="122.0" styleClass="custom-text-field" stylesheets="@styles.css" text="Assignment">
+      <TextField fx:id="teacherNameTextField11" blendMode="SOFT_LIGHT" editable="false" layoutX="626.0" layoutY="79.0" prefHeight="34.0" prefWidth="122.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Assignment">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>

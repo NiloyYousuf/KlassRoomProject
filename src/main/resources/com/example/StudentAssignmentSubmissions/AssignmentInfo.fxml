@@ -12,7 +12,8 @@
                 <TilePane fx:id="tilePane" hgap="10.0" prefColumns="1" vgap="10.0" />
             </content>
         </ScrollPane>
-      <Button layoutX="36.0" layoutY="14.0" mnemonicParsing="false" styleClass="back-button" stylesheets="@../klassroom/styles.css" text="Back" />
+      <Button layoutX="36.0" layoutY="14.0" mnemonicParsing="false" styleClass="back-button" stylesheets="@../styles.css" text="Back" />
+      <Button layoutX="316.0" layoutY="19.0" mnemonicParsing="false" onAction="#generateCSVReportButtonClicked" text="Generate CSV REPORT" />
 
     </children>
 </AnchorPane>

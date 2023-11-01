@@ -3,18 +3,25 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="579.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.classroomStudentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.classroomStudentController">
    <children>
-      <TextField fx:id="courseCodeTextField" layoutX="112.0" layoutY="105.0" />
-      <TextField fx:id="subjectNameTextField" layoutX="112.0" layoutY="143.0" />
-      <ScrollPane fx:id="scrollPane" layoutX="112.0" layoutY="191.0" prefHeight="342.0" prefWidth="666.0">
+      <ImageView fitHeight="577.0" fitWidth="892.0" layoutX="-9.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/ImageAbstractBackground.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="courseCodeTextField" editable="false" layoutX="216.0" layoutY="40.0" />
+      <TextField fx:id="subjectNameTextField" editable="false" layoutX="404.0" layoutY="40.0" />
+      <ScrollPane fx:id="scrollPane" layoutX="23.0" layoutY="115.0" prefHeight="387.0" prefWidth="765.0">
          <content>
-            <VBox fx:id="postContainer" prefHeight="142.0" prefWidth="652.0" spacing="10.0" />
+            <VBox fx:id="postContainer" prefHeight="142.0" prefWidth="762.0" spacing="10.0" />
          </content></ScrollPane>
-      <TextField fx:id="studentNameTextField" layoutX="112.0" layoutY="65.0" />
-      <Button layoutX="666.0" layoutY="92.0" mnemonicParsing="false" onAction="#view_attendance_clicked" text="View Attendance" />
+      <TextField fx:id="studentNameTextField" editable="false" layoutX="33.0" layoutY="40.0" />
+      <Button layoutX="612.0" layoutY="32.0" mnemonicParsing="false" onAction="#view_attendance_clicked" styleClass="button-gradient" stylesheets="@../styles.css" text="View Attendance" />
    </children>
 </AnchorPane>

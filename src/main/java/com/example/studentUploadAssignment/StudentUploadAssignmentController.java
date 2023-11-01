@@ -1,10 +1,12 @@
 package com.example.studentUploadAssignment;
 
-import com.example.klassroom.CurrentStudent;
+import com.example.student.CurrentStudent;
 import com.example.klassroom.DatabaseConnection;
-import com.example.klassroom.current_Assignment;
+import com.example.Current_Variables.current_Assignment;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -46,14 +48,34 @@ public class StudentUploadAssignmentController {
     private String originalFileName;
 
     @FXML
+    private Button Download;
+
+    @FXML
+    private Label uploadedFileNameLabel;
+
+    @FXML
     public void initialize() {
         // Load and display assignment details when the view is initialized
         fetchAssignmentDetailsAndPopulateLabels();
         fetchAttachment();
+        fetchUploadedFileName();
+
+        if (attachmentData != null) {
+            attachmentStatusLabel.setText("Attachment Available");
+        } else {
+            attachmentStatusLabel.setText("No attachment available.");
+            Download.setDisable(true);
+        }
     }
 
     @FXML
     public void uploadAssignment() {
+        // Check if the student has already submitted the assignment
+        if (hasStudentSubmittedAssignment()) {
+            statusLabel.setText("You have already submitted the assignment. To submit again, please unsubmit first.");
+            return;
+        }
+
         // Open a file dialog for the user to select an assignment file
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose Assignment File");
@@ -96,29 +118,73 @@ public class StudentUploadAssignmentController {
         }
     }
 
-
-    private void fetchAssignmentDetailsAndPopulateLabels() {
+    private boolean hasStudentSubmittedAssignment() {
         int assignmentID = current_Assignment.current_assignment_ID;
-        //int assignmentID =7;
-        System.out.println(assignmentID);
+        String username = CurrentStudent.CurrentStudentUsername;
+
         try (Connection connection = DatabaseConnection.getConnection()) {
-            String sql = "SELECT Assignment_Text, Assign_Date, Deadline, Teacher_Username, Classroom_Code FROM assignments WHERE Assignment_ID = ?";
+            String sql = "SELECT COUNT(*) FROM student_assignment_junction WHERE Assignment_ID = ? AND Student_Username = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, assignmentID);
+            preparedStatement.setString(2, username);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                assignmentTextLabel.setText("Assignment Text: " + resultSet.getString("Assignment_Text"));
-                assignDateLabel.setText("Assign Date: " + resultSet.getDate("Assign_Date").toString());
-                deadlineLabel.setText("Deadline: " + resultSet.getDate("Deadline").toString());
-                teacherUsernameLabel.setText("Teacher's Username: " + resultSet.getString("Teacher_Username"));
-                classroomCodeLabel.setText("Classroom Code: " + resultSet.getString("Classroom_Code"));
+                int submissionCount = resultSet.getInt(1);
+                return submissionCount > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+
+
+    private void fetchAssignmentDetailsAndPopulateLabels() {
+        int assignmentID = current_Assignment.current_assignment_ID;
+        String studentUsername = CurrentStudent.CurrentStudentUsername;
+
+        try (Connection connection = DatabaseConnection.getConnection()) {
+            // Fetch assignment details from the assignments table
+            String assignmentDetailsSQL = "SELECT Assignment_Text, Assign_Date, Deadline, Teacher_Username, Classroom_Code FROM assignments WHERE Assignment_ID = ?";
+            PreparedStatement assignmentDetailsStatement = connection.prepareStatement(assignmentDetailsSQL);
+            assignmentDetailsStatement.setInt(1, assignmentID);
+            ResultSet assignmentDetailsResult = assignmentDetailsStatement.executeQuery();
+
+            if (assignmentDetailsResult.next()) {
+                assignmentTextLabel.setText("Assignment Text: " + assignmentDetailsResult.getString("Assignment_Text"));
+                assignDateLabel.setText("Assign Date: " + assignmentDetailsResult.getDate("Assign_Date").toString());
+                deadlineLabel.setText("Deadline: " + assignmentDetailsResult.getDate("Deadline").toString());
+                teacherUsernameLabel.setText("Teacher's Username: " + assignmentDetailsResult.getString("Teacher_Username"));
+                classroomCodeLabel.setText("Classroom Code: " + assignmentDetailsResult.getString("Classroom_Code"));
+            }
+
+            // Fetch submission details from the student_assignment_junction table
+            String submissionDetailsSQL = "SELECT Submission_Status, Marks_Obtained FROM student_assignment_junction WHERE Assignment_ID = ? AND Student_Username = ?";
+            PreparedStatement submissionDetailsStatement = connection.prepareStatement(submissionDetailsSQL);
+            submissionDetailsStatement.setInt(1, assignmentID);
+            submissionDetailsStatement.setString(2, studentUsername);
+            ResultSet submissionDetailsResult = submissionDetailsStatement.executeQuery();
+
+            if (submissionDetailsResult.next()) {
+                String submissionStatus = submissionDetailsResult.getString("Submission_Status");
+                int marksObtained = submissionDetailsResult.getInt("Marks_Obtained");
+
+                // Update the status label
+                if ("Submitted".equals(submissionStatus)) {
+                    statusLabel.setText("Assignment Submitted");
+                } else if ("Marked".equals(submissionStatus)) {
+                    statusLabel.setText("Assignment Marked - Marks: " + marksObtained);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
             statusLabel.setText("Error: " + e.getMessage());
         }
     }
+
 
 
 
@@ -167,4 +233,71 @@ public class StudentUploadAssignmentController {
             attachmentStatusLabel.setText("Error: " + e.getMessage());
         }
     }
+
+
+    @FXML
+    public void unsubmitAssignment() {
+        // Show a confirmation dialog
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Unsubmit Confirmation");
+        alert.setHeaderText("Are you sure you want to unsubmit this assignment?");
+        alert.setContentText("This action cannot be undone.");
+
+        // Customize the buttons
+        alert.getButtonTypes().setAll(ButtonType.YES, ButtonType.CANCEL);
+
+        // Show and wait for the user's response
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.YES) {
+                // User clicked YES, proceed with unsubmitting the assignment
+                int assignmentID = current_Assignment.current_assignment_ID;
+                String studentUsername = CurrentStudent.CurrentStudentUsername;
+
+                try (Connection connection = DatabaseConnection.getConnection()) {
+                    String sql = "DELETE FROM student_assignment_junction WHERE Assignment_ID = ? AND Student_Username = ?";
+                    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                    preparedStatement.setInt(1, assignmentID);
+                    preparedStatement.setString(2, studentUsername);
+
+                    int rows = preparedStatement.executeUpdate();
+                    if (rows > 0) {
+                        statusLabel.setText("Assignment unsubmitted successfully.");
+                        fetchUploadedFileName(); // Refresh the uploaded file name label
+                    } else {
+                        statusLabel.setText("Failed to unsubmit assignment.");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    statusLabel.setText("Error: " + e.getMessage());
+                }
+            }
+            // If NO or CANCEL, do nothing
+        });
+    }
+
+    private void fetchUploadedFileName() {
+        int assignmentID = current_Assignment.current_assignment_ID;
+        String studentUsername = CurrentStudent.CurrentStudentUsername;
+
+       // System.out.println("Debug--" + assignmentID + studentUsername);
+
+        try (Connection connection = DatabaseConnection.getConnection()) {
+            String sql = "SELECT Original_Filename FROM student_assignment_junction WHERE Assignment_ID = ? AND Student_Username = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, assignmentID);
+            preparedStatement.setString(2, studentUsername);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                String uploadedFileName = resultSet.getString("Original_Filename");
+                uploadedFileNameLabel.setText("Name of File Uploaded: " + uploadedFileName);
+            } else {
+                uploadedFileNameLabel.setText("No file uploaded.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            statusLabel.setText("Error: " + e.getMessage());
+        }
+    }
+
 }

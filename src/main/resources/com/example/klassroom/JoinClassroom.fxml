@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="263.0" prefWidth="259.0" spacing="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.JoinClassroomController">
+<VBox prefHeight="263.0" prefWidth="259.0" spacing="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.JoinClassroomController">
     <Label text="Join Classroom" />
     <TextField fx:id="classroomCode" promptText="Classroom Code" />
     <TextField fx:id="classroomPassword" promptText="Classroom Password" />

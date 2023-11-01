@@ -2,18 +2,37 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="124.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.ClassroomTileStudentController">
-    <!-- Classroom Name Label -->
-    <Label fx:id="classroomLabel" prefHeight="18.0" prefWidth="329.0" text="" />
-
-    <!-- Classroom Code Label -->
-    <Label fx:id="classroomCodeLabel" prefHeight="18.0" prefWidth="356.0" text="" />
-
-    <!-- Subject Label -->
-    <Label fx:id="subjectLabel" prefHeight="18.0" prefWidth="292.0" text="" />
-   <Button mnemonicParsing="false" onAction="#tileClicked" onMouseClicked="#tileClicked" text="Go" />
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="189.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.ClassroomTileStudentController">
+   <AnchorPane prefHeight="140.0" prefWidth="672.0">
+      <children>
+         <ImageView fitHeight="223.0" fitWidth="780.0" layoutX="1.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@images/ImageTileBackground.jpg" />
+            </image>
+         </ImageView>
+          <!-- Classroom Name Label -->
+          <Label fx:id="classroomLabel" layoutY="14.0" prefHeight="18.0" prefWidth="329.0" />
+      
+          <!-- Classroom Code Label -->
+          <Label fx:id="classroomCodeLabel" layoutX="19.0" layoutY="23.0" prefHeight="35.0" prefWidth="574.0" text="Classroom Code">
+            <font>
+               <Font name="Segoe UI Black" size="24.0" />
+            </font></Label>
+      
+          <!-- Subject Label -->
+          <Label fx:id="subjectLabel" layoutX="19.0" layoutY="89.0" prefHeight="46.0" prefWidth="574.0" text="Classroom Subject ">
+            <font>
+               <Font size="30.0" />
+            </font></Label>
+         <Button layoutX="616.0" layoutY="74.0" mnemonicParsing="false" onAction="#tileClicked" onMouseClicked="#tileClicked" prefHeight="41.0" prefWidth="98.0" styleClass="button-gradient" stylesheets="@../styles.css" text="Go" />
+      </children>
+   </AnchorPane>
 
 
     <!-- You can add more UI elements or customize the tile further if needed -->

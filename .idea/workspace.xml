@@ -5,47 +5,158 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="220de450-cd4a-49eb-a59d-a64a8384d59b" name="Changes" comment="niloy working">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Notification/NotificationChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_1_2023_3_43_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_1_2023_3_43_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dev2/RegisterMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dev2/RegisterMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dev2/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dev2/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dev2/StudentRegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dev2/StudentRegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dev2/TeacherRegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dev2/TeacherRegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentPostTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentPostTileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherPostTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherPostTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/ClassroomStudentJunctionTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/ClassroomsTableSetup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/CreateCommentTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/CreateTableAssignments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/CreateTableStudentAssignmentJunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/PostsTableSetup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/StudentsTableSetup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/TeachersTableSetup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/StudentAssignmentSubmissions/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/StudentAssignmentSubmissions/StudentTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/StudentAssignmentSubmissions/StudentTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/StudentAssignmentSubmissions/StudentsSubmissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/StudentAssignmentSubmissions/StudentsSubmissionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dev2/RegisterMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Registration/RegisterMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dev2/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Registration/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dev2/StudentRegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Registration/StudentRegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dev2/TeacherRegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Registration/TeacherRegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/AssignmentPostApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/AssignmentTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/AssignmentTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/Attenance_test_Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomMakerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/ClassroomMakerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomPostsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomPostsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/ClassroomTeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTeacher_gives_AttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/ClassroomTeacher_gives_AttendanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/ClassroomTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTileStudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/ClassroomTileStudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/ClassroomTileTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/ClassroomTileTeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CommentApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Comment/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CommentSectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Comment/CommentSectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CommentTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Comment/CommentTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CreateAssignmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/CreateAssignmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CurrentClassroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Current_Variables/CurrentClassroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CurrentStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/CurrentStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/CurrentTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/CurrentTeacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/Current_User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Current_Variables/Current_User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/FXMLApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/FileDownloadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/klassroom/FileDownloadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/FileDownloadMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/FileUploadController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/FileUploadMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/JoinClassroomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/JoinClassroomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/JoinclassroomMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/KlassroomMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/MainCSS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/MakeClassroomMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/MonthlyAttendanceChart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/NotificationChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentAssignmentsApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentAssignmentsAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentAssignmentsAppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentAttendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentAttendanceCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentAttendanceCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentAttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentAttendanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentFinalDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentFinalDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login/StudentLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentMonthlyAttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentMonthlyAttendanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentPostTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentPostTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentsMonthlyAttendanceChart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/StudentsMonthlyAttendanceChart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherFinalDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/TeacherFinalDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login/TeacherLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/TeacherMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/TeacherPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherPostTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/TeacherPostTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/TeacherTakingStudentAttendanceListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacher/TeacherTakingStudentAttendanceListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/classroomStudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/student/classroomStudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/currentPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Current_Variables/currentPost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/klassroom/current_Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Current_Variables/current_Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studentUploadAssignment/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studentUploadAssignment/StudentUploadAssignmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studentUploadAssignment/StudentUploadAssignmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teacherassignment/TeacherAssignmentTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacherassignment/TeacherAssignmentTileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teacherassignment/TeacherFetchAssignmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teacherassignment/TeacherFetchAssignmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teacherassignment/TeacherViewAssignments.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/StudentAssignmentSubmissions/AssignmentInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/StudentAssignmentSubmissions/AssignmentInfo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dev2/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dev2/register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dev2/student_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dev2/student_register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dev2/teacher_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dev2/teacher_register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/AssignmentPostForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/AssignmentPostForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/AssignmentTile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/AssignmentTile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Attendance_taker.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Attendance_taker.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Student Attendance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Student Attendance.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentAssignmentsApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentAssignmentsApp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentFinalDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentFinalDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Student_post_tile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Student_post_tile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherFinalDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherFinalDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Teacher_post_tile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Teacher_post_tile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Teacher_taking_student_Attendance_list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Teacher_taking_student_Attendance_list.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/StudentAssignmentSubmissions/StudentTile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/StudentAssignmentSubmissions/StudentTile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dev2/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Registration/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dev2/register.fxml~merged" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Registration/register.fxml~merged" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dev2/student_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Registration/student_register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dev2/teacher_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Registration/teacher_register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/6530.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/ImageTileBackground.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Abstract circle background vector design 06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/ImageCircularBackground.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/AssignmentPostForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Assignment/AssignmentPostForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/AssignmentTile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Assignment/AssignmentTile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Attendance_taker.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Attendance/Attendance_taker.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/ClassroomTileStudent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/ClassroomTileStudent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/ClassroomTileTeacher.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/ClassroomTileTeacher.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Createclassroom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Createclassroom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/FileDownloadApp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/FileUploadApp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/JoinClassroom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/JoinClassroom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Pic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Screenshot_2023-10-30_135941-removebg-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Screenshot_2023-10-30_141545-removebg-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Screenshot_2023-10-30_143002-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/ImageLoginPageBackground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Screenshot_2023-10-30_153857-removebg-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Screenshot_2023-11-01_143657-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/ImageUploadAssignmentSign.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Screenshot_2023-11-01_144110-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/ImageAddAttachment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Screenshot_2023-11-01_144651-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/ImageAttendanceViewerIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Screenshot_2023-11-01_223315-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/ImageAssignmentsIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Screenshot_2023-11-01_224044-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/ImageStudentLoginPageBackground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Student Attendance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Attendance/Student Attendance.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentAllClassrooms.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentAllClassrooms.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentAssignmentsApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Assignment/StudentAssignmentsApp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentFinalDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Dashboards/StudentFinalDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Post/StudentPost.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/StudentRegister.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Student_post_tile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Post/Student_post_tile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherFinalDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Dashboards/TeacherFinalDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Post/TeacherPost.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/TeacherRegister.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Teacher_post_tile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Post/Teacher_post_tile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/Teacher_taking_student_Attendance_list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Attendance/Teacher_taking_student_Attendance_list.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/WhiteBG.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/bbad5b9c-24e4-4bd3-a62c-f2e5fcc98915.avif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/classroomStudent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/classroomStudent.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/classroomTeacher.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/classroomTeacher.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/commentSection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/commentSection.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/nicee.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/nicee.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/studentlogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/studentlogin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/teacherlogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/teacherlogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/comment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Comment/comment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/commentSection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Comment/commentSection.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/commentTile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Comment/commentTile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/dl.beatsnoop.com-final-1ywgtC7Nkn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login/LoginPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/jcommon-1.0.24.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/jcommon-1.0.24.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/jfreechart.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/jfreechart.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/jn233_generated.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/ImageAbstractBackground.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/klasrom.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/klassroom.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/lol.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/nicee-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/images/ImageteacherLoginPage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/nicee.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/notification.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Notification/notification.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/ok.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/registerPage.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/studentUploadAssignment/studentUploadAssignment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Assignment/studentUploadAssignment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/student_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/student_profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/studentlogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login/studentlogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/teacherRegister.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/teacherlogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login/teacherlogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Comment/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/vecteezy_online-education-training-with-students-and-tutor_13867897.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/klassroom/—Pngtree—abstract low poly cyan background_1234132.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/teacherassignment/TeacherFetchAssignment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/teacherassignment/TeacherFetchAssignment.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/teacherassignment/teacher_assignment_tile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/teacherassignment/teacher_assignment_tile.fxml" afterDir="false" />
     </list>
@@ -58,8 +169,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -82,14 +193,13 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/klassroom/CommentSectionController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/klassroom/CommentTileController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/klassroom/KlassroomMain.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/klassroom/LoginController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/klassroom/NotificationChecker.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/Comment/CommentSectionController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/Comment/CommentTileController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/KlassroomMain.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/Login/LoginController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/Login/StudentLoginController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/Notification/NotificationChecker.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/klassroom/Post.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentLoginController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/klassroom/StudentProfile.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/module-info.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -108,26 +218,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/yousu/IdeaProjects/KLASSROOM/src/main/java/com/example/teacherassignment&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yousu/IdeaProjects/KLASSROOM/src/main/resources/com/example/klassroom&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.14367816&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "C:/Users/yousu/IdeaProjects/KLASSROOM/src/main/java/com/example/teacherassignment",
+    "last_opened_file_path": "C:/Users/yousu/Downloads/mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.14367816",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.klassroom" />
@@ -138,14 +249,18 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\resources\com\example" />
-      <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\resources\com\example\Dev2" />
+      <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\resources\com\example\klassroom\images" />
+      <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\resources\com\example\Assignment" />
+      <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\resources\com\example\Notification" />
+      <recent name="C:\Users\yousu\IdeaProjects\KLASSROOM\src\main\resources\com\example\Dashboards" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.example.klassroom" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example.klassroom" />
       <recent name="com.example" />
+      <recent name="com.example.klassroom" />
+      <recent name="com.example.Notification" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.klassroom" />
@@ -177,6 +292,13 @@
       <workItem from="1699284701855" duration="8237000" />
       <workItem from="1699353324350" duration="12250000" />
       <workItem from="1699432625484" duration="11150000" />
+      <workItem from="1699613256734" duration="3049000" />
+      <workItem from="1699616790777" duration="12024000" />
+      <workItem from="1699630135244" duration="18606000" />
+      <workItem from="1700661795539" duration="1362000" />
+      <workItem from="1700932238497" duration="208000" />
+      <workItem from="1701021197888" duration="616000" />
+      <workItem from="1701243336861" duration="14339000" />
     </task>
     <task id="LOCAL-00001" summary="niloy">
       <created>1697454145033</created>
@@ -332,7 +454,21 @@
       <option name="project" value="LOCAL" />
       <updated>1698831873583</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="niloy working">
+      <created>1699613359033</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1699613359033</updated>
+    </task>
+    <task id="LOCAL-00024" summary="niloy working">
+      <created>1699613374074</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1699613374074</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

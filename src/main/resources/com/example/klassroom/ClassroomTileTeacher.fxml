@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="157.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.ClassroomTileTeacherController">
+<VBox prefHeight="157.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacher.ClassroomTileTeacherController">
    <AnchorPane prefHeight="166.0" prefWidth="702.0">
       <children>
-         <ImageView fitHeight="184.0" fitWidth="300.0" layoutX="-15.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="188.0" fitWidth="746.0" layoutX="-15.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@Screenshot_2023-10-30_141545-removebg-preview.png" />
+               <Image url="@images/ImageTileBackground.jpg" />
             </image>
          </ImageView>
          <Button layoutX="551.0" layoutY="46.0" mnemonicParsing="false" onAction="#tileClicked" onMouseClicked="#tileClicked" text="Go" />

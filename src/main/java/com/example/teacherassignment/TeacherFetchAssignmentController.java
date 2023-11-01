@@ -1,7 +1,8 @@
 package com.example.teacherassignment;
 
 import com.example.Database.DatabaseConnection;
-import com.example.klassroom.CurrentTeacher;
+import com.example.Current_Variables.CurrentClassroom;
+import com.example.teacher.CurrentTeacher;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -44,11 +45,12 @@ public class TeacherFetchAssignmentController implements Initializable {
         Connection connection = DatabaseConnection.getConnection();
 
         // SQL query to retrieve assignments for a teacher
-        String sqlQuery = "SELECT * FROM assignments WHERE Teacher_Username = ?";
+        String sqlQuery = "SELECT * FROM assignments WHERE Teacher_Username = ? AND Classroom_code = ? ";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
             preparedStatement.setString(1, CurrentTeacher.current_teacher_username);
+            preparedStatement.setString(2, CurrentClassroom.classroomCode);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -81,14 +83,22 @@ public class TeacherFetchAssignmentController implements Initializable {
             HBox assignmentTile = loader.load();
             TeacherAssignmentTileController assignmentTileController = loader.getController();
 
+            // Check for null values before setting assignment details
+            String assignmentText = assignment.getAssignmentText();
+            String assignDate = (assignment.getAssignDate() != null) ? assignment.getAssignDate().toString() : "N/A";
+            String deadline = (assignment.getDeadline() != null) ? assignment.getDeadline().toString() : "N/A";
+            String marks = (String.valueOf(assignment.getMarks()) != null) ? String.valueOf(assignment.getMarks()) : "N/A";
+            String classroomCode = (assignment.getClassroomCode() != null) ? assignment.getClassroomCode() : "N/A";
+            int  assignmentId = assignment.getId();
+
             // Pass individual properties to setAssignmentDetails
             assignmentTileController.setAssignmentDetails(
-                    assignment.getAssignmentText(),
-                    assignment.getAssignDate().toString(),
-                    assignment.getDeadline().toString(),
-                    String.valueOf(assignment.getMarks()),
-                    assignment.getClassroomCode(),
-                    assignment.getId()
+                    assignmentText,
+                    assignDate,
+                    deadline,
+                    marks,
+                    classroomCode,
+                    assignmentId
             );
 
             assignmentsVBox.getChildren().add(assignmentTile);
@@ -98,8 +108,12 @@ public class TeacherFetchAssignmentController implements Initializable {
     }
 
 
+
     public void backbuttonclicked()
     {
 
     }
+
+
+
 }
