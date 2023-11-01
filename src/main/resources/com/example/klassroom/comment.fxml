@@ -7,17 +7,17 @@
 <?import javafx.scene.text.Text?>
 
 <HBox prefHeight="148.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.klassroom.CommentController">
-   <AnchorPane prefHeight="148.0" prefWidth="582.0">
-      <children>
-          <Text fx:id="commentText" layoutX="81.0" layoutY="63.0" text="Comment Text :" wrappingWidth="233.60003519058228" />
-         <Text fx:id="commentDate" layoutX="81.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
-         <Text fx:id="commentTime" layoutX="519.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
-         <ImageView fx:id="Uploader_image" fitHeight="55.0" fitWidth="53.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@images/user.png" />
-            </image>
-         </ImageView>
-         <Text fx:id="user_name" layoutX="29.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      </children>
-   </AnchorPane>
+    <AnchorPane prefHeight="148.0" prefWidth="582.0">
+        <children>
+            <Text fx:id="commentText" layoutX="81.0" layoutY="63.0" text="Comment Text :" wrappingWidth="233.60003519058228" />
+            <Text fx:id="commentDate" layoutX="81.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+            <Text fx:id="commentTime" layoutX="519.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
+            <ImageView fx:id="Uploader_image" fitHeight="55.0" fitWidth="53.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@images/user.png" />
+                </image>
+            </ImageView>
+            <Text fx:id="user_name" layoutX="29.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        </children>
+    </AnchorPane>
 </HBox>
