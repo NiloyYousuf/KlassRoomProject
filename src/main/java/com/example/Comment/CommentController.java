@@ -62,7 +62,7 @@ public class CommentController {
                 Uploader_image.setImage(blankImage);
             } else {
                 // Handle the case where the resource is not found
-                System.err.println("Resource not found: com/example/Comment/user.png");
+                //System.err.println("Resource not found: com/example/Comment/user.png");
             }
 
         }

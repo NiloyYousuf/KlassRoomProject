@@ -10,6 +10,8 @@ import javafx.stage.StageStyle;
 import java.io.File;
 import java.io.IOException;
 
+import static com.example.student.classroomStudentController.stopScheduler;
+
 public class KlassroomMain extends Application {
     @Override
     public void start(Stage primaryStage) {
@@ -51,5 +53,6 @@ public class KlassroomMain extends Application {
 
     public static void main(String[] args) {
         launch();
+
     }
 }

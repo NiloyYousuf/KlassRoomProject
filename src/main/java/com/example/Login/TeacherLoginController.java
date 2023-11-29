@@ -1,5 +1,6 @@
 package com.example.Login;
 
+import com.example.Notification.CommentNotificationChecker;
 import com.example.teacher.CurrentTeacher;
 import com.example.Current_Variables.Current_User;
 import com.example.klassroom.DatabaseConnection;
@@ -63,6 +64,10 @@ public class TeacherLoginController {
                     // Get the current scene and set the student login content
                     Scene currentScene = teacherloginbutton.getScene();
                     currentScene.setRoot(studentLogin);
+
+                    CommentNotificationChecker commentNotificationChecker = new CommentNotificationChecker();
+                    Thread commentnotificationThread = new Thread(() -> commentNotificationChecker.startCheckingCommentNotifications());
+                    commentnotificationThread.start();
 
                 } else {
                     // Teacher login failed

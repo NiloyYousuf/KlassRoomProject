@@ -1,7 +1,7 @@
 package com.example.teacherassignment;
 
-import com.example.Database.DatabaseConnection;
 import com.example.Current_Variables.CurrentClassroom;
+import com.example.klassroom.DatabaseConnection;
 import com.example.teacher.CurrentTeacher;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

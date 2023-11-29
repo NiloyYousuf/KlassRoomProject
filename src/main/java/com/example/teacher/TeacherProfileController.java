@@ -1,6 +1,6 @@
 package com.example.teacher;
 
-import com.example.Database.DatabaseConnection;
+import com.example.klassroom.DatabaseConnection;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -33,7 +33,8 @@ public class TeacherProfileController {
         String teacherUsername = currentTeacherUsername;
 
         // Connect to the database and retrieve teacher information
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {
+            Connection connection = DatabaseConnection.getConnection();
             String sql = "SELECT teacher_username, teacher_email, photo FROM teachers WHERE teacher_username = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setString(1, teacherUsername);

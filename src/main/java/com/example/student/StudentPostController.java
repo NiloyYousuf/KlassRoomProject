@@ -53,7 +53,7 @@ public class StudentPostController implements Initializable {
         Time.setText(StudentPostTileController.current_post.getPostTime());
         Post.setText(StudentPostTileController.current_post.getPostText());
        // System.out.println(StudentPostTileController.current_post.getPostText()+ " this was written");
-
+        loadCommentSection();
         int postId = currentPost.currentPostId;
 
             // Check if attachment is available for the selected post
@@ -65,7 +65,7 @@ public class StudentPostController implements Initializable {
             }
 
 
-        loadCommentSection();
+
     }
 
 

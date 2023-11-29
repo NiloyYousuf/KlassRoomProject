@@ -119,7 +119,7 @@ public class StudentsSubmissionController implements Initializable {
         List<CSVData> csvDataList = new ArrayList<>();
 
         // Establish a database connection (assuming you have a DatabaseConnection class)
-        Connection connection = com.example.Database.DatabaseConnection.getConnection();
+        Connection connection = DatabaseConnection.getConnection();
 
         // Use the current classroom code from the CurrentClassroom class
         String classroomCode = CurrentClassroom.classroomCode;

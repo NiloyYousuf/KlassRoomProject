@@ -1,5 +1,7 @@
 package com.example.Login;
 
+import com.example.Notification.AssignmentNotificationChecker;
+import com.example.Notification.CommentNotificationChecker;
 import com.example.Notification.NotificationChecker;
 import com.example.student.CurrentStudent;
 import com.example.Current_Variables.Current_User;
@@ -62,10 +64,23 @@ public class StudentLoginController {
                     CurrentStudent.CurrentStudentUsername=student_username;
                     FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/StudentFinalDashboard.fxml").toURL());
                     Parent studentLogin = loader.load();
-                    // Start the notification checker for the logged-in student
+                    // Start the notification checker for the logged-in student // for post notification
                     NotificationChecker notificationChecker = new NotificationChecker();
                     Thread notificationThread = new Thread(() -> notificationChecker.startCheckingNotifications());
                     notificationThread.start();
+
+                    //for comment notification
+                    CommentNotificationChecker commentNotificationChecker = new CommentNotificationChecker();
+                    Thread commentnotificationThread = new Thread(() -> commentNotificationChecker.startCheckingCommentNotifications());
+                    commentnotificationThread.start();
+
+
+                    AssignmentNotificationChecker assignmentNotificationChecker = new AssignmentNotificationChecker();
+                    Thread assignmentNotificationThread = new Thread(() -> assignmentNotificationChecker.startCheckingNotifications());
+                    assignmentNotificationThread.start();
+
+
+
                     // Get the current scene and set the student login content
                     Scene currentScene = studentloginbutton.getScene();
                     currentScene.setRoot(studentLogin);

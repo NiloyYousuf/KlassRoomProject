@@ -21,5 +21,6 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Comments : " />
          </children></VBox>
+      <Button fx:id="deleteButton" layoutX="637.0" layoutY="173.0" mnemonicParsing="false" onAction="#handleDeleteButton" text="Delete" />
    </children>
 </AnchorPane>

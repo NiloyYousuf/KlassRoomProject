@@ -1,5 +1,7 @@
 package com.example.Database;
 
+import com.example.klassroom.DatabaseConnection;
+
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;

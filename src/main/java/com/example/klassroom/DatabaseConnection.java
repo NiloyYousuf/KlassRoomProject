@@ -17,7 +17,7 @@ public class DatabaseConnection {
 //    private static final String PASSWORD  = "dZmh6WCGlT";
 
     String lol ;
-    private static final String JDBC_URL = "jdbc:mysql://viaduct.proxy.rlwy.net/railway";
+    private static final String JDBC_URL = "jdbc:mysql://viaduct.proxy.rlwy.net:38404/railway";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "HacBGHFd3EabEE12eafeE4Fb3e-F2fCD";
 

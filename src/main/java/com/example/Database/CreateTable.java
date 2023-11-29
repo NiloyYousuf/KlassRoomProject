@@ -55,6 +55,7 @@ public class CreateTable {
                 "`Marks` int DEFAULT NULL, " +
                 "`Teacher_Username` varchar(50) DEFAULT NULL, " +
                 "`Classroom_Code` varchar(10) DEFAULT NULL, " +
+                "`Original_Filename` varchar(100) DEFAULT NULL, " +
                 "PRIMARY KEY (`Assignment_ID`), " +
                 "KEY `Teacher_Username` (`Teacher_Username`), " +
                 "KEY `Classroom_Code` (`Classroom_Code`), " +

@@ -38,8 +38,10 @@ public class ClassroomPostsDAO {
     // Get posts by classroom ID
     public static List<Post> getPostsByClassroom(int classroomId) {
         List<Post> posts = new ArrayList<>();
-        Connection connection =DatabaseConnection.getConnection();
-        try (PreparedStatement statement = connection.prepareStatement(GET_POSTS_BY_CLASSROOM)) {
+        try {
+            Connection connection =DatabaseConnection.getConnection();
+            DatabaseConnection.establishConnection();
+            PreparedStatement statement = connection.prepareStatement(GET_POSTS_BY_CLASSROOM);
             statement.setInt(1, classroomId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {

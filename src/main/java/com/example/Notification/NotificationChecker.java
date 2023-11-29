@@ -34,7 +34,9 @@ public class NotificationChecker {
 
             String query = "SELECT * FROM notifications WHERE student_username = ?";
             DatabaseConnection.establishConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            PreparedStatement preparedStatement;
+            preparedStatement = connection.prepareStatement(query);
+          //  System.out.println("Notification checking");
             preparedStatement.setString(1, CurrentStudent.CurrentStudentUsername);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -50,10 +52,6 @@ public class NotificationChecker {
                 CurrentClassroom.fetchClassroomDetails(classroom_code);
                 deleteNotification(notificationId, connection);
             }
-
-            resultSet.close();
-            preparedStatement.close();
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -66,7 +64,6 @@ public class NotificationChecker {
         PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery);
         preparedStatement.setInt(1, notificationId);
         preparedStatement.executeUpdate();
-        preparedStatement.close();
     }
 
 //    private void showNotification(String notificationText) {

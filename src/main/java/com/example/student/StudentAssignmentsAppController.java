@@ -45,10 +45,12 @@ public class StudentAssignmentsAppController {
 
     private void fetchClassroomCodes() {
         // Connect to the database and retrieve classroom codes for the student
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {
+            Connection connection = DatabaseConnection.getConnection();
             DatabaseConnection.establishConnection();
             String classroomQuery = "SELECT classroom_code FROM classroom_student_junction WHERE student_username = ?";
-            PreparedStatement classroomStatement = connection.prepareStatement(classroomQuery);
+            PreparedStatement classroomStatement;
+            classroomStatement = connection.prepareStatement(classroomQuery);
             classroomStatement.setString(1, CurrentStudent.CurrentStudentUsername);
             ResultSet classroomResultSet = classroomStatement.executeQuery();
 
