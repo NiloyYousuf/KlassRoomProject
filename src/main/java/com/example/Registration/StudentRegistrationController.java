@@ -182,6 +182,6 @@ public class StudentRegistrationController {
         String password = "HacBGHFd3EabEE12eafeE4Fb3e-F2fCD";
 
 
-        return DriverManager.getConnection(url, username, password);
+        return DriverManager.getConnection(url, user, password);
     }
 }
