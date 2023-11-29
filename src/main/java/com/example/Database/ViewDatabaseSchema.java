@@ -20,7 +20,7 @@ public class ViewDatabaseSchema {
             DatabaseMetaData metaData = connection.getMetaData();
 
             // Retrieve a list of tables in the database
-            ResultSet tablesResultSet = metaData.getTables("project", null, null, new String[]{"TABLE"});
+            ResultSet tablesResultSet = metaData.getTables("railway", null, null, new String[]{"TABLE"});
 
             while (tablesResultSet.next()) {
                 String tableName = tablesResultSet.getString("TABLE_NAME");

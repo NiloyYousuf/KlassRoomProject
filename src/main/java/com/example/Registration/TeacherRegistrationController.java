@@ -171,9 +171,14 @@ public class TeacherRegistrationController {
 //        String password = "200041123";
 
 //this is for online database
-        String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
-        String username = "sql12666169";
-        String password = "dZmh6WCGlT";
+//        String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
+//        String username = "sql12666169";
+//        String password = "dZmh6WCGlT";
+
+        String url = "jdbc:mysql://viaduct.proxy.rlwy.net:38404/railway";
+        String username = "root";
+        String password = "HacBGHFd3EabEE12eafeE4Fb3e-F2fCD";
+
         return DriverManager.getConnection(url, username, password);
     }
 }

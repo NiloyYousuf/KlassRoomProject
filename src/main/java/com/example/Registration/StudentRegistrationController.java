@@ -172,9 +172,14 @@ public class StudentRegistrationController {
 
 
 
-         String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
-         String username = "sql12666169";
-         String password = "dZmh6WCGlT";
+//         String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
+//         String username = "sql12666169";
+//         String password = "dZmh6WCGlT";
+
+
+        String url = "jdbc:mysql://viaduct.proxy.rlwy.net:38404/railway";
+        String user = "root";
+        String password = "HacBGHFd3EabEE12eafeE4Fb3e-F2fCD";
 
 
         return DriverManager.getConnection(url, username, password);

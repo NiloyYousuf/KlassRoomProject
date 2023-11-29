@@ -57,7 +57,7 @@ public class StudentPostController implements Initializable {
         int postId = currentPost.currentPostId;
 
             // Check if attachment is available for the selected post
-            if (com.example.dao.AttachmentDAO.getAttachment(postId) != null && com.example.dao.AttachmentDAO.getOriginalFilename(postId) != null) {
+            if (com.example.DAO.AttachmentDAO.getAttachment(postId) != null && com.example.DAO.AttachmentDAO.getOriginalFilename(postId) != null) {
                 AttachmentLabel.setText("Attachment Available");
             } else {
                 AttachmentLabel.setText("No Attachment");

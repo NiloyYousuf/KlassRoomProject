@@ -1,5 +1,5 @@
 package com.example.teacher;
-import com.example.dao.AttachmentDAO;
+import com.example.DAO.AttachmentDAO;
 
 import com.example.klassroom.DatabaseConnection;
 import com.example.klassroom.GlobalFxmlString;

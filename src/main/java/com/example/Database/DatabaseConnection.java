@@ -14,9 +14,15 @@ public class DatabaseConnection {
 
 
 
-    private static final String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
-    private static final String user = "sql12666169";
-    private static final String password = "dZmh6WCGlT";
+//    private static final String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
+//    private static final String user = "sql12666169";
+//    private static final String password = "dZmh6WCGlT";
+
+
+
+    private static final String url = "jdbc:mysql://viaduct.proxy.rlwy.net:38404/railway";
+    private static final String user = "root";
+    private static final String password = "HacBGHFd3EabEE12eafeE4Fb3e-F2fCD";
  DatabaseConnection() throws SQLException {
      //connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
      connection = DriverManager.getConnection(url, user, password);
