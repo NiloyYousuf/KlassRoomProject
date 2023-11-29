@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.teacher.TeacherProfileController">
+    <Label text="Teacher Profile" />
+    <ImageView fx:id="teacherPhoto" fitHeight="150" fitWidth="150" />
+    <Label fx:id="teacherInfoLabel" />
+    <Button onAction="#uploadPhoto" text="Upload Photo" />
+</VBox>

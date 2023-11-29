@@ -1,0 +1,8 @@
+Employee ID,Username,Title,Present Days,Percentage of Days Present,Missed Deadlines,Percentage of Work Done After Deadline,Total Story Points Assigned,Total Story Points Completed,Velocity,Total Late (Minutes)
+1,a,Junior Developer,27,90.00,1,9.09,22.00,20.00,10.00,464
+21,tawsif_username,Senior Developer,23,76.67,0,0.00,50.00,50.00,1.67,148
+22,shadid_username,Junior Developer,30,100.00,0,0.00,15.00,15.00,1.07,127
+23,muna_username,Senior Developer,26,86.67,0,0.00,0.00,0.00,0.00,385
+25,sadia_username,Senior Developer,30,100.00,0,0.00,0.00,0.00,0.00,546
+26,tanvir_username,Senior Developer,30,100.00,0,0.00,75.00,85.00,1.25,550
+27,fahim_username,Junior Developer,27,90.00,0,0.00,110.00,120.00,1.40,298

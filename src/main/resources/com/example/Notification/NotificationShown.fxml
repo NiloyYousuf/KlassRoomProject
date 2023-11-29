@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="98.0" prefWidth="392.0" style="-fx-background-color: black; -fx-border-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Notification.NotificationController">
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10" />
+    </bottom>
+   <center>
+      <AnchorPane prefHeight="85.0" prefWidth="398.0" BorderPane.alignment="CENTER">
+         <children>
+              <Label fx:id="notificationLabel" layoutX="19.0" layoutY="17.0" prefHeight="50.0" prefWidth="343.0" textFill="WHITE" />
+            <Button layoutX="138.0" layoutY="71.0" onAction="#openFXML" style="-fx-background-color: black;" text="Go to Classroom" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button layoutX="366.0" layoutY="1.0" onAction="#closeNotification" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: black;" text="X" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
