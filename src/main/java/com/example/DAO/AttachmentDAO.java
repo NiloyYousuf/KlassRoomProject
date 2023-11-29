@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.DAO;
 
 import com.example.klassroom.DatabaseConnection;
 import javafx.stage.FileChooser;
