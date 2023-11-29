@@ -13,9 +13,9 @@ public class CreateTable {
 
     public static void main(String[] args) {
         // Database connection information
-        String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12655925";
-        String user = "sql12655925";
-        String password = "W45fwGDgsK";
+        String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
+        String user = "sql12666169";
+        String password = "dZmh6WCGlT";
 
         // Create the tables
         createAssignmentsTable(url, user, password);
@@ -27,6 +27,7 @@ public class CreateTable {
         createStudentAssignmentJunctionTable(url, user, password);
         createStudentsTable(url, user, password);
         createTeachersTable(url, user, password);
+        createNotificationsTable(url, user,  password);
     }
 
     public static void createTable(String url, String user, String password, String tableName, String tableDefinition) {
@@ -167,4 +168,15 @@ public class CreateTable {
                 "UNIQUE KEY `teacher_username` (`teacher_username`)";
         createTable(url, user, password, tableName, tableDefinition);
     }
+
+    public static void createNotificationsTable(String url, String user, String password) {
+        String tableName = "notifications";
+        String tableDefinition = "`notification_id` int NOT NULL AUTO_INCREMENT, " +
+                "`classroom_code` varchar(10) DEFAULT NULL, " +
+                "`student_username` varchar(50) DEFAULT NULL, " +
+                "`notification_text` text, " +
+                "PRIMARY KEY (`notification_id`)";
+        createTable(url, user, password, tableName, tableDefinition);
+    }
+
 }

@@ -8,13 +8,13 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class DatabaseConnection {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/project";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "200041123";
+//    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/project";
+//    private static final String USERNAME = "root";
+//    private static final String PASSWORD = "200041123";
 
-//    private static final String JDBC_URL = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12655925";
-//    private static final String USERNAME = "sql12655925";
-//    private static final String PASSWORD = "W45fwGDgsK";
+    private static final String JDBC_URL = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
+    private static final String USERNAME  = "sql12666169";
+    private static final String PASSWORD  = "dZmh6WCGlT";
 
 
 
