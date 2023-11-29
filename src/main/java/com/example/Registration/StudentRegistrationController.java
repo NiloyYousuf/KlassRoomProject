@@ -170,7 +170,7 @@ public class StudentRegistrationController {
 //        String username = "root";
 //        String password = "200041123";
 
-
+   String commit;
 
 //         String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
 //         String username = "sql12666169";
