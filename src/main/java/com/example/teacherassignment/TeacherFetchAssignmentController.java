@@ -41,13 +41,13 @@ public class TeacherFetchAssignmentController implements Initializable {
     private List<Assignment> fetchAssignmentsForTeacher(String teacherUsername) throws SQLException {
         List<Assignment> assignments = new ArrayList<>();
 
-        // Establish a database connection (assuming you have a DatabaseConnection class)
-        Connection connection = DatabaseConnection.getConnection();
 
         // SQL query to retrieve assignments for a teacher
         String sqlQuery = "SELECT * FROM assignments WHERE Teacher_Username = ? AND Classroom_code = ? ";
 
         try {
+            Connection connection = DatabaseConnection.getConnection();
+            DatabaseConnection.establishConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
             preparedStatement.setString(1, CurrentTeacher.current_teacher_username);
             preparedStatement.setString(2, CurrentClassroom.classroomCode);
@@ -68,8 +68,7 @@ public class TeacherFetchAssignmentController implements Initializable {
                 assignments.add(assignment);
             }
 
-            // Close the database connection
-            connection.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

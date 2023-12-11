@@ -8,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -103,22 +100,7 @@ public class TeacherPostController implements Initializable {
 
         public void Go_back()
     {
-        try {
-            // Load the new FXML file
-            GlobalFxmlString.FXML_to_load="src/main/resources/com/example/klassroom/classroomTeacher.fxml";
-            FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/TeacherFinalDashboard.fxml").toURL());
-            Parent root = loader.load();
-
-            // Get the current stage (assuming you have a reference to the current stage)
-            Stage stage = (Stage) Download.getScene().getWindow();
-
-            // Set the new FXML content on the current stage
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+      loadAnotherFXML();
 
     }
 
@@ -126,11 +108,25 @@ public class TeacherPostController implements Initializable {
     private void handleDeleteButton() {
         int postId = TeacherPostTileController.current_post.getPostId();
 
-        // TODO: Add code to delete the post from the posts table
-        deletePost(postId);
 
-        // Load another FXML file after successful deletion
-        loadAnotherFXML();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Delete Post");
+        alert.setContentText("Are you sure you want to delete this post?");
+
+        // Customize the buttons in the alert
+        alert.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO);
+
+        // Show the confirmation alert and wait for user response
+        ButtonType result = alert.showAndWait().orElse(ButtonType.NO);
+        if (result == ButtonType.YES) {
+            // TODO: Add code to delete the post from the posts table
+            deletePost(postId);
+
+            // Load another FXML file after successful deletion
+            loadAnotherFXML();
+        }
+
     }
 
     private void deletePost(int postId) {
@@ -163,15 +159,16 @@ public class TeacherPostController implements Initializable {
             // Load the new FXML file
             GlobalFxmlString.FXML_to_load = "src/main/resources/com/example/klassroom/classroomTeacher.fxml";
             FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/TeacherFinalDashboard.fxml").toURL());
-            Parent root = loader.load();
-
             // Get the current stage (assuming you have a reference to the current stage)
-            Stage stage = (Stage) deleteButton.getScene().getWindow();
 
-            // Set the new FXML content on the current stage
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            Parent post = loader.load();
+            // Get the current scene and set the student login content
+            Scene currentScene =Download.getScene();
+            currentScene.setRoot(post);
+
+
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -208,7 +205,7 @@ public class TeacherPostController implements Initializable {
                 System.out.println(); // Add a separator between comments
             }
 
-            connection.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

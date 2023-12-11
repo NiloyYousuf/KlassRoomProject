@@ -4,10 +4,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.teacher.TeacherProfileController">
-    <Label text="Teacher Profile" />
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="807.0" spacing="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacher.TeacherProfileController">
+   <Label prefHeight="76.0" prefWidth="298.0" text="Teacher's Profile" textFill="#460653">
+      <font>
+         <Font name="Gloucester MT Extra Condensed" size="60.0" />
+      </font>
+   </Label>
     <ImageView fx:id="teacherPhoto" fitHeight="150" fitWidth="150" />
-    <Label fx:id="teacherInfoLabel" />
-    <Button onAction="#uploadPhoto" text="Upload Photo" />
+    <Label fx:id="teacherInfoLabel" alignment="TOP_LEFT" prefHeight="73.0" prefWidth="196.0" text="Teacher's Info">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+    <Button onAction="#uploadPhoto" styleClass="button-gradient" stylesheets="@../styles.css" text="Upload Photo" />
 </VBox>

@@ -110,8 +110,6 @@ public class CreateAssignmentController {
             preparedStatement.setString(8, CurrentClassroom.classroomCode);
 
             int rowsAffected = preparedStatement.executeUpdate();
-            preparedStatement.close();
-            connection.close();
 
             if (rowsAffected > 0) {
                 // Assignment posted successfully, display a success message or perform any other actions
@@ -149,17 +147,14 @@ public class CreateAssignmentController {
     }
 
     public void back_button_clicked() throws IOException {
-        GlobalFxmlString.FXML_to_load="src/main/resources/com/example/klassroom/classroomTeacher.fxml";
+        GlobalFxmlString.FXML_to_load = "src/main/resources/com/example/klassroom/classroomTeacher.fxml";
         FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/TeacherFinalDashboard.fxml").toURL());
-        Parent root = loader.load();
-
         // Get the current stage (assuming you have a reference to the current stage)
-        Stage stage = (Stage) assignDate.getScene().getWindow();
 
-        // Set the new FXML content on the current stage
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        Parent post = loader.load();
+        // Get the current scene and set the student login content
+        Scene currentScene =assignDate.getScene();
+        currentScene.setRoot(post);
     }
 
 //    public void viewexistingassignemnt() throws IOException {

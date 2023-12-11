@@ -11,28 +11,31 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="807.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacher.CreateAssignmentController">
-   <AnchorPane prefHeight="522.0" prefWidth="790.0">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="807.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacher.CreateAssignmentController">
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="807.0">
       <children>
-         <ImageView fitHeight="560.0" fitWidth="958.0" layoutX="44.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="622.0" fitWidth="852.0" layoutX="-31.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@Screenshot%202023-11-02%20144346.png" />
+               <Image url="@../klassroom/Screenshot%202023-12-10%20163359.png" />
             </image>
          </ImageView>
-         <Label layoutX="386.0" layoutY="28.0" text="Create Assignment" textFill="WHITE">
+         <Label layoutX="293.0" layoutY="21.0" text="Create Assignment" textFill="WHITE">
             <font>
                <Font name="System Bold" size="26.0" />
             </font></Label>
-         <DatePicker fx:id="assignDate" layoutX="428.0" layoutY="78.0" promptText="Assign Date" />
-         <DatePicker fx:id="deadline" layoutX="642.0" layoutY="78.0" promptText="Deadline" />
-         <TextField fx:id="marks" layoutX="214.0" layoutY="78.0" promptText="Marks" />
-         <TextArea fx:id="assignmentText" layoutX="212.0" layoutY="118.0" prefHeight="95.0" prefWidth="519.0" promptText="Assignment Text" />
-         <Label fx:id="selectedFileLabel" layoutX="450.0" layoutY="337.0" prefHeight="18.0" prefWidth="0.0" />
-         <Button layoutX="738.0" layoutY="166.0" onAction="#chooseFile" prefHeight="41.0" prefWidth="143.0" styleClass="button-gradient" stylesheets="@../styles.css" text="Add Attachment" />
-         <Button layoutX="738.0" layoutY="118.0" onAction="#postAssignment" styleClass="button-gradient" stylesheets="@../styles.css" text="Post Assignment" />
-         <Button layoutX="111.0" layoutY="30.0" mnemonicParsing="false" onAction="#back_button_clicked" styleClass="back-button" stylesheets="@../styles.css" text="Back" />
+         <DatePicker fx:id="assignDate" layoutX="335.0" layoutY="71.0" promptText="Assign Date" />
+         <DatePicker fx:id="deadline" layoutX="549.0" layoutY="71.0" promptText="Deadline" />
+         <TextField fx:id="marks" layoutX="121.0" layoutY="71.0" promptText="Marks" />
+         <TextArea fx:id="assignmentText" layoutX="119.0" layoutY="111.0" prefHeight="95.0" prefWidth="519.0" promptText="Assignment Text" />
+         <Button layoutX="645.0" layoutY="159.0" onAction="#chooseFile" prefHeight="41.0" prefWidth="143.0" styleClass="button-gradient" stylesheets="@../styles.css" text="Add Attachment" />
+         <Button layoutX="645.0" layoutY="111.0" onAction="#postAssignment" styleClass="button-gradient" stylesheets="@../styles.css" text="Post Assignment" />
+         <Button layoutX="18.0" layoutY="23.0" mnemonicParsing="false" onAction="#back_button_clicked" styleClass="back-button" stylesheets="@../styles.css" text="Back" />
          <!-- AssignmentForm.fxml -->
-         <VBox fx:id="dynamicContentVBox" layoutX="212.0" layoutY="267.0" prefHeight="266.0" prefWidth="664.0" />
+         <VBox fx:id="dynamicContentVBox" layoutX="115.0" layoutY="236.0" prefHeight="278.0" prefWidth="641.0" />
+         <Label fx:id="selectedFileLabel" layoutX="117.0" layoutY="209.0" prefHeight="26.0" prefWidth="519.0" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Label>
 
       </children>
    </AnchorPane>

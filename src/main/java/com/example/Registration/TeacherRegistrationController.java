@@ -1,5 +1,6 @@
 package com.example.Registration;
 
+import com.example.klassroom.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -109,14 +110,14 @@ public class TeacherRegistrationController {
 
     private boolean emailExists(String email) {
         try {
-            Connection connection = getConnection();
+            Connection connection =DatabaseConnection.getConnection();
             String query = "SELECT COUNT(*) FROM teachers WHERE teacher_email = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             int count = resultSet.getInt(1);
-            connection.close();
+
             return count > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -125,14 +126,15 @@ public class TeacherRegistrationController {
     }
     private boolean usernameExists(String username) {
         try {
-            Connection connection = getConnection();
+            Connection connection = DatabaseConnection.getConnection();
+            DatabaseConnection.establishConnection();
             String query = "SELECT COUNT(*) FROM teachers WHERE teacher_username = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             int count = resultSet.getInt(1);
-            connection.close();
+
             return count > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -150,14 +152,15 @@ public class TeacherRegistrationController {
 
     private boolean insertDataToDatabase(String username, String email, String password) {
         try {
-            Connection connection = getConnection();
+            Connection connection = DatabaseConnection.getConnection();
+            DatabaseConnection.establishConnection();
             String insertQuery = "INSERT INTO teachers (teacher_username, teacher_email, teacher_password) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, email);
             preparedStatement.setString(3, password);
             int rowsAffected = preparedStatement.executeUpdate();
-            connection.close();
+
             return rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -165,20 +168,5 @@ public class TeacherRegistrationController {
         }
     }
 
-    private Connection getConnection() throws SQLException {
-//        String url = "jdbc:mysql://localhost:3306/Project";
-//        String username = "root";
-//        String password = "200041123";
 
-//this is for online database
-//        String url = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
-//        String username = "sql12666169";
-//        String password = "dZmh6WCGlT";
-
-        String url = "jdbc:mysql://viaduct.proxy.rlwy.net:38404/railway";
-        String username = "root";
-        String password = "HacBGHFd3EabEE12eafeE4Fb3e-F2fCD";
-
-        return DriverManager.getConnection(url, username, password);
-    }
 }

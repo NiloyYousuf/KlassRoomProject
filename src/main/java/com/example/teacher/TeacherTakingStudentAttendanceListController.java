@@ -10,7 +10,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 
 import java.io.File;
@@ -104,7 +106,21 @@ public class TeacherTakingStudentAttendanceListController implements Initializab
             updateAttendanceInDatabase(studentUsername, date, classroomCode, isPresent);
         }
 
-        // Optionally, you can show a confirmation message or perform other actions
+        // Show a confirmation message
+        showConfirmationMessage("Attendance updated successfully.");
+    }
+
+    private void showConfirmationMessage(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+
+        // Customize the button in the alert
+        alert.getButtonTypes().setAll(ButtonType.OK);
+
+        // Show the confirmation alert and wait for user response
+        alert.showAndWait();
     }
 
     private void updateAttendanceInDatabase(String studentUsername, LocalDate date, String classroomCode, boolean isPresent) {
@@ -155,37 +171,25 @@ public class TeacherTakingStudentAttendanceListController implements Initializab
         }
     }
 
-    public void Go_Back()
-    {
-        try {
-            // Load the new FXML file
-            GlobalFxmlString.FXML_to_load="src/main/resources/com/example/klassroom/classroomTeacher.fxml";
-            FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/TeacherFinalDashboard.fxml").toURL());
-            Parent root = loader.load();
+    public void Go_Back() throws IOException {
 
-            // Get the current stage (assuming you have a reference to the current stage)
-            Stage stage = (Stage)studentListView.getScene().getWindow();
-            // Set the new FXML content on the current stage
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        GlobalFxmlString.FXML_to_load = "src/main/resources/com/example/klassroom/classroomTeacher.fxml";
+        FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/TeacherFinalDashboard.fxml").toURL());
+        // Get the current stage (assuming you have a reference to the current stage)
+
+        Parent post = loader.load();
+        // Get the current scene and set the student login content
+        Scene currentScene =generate_report.getScene();
+        currentScene.setRoot(post);
     }
 
     public void generate_report_button_clicked() {
         String classroomCode = CurrentClassroom.classroomCode;
-
-        // Get the current year and month
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH) + 1; // Month is zero-based, so add 1
-
         // Create the chart for the current year and month
-        StudentsMonthlyAttendanceChart chart = new StudentsMonthlyAttendanceChart(classroomCode, year, month);
+        StudentsMonthlyAttendanceChart chart = new StudentsMonthlyAttendanceChart(classroomCode);
         chart.generateMonthlyAttendanceChart();
     }
+
 
 
 }

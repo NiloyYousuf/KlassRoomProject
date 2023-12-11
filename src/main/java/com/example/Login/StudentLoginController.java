@@ -98,9 +98,6 @@ public class StudentLoginController {
                 errorMessageText.setText("Database error");
             } catch (IOException e) {
                 throw new RuntimeException(e);
-            } finally {
-                // Close the database connection when done
-               // DatabaseConnection.closeConnection();
             }
         } else {
             errorMessageText.setText("Failed to obtain a database connection.");

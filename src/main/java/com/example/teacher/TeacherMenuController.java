@@ -37,6 +37,7 @@ public class TeacherMenuController {
         if (connection != null) {
             try {
                 String sql = "SELECT classroom_code, subject_name, classroom_id FROM classrooms WHERE teacher_username = ?";
+                DatabaseConnection.establishConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, teacher_username);
                 ResultSet resultSet = preparedStatement.executeQuery();

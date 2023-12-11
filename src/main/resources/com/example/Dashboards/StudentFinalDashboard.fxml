@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="807.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.StudentFinalDashboardController">
     <children>
-        <AnchorPane prefHeight="79.0" prefWidth="835.0" style="-fx-background-color: #3A4C40;">
+        <AnchorPane prefHeight="79.0" prefWidth="835.0" style="-fx-background-color: #561664;">
             <children>
                 <Label fx:id="drawerImage" layoutX="7.0" layoutY="7.0" prefHeight="46.0" prefWidth="52.0">
                     <graphic>

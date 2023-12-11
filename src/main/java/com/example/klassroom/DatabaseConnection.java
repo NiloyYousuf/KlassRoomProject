@@ -8,25 +8,32 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class DatabaseConnection {
-//    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/project";
-//    private static final String USERNAME = "root";
-//    private static final String PASSWORD = "200041123";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/project";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "200041123";
 
 //    private static final String JDBC_URL = "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12666169";
 //    private static final String USERNAME  = "sql12666169";
 //    private static final String PASSWORD  = "dZmh6WCGlT";
 
-    String lol ;
-    private static final String JDBC_URL = "jdbc:mysql://viaduct.proxy.rlwy.net:38404/railway";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "HacBGHFd3EabEE12eafeE4Fb3e-F2fCD";
+//    private static final String JDBC_URL = "jdbc:mysql://viaduct.proxy.rlwy.net:38404/railway";
+//    private static final String USERNAME = "root";
+//    private static final String PASSWORD = "HacBGHFd3EabEE12eafeE4Fb3e-F2fCD";
 
 
 
 
 
     // Database connection instance
-    private static Connection connection = null;
+    private static Connection   connection;
+
+    static {
+        try {
+            connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private static final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
 
@@ -44,10 +51,11 @@ public class DatabaseConnection {
     }
 
     public static void establishConnection() {
+
         try {
-            connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-        } catch (SQLException e) {
-            e.printStackTrace();
+                connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+            } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 

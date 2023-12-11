@@ -51,6 +51,7 @@
 
 
 
+
 /* styles.css */
 .back-button {
     -fx-background-color: black;
@@ -65,6 +66,19 @@
     -fx-background-color: #333; /* Darker color on hover */
 }
 
+
+.backred-button {
+    -fx-background-color: #FF4444;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+.backred-button:hover {
+    -fx-background-color: red; /* Darker color on hover */
+}
 
 
 

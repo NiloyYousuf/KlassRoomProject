@@ -55,7 +55,7 @@ public class NotificationChecker {
 
             resultSet.close();
             preparedStatement.close();
-            connection.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

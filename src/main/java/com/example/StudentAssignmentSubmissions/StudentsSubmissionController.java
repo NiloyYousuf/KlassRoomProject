@@ -3,14 +3,18 @@ package com.example.StudentAssignmentSubmissions;
 import com.example.Current_Variables.CurrentClassroom;
 import com.example.klassroom.DatabaseConnection;
 import com.example.Current_Variables.current_Assignment;
+import com.example.klassroom.GlobalFxmlString;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -146,8 +150,6 @@ public class StudentsSubmissionController implements Initializable {
                 csvDataList.add(csvData);
             }
 
-            // Close the database connection
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -156,6 +158,18 @@ public class StudentsSubmissionController implements Initializable {
     }
 
 
+    @FXML
+    void back_pressed() throws IOException {
+        GlobalFxmlString.FXML_to_load = "src/main/resources/com/example/Assignment/AssignmentPostForm.fxml";
+        FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/TeacherFinalDashboard.fxml").toURL());
+        // Get the current stage (assuming you have a reference to the current stage)
+
+        Parent post = loader.load();
+        // Get the current scene and set the student login content
+        Scene currentScene =tilePane.getScene();
+        currentScene.setRoot(post);
+
+    }
 
     // Add a helper class for storing CSV data
     private static class CSVData {

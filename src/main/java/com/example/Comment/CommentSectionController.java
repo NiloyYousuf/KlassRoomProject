@@ -146,7 +146,7 @@ public class CommentSectionController {
             preparedStatement.setString(6, teacherUsername);
 
             preparedStatement.executeUpdate();
-            connection.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -187,7 +187,7 @@ public class CommentSectionController {
                 addComment(commentText, commentDate, commentTime,userName , userPhotoBlob);
             }
 
-            connection.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -61,7 +61,7 @@ public class PostNotificationTrigger {
             System.out.println("Trigger created successfully.");
 
             statement.close();
-            connection.close();
+
         } catch (SQLException e) {
             System.err.println("Error creating trigger:");
             e.printStackTrace();

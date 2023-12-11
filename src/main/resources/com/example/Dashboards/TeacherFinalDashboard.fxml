@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="807.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacher.TeacherFinalDashboardController">
     <children>
-        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="835.0" style="-fx-background-color: #3C0008;">
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="66.0" prefWidth="835.0" style="-fx-background-color: #460653;">
             <children>
                 <Label fx:id="drawerImage" layoutX="7.0" prefHeight="67.0" prefWidth="82.0">
                     <graphic>
@@ -39,21 +39,11 @@
             </children>
         </AnchorPane>
         <AnchorPane fx:id="opacityPane" layoutX="-103.0" layoutY="-75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="814.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-        <AnchorPane fx:id="drawerPane" layoutX="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="228.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0">
+        <AnchorPane fx:id="drawerPane" layoutX="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="228.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0">
             <children>
                 <VBox layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="221.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="10.0">
                     <children>
                         <Button alignment="BASELINE_LEFT" onAction="#load_classrooms_page" prefHeight="37.0" prefWidth="225.0" text="View Classrooms">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="58.0" prefHeight="38.0" prefWidth="225.0" text="Attendance Viewer">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="106.0" prefHeight="38.0" prefWidth="224.0" text="Submitted Tasks">
                             <font>
                                 <Font size="16.0" />
                             </font>

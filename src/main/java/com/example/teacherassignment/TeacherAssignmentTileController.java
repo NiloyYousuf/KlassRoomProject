@@ -11,7 +11,7 @@ import javafx.scene.text.Text;
 import java.io.File;
 import java.io.IOException;
 
-public class TeacherAssignmentTileController {
+public class  TeacherAssignmentTileController {
     @FXML
     private Text assignmentText;
 

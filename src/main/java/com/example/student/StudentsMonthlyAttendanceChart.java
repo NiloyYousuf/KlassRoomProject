@@ -1,5 +1,6 @@
 package com.example.student;
 
+import com.example.Current_Variables.CurrentClassroom;
 import com.example.klassroom.DatabaseConnection;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -16,13 +17,10 @@ import java.util.Map;
 public class StudentsMonthlyAttendanceChart extends JPanel {
 
     private String classroomCode;
-    private int year;
-    private int month;
+    private JFrame frame;
 
-    public StudentsMonthlyAttendanceChart(String classroomCode, int year, int month) {
+    public StudentsMonthlyAttendanceChart(String classroomCode) {
         this.classroomCode = classroomCode;
-        this.year = year;
-        this.month = month;
 
         DefaultCategoryDataset dataset = createDataset();
         JFreeChart chart = createChart(dataset);
@@ -30,12 +28,19 @@ public class StudentsMonthlyAttendanceChart extends JPanel {
         chartPanel.setPreferredSize(new Dimension(800, 600));
         add(chartPanel);
 
-        JFrame frame = new JFrame("Monthly Classroom Attendance Chart");
+        // Remove the following lines from the constructor:
+        // JFrame frame = new JFrame("Monthly Classroom Attendance Chart");
+        // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // frame.getContentPane().add(this);
+        // frame.pack();
+        // frame.setVisible(true);
+
+        // Initialize the frame once in the constructor
+        frame = new JFrame("Monthly Classroom Attendance Chart");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().add(this);
-        frame.pack();
-        frame.setVisible(true);
     }
+
 
     private DefaultCategoryDataset createDataset() {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
@@ -49,7 +54,7 @@ public class StudentsMonthlyAttendanceChart extends JPanel {
 
     private JFreeChart createChart(DefaultCategoryDataset dataset) {
         return ChartFactory.createBarChart(
-                "Monthly Classroom Attendance",
+                " Classroom Attendance",
                 "Student",
                 "Attendance",
                 dataset,
@@ -61,9 +66,14 @@ public class StudentsMonthlyAttendanceChart extends JPanel {
     }
 
     public void generateMonthlyAttendanceChart() {
-        JFrame frame = new JFrame("Monthly Classroom Attendance Chart");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.getContentPane().add(this);
+        // Remove the following lines from the generateMonthlyAttendanceChart method:
+        // JFrame frame = new JFrame("Monthly Classroom Attendance Chart");
+        // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // frame.getContentPane().add(this);
+        // frame.pack();
+        // frame.setVisible(true);
+
+        // Use the existing frame for showing the chart
         frame.pack();
         frame.setVisible(true);
     }
@@ -71,18 +81,15 @@ public class StudentsMonthlyAttendanceChart extends JPanel {
     private Map<String, Integer> fetchMonthlyAttendanceData() {
         Map<String, Integer> attendanceData = new HashMap<>();
 
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {
+            Connection connection = DatabaseConnection.getConnection();
             String sql = "SELECT student_username, SUM(is_present) AS attendance_count " +
                     "FROM attendance " +
-                    "WHERE YEAR(date) = ? AND MONTH(date) = ? " +
-                    "AND classroom_code = ? " +
+                    "WHERE classroom_code = ? " +
                     "GROUP BY student_username";
+            DatabaseConnection.establishConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
-            preparedStatement.setInt(1, year);
-            preparedStatement.setInt(2, month);
-            preparedStatement.setString(3, classroomCode);
-
+            preparedStatement.setString(1, CurrentClassroom.classroomCode);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 String studentUsername = resultSet.getString("student_username");

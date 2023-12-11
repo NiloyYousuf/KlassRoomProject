@@ -48,15 +48,16 @@ public class AssignmentNotificationChecker {
                 int notificationId = resultSet.getInt("notification_id");
                 String classroom_code = resultSet.getString("classroom_code");
                 CurrentClassroom.fetchClassroomDetails(classroom_code);
-                deleteNotification(notificationId, connection);
+                deleteNotification(notificationId);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private void deleteNotification(int notificationId, Connection connection) throws SQLException {
+    private void deleteNotification(int notificationId) throws SQLException {
         // Delete the notification from the database
+        Connection connection=DatabaseConnection.getConnection();
         DatabaseConnection.establishConnection();
         String deleteQuery = "DELETE FROM assignment_notification WHERE notification_id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery);

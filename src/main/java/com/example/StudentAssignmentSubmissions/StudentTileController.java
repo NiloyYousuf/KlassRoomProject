@@ -38,7 +38,7 @@ public class StudentTileController {
     public void initialize(String studentUsername, String submissionDate, byte[] photoBytes) {
         // Populate the elements with student-specific data
         usernameLabel.setText( studentUsername);
-        submissionDateLabel.setText("Submission Date: " + submissionDate);
+        submissionDateLabel.setText( submissionDate);
 
         // Load the image from the byte array
         if (photoBytes != null) {
@@ -131,16 +131,6 @@ public class StudentTileController {
         } catch (SQLException e) {
             e.printStackTrace();
             // Handle any database-related errors
-        } finally {
-            // Close the database connection (replace with your database connection management)
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                    // Handle database connection closing errors
-                }
-            }
         }
 
         return originalFilename;
@@ -174,16 +164,6 @@ public class StudentTileController {
         } catch (SQLException e) {
             e.printStackTrace();
             // Handle any database-related errors
-        } finally {
-            // Close the database connection (replace with your database connection management)
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                    // Handle database connection closing errors
-                }
-            }
         }
 
         return attachmentBytes;
@@ -222,6 +202,7 @@ public class StudentTileController {
 
             // Prepare a SQL query to fetch the photo bytes based on the parameters
             String sqlQuery = "SELECT photo FROM students WHERE student_username = ?";
+            DatabaseConnection.establishConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
             preparedStatement.setString(1, studentUsername);
@@ -238,16 +219,6 @@ public class StudentTileController {
         } catch (SQLException e) {
             e.printStackTrace();
             // Handle any database-related errors
-        } finally {
-            // Close the database connection (replace with your database connection management)
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                    // Handle database connection closing errors
-                }
-            }
         }
 
         return photoBytes;
@@ -263,7 +234,7 @@ public class StudentTileController {
             String sqlQuery = "UPDATE student_assignment_junction " +
                     "SET Marks_Obtained = ?, Submission_Status = 'Marked' " +
                     "WHERE Student_Username = ? AND Assignment_ID = ?";
-
+            DatabaseConnection.establishConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
             preparedStatement.setInt(1, Integer.parseInt(marks));
             preparedStatement.setString(2, studentUsername);
@@ -284,16 +255,6 @@ public class StudentTileController {
         } catch (SQLException e) {
             e.printStackTrace();
             // Handle any database-related errors
-        } finally {
-            // Close the database connection (replace with your database connection management)
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                    // Handle database connection closing errors
-                }
-            }
         }
     }
 
@@ -310,7 +271,7 @@ public class StudentTileController {
             // Prepare a SQL query to fetch the marks based on the parameters
             String sqlQuery = "SELECT Marks_Obtained FROM student_assignment_junction " +
                     "WHERE Student_Username = ? AND Assignment_ID = ?";
-
+            DatabaseConnection.establishConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
             preparedStatement.setString(1, studentUsername);
             preparedStatement.setInt(2, current_Assignment.current_assignment_ID);
@@ -327,18 +288,7 @@ public class StudentTileController {
         } catch (SQLException e) {
             e.printStackTrace();
             // Handle any database-related errors
-        } finally {
-            // Close the database connection (replace with your database connection management)
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                    // Handle database connection closing errors
-                }
-            }
         }
-
         return marks;
     }
 

@@ -59,7 +59,7 @@ public class FileDownloadController {
                 }
 
                 preparedStatement.close();
-                connection.close();
+
             } catch (SQLException | IOException e) {
                 e.printStackTrace();
                 showAlert("Error", "An error occurred while downloading the file.");

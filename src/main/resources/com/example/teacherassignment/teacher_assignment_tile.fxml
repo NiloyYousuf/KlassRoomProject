@@ -3,27 +3,63 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox prefHeight="124.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacherassignment.TeacherAssignmentTileController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="168.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacherassignment.TeacherAssignmentTileController">
     <children>
-      <ImageView fitHeight="120.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../klassroom/images/ImageAssignmentsIcon.png" />
-         </image>
-      </ImageView>
-        <VBox prefHeight="124.0" prefWidth="394.0">
-            <children>
-                <Text fx:id="assignmentText" text="Assignment Text:" wrappingWidth="386.1816711425781" />
-                <Text fx:id="assignDate" text="Assign Date:" wrappingWidth="394.2374572753906" />
-                <Text fx:id="deadline" text="Deadline:" wrappingWidth="391.74179458618164" />
-                <Text fx:id="marks" text="Marks:" wrappingWidth="383.51095962524414" />
-                <Text fx:id="classroomCode" text="Classroom Code:" wrappingWidth="392.8866882324219" />
-            <Text fx:id="Assignment_ID" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment ID:" />
-            </children>
-        </VBox>
-      <Button mnemonicParsing="false" onAction="#view_submissions_buttonclicked" prefHeight="33.0" prefWidth="118.0" styleClass="button-gradient" stylesheets="@../styles.css" text="Submissions" />
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="634.0">
+         <children>
+            <Text fx:id="Assignment_ID" fill="#fcf8f8" layoutX="19.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment ID:" />
+                <Text fx:id="classroomCode" fill="#ececec" layoutX="23.0" layoutY="90.0" text="Classroom Code:" wrappingWidth="97.6866455078125" />
+            <ImageView fitHeight="192.0" fitWidth="631.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../klassroom/images/Purplebg.png" />
+               </image>
+            </ImageView>
+                <Text fx:id="assignmentText" fill="WHITE" layoutX="112.0" layoutY="106.0" text="Assignment Text:" wrappingWidth="371.7816467285156">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Text>
+            <ImageView fitHeight="96.0" fitWidth="109.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../klassroom/images/AssignementIcon.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="490.0" layoutY="37.0" mnemonicParsing="false" onAction="#view_submissions_buttonclicked" prefHeight="33.0" prefWidth="118.0" styleClass="button-gradient" stylesheets="@../styles.css" text="Submissions" />
+                <Text fx:id="assignDate" fill="WHITE" layoutX="186.0" layoutY="41.0" text="Assign Date:" wrappingWidth="158.23751831054688">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+                <Text fx:id="deadline" fill="WHITE" layoutX="379.0" layoutY="41.0" text="Deadline:" wrappingWidth="117.99999999999994">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+                <Text fx:id="marks" fill="WHITE" layoutX="156.0" layoutY="71.0" text="Marks:" wrappingWidth="173.9109230041504">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="assignDate1" fill="WHITE" layoutX="112.0" layoutY="41.0" text="Assign Date:" wrappingWidth="88.63743591308594">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="deadline1" fill="WHITE" layoutX="316.0" layoutY="41.0" text="Deadline:" wrappingWidth="126.14189529418945">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="marks1" fill="WHITE" layoutX="112.0" layoutY="70.0" text="Marks:" wrappingWidth="45.11101150512695">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
     </children>
 </HBox>

@@ -3,12 +3,22 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="206.0" prefWidth="225.0" spacing="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacher.ClassroomMakerController">
-    <Label text="Create Classroom" />
-    <TextField fx:id="classroomCode" promptText="Classroom Code" />
-    <TextField fx:id="classroomPassword" promptText="Classroom Password" />
-   <TextField fx:id="classroomname" promptText="Classroom Name" />
-    <Button onAction="#createClassroom" text="Create Classroom" />
-</VBox>
+<AnchorPane prefHeight="478.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacher.ClassroomMakerController">
+   <children>
+      <VBox layoutX="195.0" layoutY="199.0" prefHeight="112.0" prefWidth="402.0" spacing="10">
+          <TextField fx:id="classroomCode" promptText="Classroom Code" />
+          <TextField fx:id="classroomPassword" promptText="Classroom Password" />
+         <TextField fx:id="classroomname" promptText="Classroom Name" />
+      </VBox>
+       <Button layoutX="322.0" layoutY="328.0" onAction="#createClassroom" styleClass="button-gradient" stylesheets="@../styles.css" text="Create Classroom" />
+      <Label layoutX="240.0" layoutY="101.0" prefHeight="76.0" prefWidth="396.0" text="Create Classroom" textFill="#460653">
+         <font>
+            <Font name="Gloucester MT Extra Condensed" size="60.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

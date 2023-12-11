@@ -24,7 +24,7 @@ public class KlassroomMain2 extends Application {
                 event.consume(); // Consumes the event to prevent the default close action
 
                 Platform.runLater(() -> {
-                    // Open a new JavaFX window or perform other operations
+                    // Open a new JavaFX window or perform other operations-
                     // Example: Opening another FXML file
                     try {
                         primaryStage.close(); // Close the current window

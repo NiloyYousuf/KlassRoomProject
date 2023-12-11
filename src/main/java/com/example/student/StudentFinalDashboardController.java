@@ -74,23 +74,23 @@ public class StudentFinalDashboardController implements Initializable {
 
         opacityPane.setVisible(false);
 
-        FadeTransition fadeTransition=new FadeTransition(Duration.seconds(0.5),opacityPane);
+        FadeTransition fadeTransition=new FadeTransition(Duration.seconds(0.1),opacityPane);
         fadeTransition.setFromValue(1);
         fadeTransition.setToValue(0);
         fadeTransition.play();
 
-        TranslateTransition translateTransition=new TranslateTransition(Duration.seconds(0.5),drawerPane);
+        TranslateTransition translateTransition=new TranslateTransition(Duration.seconds(0.1),drawerPane);
         translateTransition.setByX(-600);
         translateTransition.play();
 
         drawerImage.setOnMouseClicked(event -> {
             opacityPane.setVisible(true);
-            FadeTransition fadeTransition1=new FadeTransition(Duration.seconds(0.5),opacityPane);
+            FadeTransition fadeTransition1=new FadeTransition(Duration.seconds(0.1),opacityPane);
             fadeTransition1.setFromValue(0);
             fadeTransition1.setToValue(0.15);
             fadeTransition1.play();
 
-            TranslateTransition translateTransition1=new TranslateTransition(Duration.seconds(0.5),drawerPane);
+            TranslateTransition translateTransition1=new TranslateTransition(Duration.seconds(0.1),drawerPane);
             translateTransition1.setByX(+600);
             translateTransition1.play();
         });
@@ -99,7 +99,7 @@ public class StudentFinalDashboardController implements Initializable {
 
 
 
-            FadeTransition fadeTransition1=new FadeTransition(Duration.seconds(0.5),opacityPane);
+            FadeTransition fadeTransition1=new FadeTransition(Duration.seconds(0.1),opacityPane);
             fadeTransition1.setFromValue(0.15);
             fadeTransition1.setToValue(0);
             fadeTransition1.play();
@@ -109,7 +109,7 @@ public class StudentFinalDashboardController implements Initializable {
             });
 
 
-            TranslateTransition translateTransition1=new TranslateTransition(Duration.seconds(0.5),drawerPane);
+            TranslateTransition translateTransition1=new TranslateTransition(Duration.seconds(0.1),drawerPane);
             translateTransition1.setByX(-600);
             translateTransition1.play();
         });

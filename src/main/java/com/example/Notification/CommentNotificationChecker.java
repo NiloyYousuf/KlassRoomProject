@@ -59,15 +59,16 @@ public class CommentNotificationChecker {
 
                 // Once the comment notification is shown, delete it from the database
                 int notificationId = resultSet.getInt("notification_id");
-                deleteCommentNotification(notificationId, connection);
+                deleteCommentNotification(notificationId);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private void deleteCommentNotification(int notificationId, Connection connection) throws SQLException {
+    private void deleteCommentNotification(int notificationId) throws SQLException {
         // Delete the comment notification from the database
+        Connection connection=DatabaseConnection.getConnection();
         DatabaseConnection.establishConnection();
         String deleteQuery = "DELETE FROM comment_notification WHERE notification_id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery);

@@ -2,18 +2,25 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.TilePane?>
 
-<AnchorPane id="AnchorPane" prefHeight="456.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.StudentAssignmentSubmissions.StudentsSubmissionController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.StudentAssignmentSubmissions.StudentsSubmissionController">
     <children>
-        <ScrollPane layoutX="26.0" layoutY="54.0" prefHeight="396.0" prefWidth="715.0">
+      <ImageView fitHeight="616.0" fitWidth="843.0" layoutX="-22.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../klassroom/Screenshot%202023-12-10%20163359.png" />
+         </image>
+      </ImageView>
+        <ScrollPane layoutX="54.0" layoutY="89.0" prefHeight="396.0" prefWidth="694.0">
             <content>
                 <TilePane fx:id="tilePane" hgap="10.0" prefColumns="1" vgap="10.0" />
             </content>
         </ScrollPane>
-      <Button layoutX="36.0" layoutY="14.0" mnemonicParsing="false" styleClass="back-button" stylesheets="@../styles.css" text="Back" />
-      <Button layoutX="316.0" layoutY="19.0" mnemonicParsing="false" onAction="#generateCSVReportButtonClicked" text="Generate CSV REPORT" />
+      <Button layoutX="21.0" layoutY="27.0" mnemonicParsing="false" onAction="#back_pressed" styleClass="back-button" stylesheets="@../styles.css" text="Back" />
+      <Button layoutX="314.0" layoutY="25.0" mnemonicParsing="false" onAction="#generateCSVReportButtonClicked" styleClass="button-gradient" stylesheets="@../styles.css" text="Generate CSV REPORT" />
 
     </children>
 </AnchorPane>
