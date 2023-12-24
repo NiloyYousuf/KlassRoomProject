@@ -8,29 +8,49 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="189.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.ClassroomTileStudentController">
-   <AnchorPane prefHeight="140.0" prefWidth="672.0">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="212.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.ClassroomTileStudentController">
+   <AnchorPane prefHeight="210.0" prefWidth="705.0">
       <children>
-         <ImageView fitHeight="223.0" fitWidth="780.0" layoutX="1.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="221.0" fitWidth="740.0" layoutX="-1.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@images/ImageTileBackground.jpg" />
+               <Image url="@images/Purplebg.png" />
             </image>
          </ImageView>
           <!-- Classroom Name Label -->
           <Label fx:id="classroomLabel" layoutY="14.0" prefHeight="18.0" prefWidth="329.0" />
-      
-          <!-- Classroom Code Label -->
-          <Label fx:id="classroomCodeLabel" layoutX="19.0" layoutY="23.0" prefHeight="35.0" prefWidth="574.0" text="Classroom Code">
-            <font>
-               <Font name="Segoe UI Black" size="24.0" />
-            </font></Label>
-      
-          <!-- Subject Label -->
-          <Label fx:id="subjectLabel" layoutX="19.0" layoutY="89.0" prefHeight="46.0" prefWidth="574.0" text="Classroom Subject ">
-            <font>
-               <Font size="30.0" />
-            </font></Label>
-         <Button layoutX="616.0" layoutY="74.0" mnemonicParsing="false" onAction="#tileClicked" onMouseClicked="#tileClicked" prefHeight="41.0" prefWidth="98.0" styleClass="button-gradient" stylesheets="@../styles.css" text="Go" />
+         <VBox layoutX="217.0" layoutY="53.0" prefHeight="82.0" prefWidth="310.0">
+            <children>
+            
+                      <!-- Classroom Code Label -->
+                <Label fx:id="classroomCodeLabel" prefHeight="35.0" prefWidth="278.0" text="Classroom Code" textFill="WHITE">
+                  <font>
+                     <Font size="19.0" />
+                  </font>
+               </Label>
+            
+                      <!-- Subject Label -->
+                <Label fx:id="subjectLabel" prefHeight="46.0" prefWidth="574.0" text="Classroom Subject " textFill="WHITE">
+                  <font>
+                     <Font size="19.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+         <Button layoutX="555.0" layoutY="74.0" mnemonicParsing="false" onAction="#tileClicked" onMouseClicked="#tileClicked" prefHeight="41.0" prefWidth="98.0" styleClass="button-gradient" stylesheets="@../styles.css" text="Go" />
+         <VBox layoutX="35.0" layoutY="53.0" prefHeight="82.0" prefWidth="181.0">
+            <children>
+               <Label fx:id="classroomCodeLabel1" prefHeight="35.0" prefWidth="226.0" text="Classroom Code:" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="19.0" />
+                  </font>
+               </Label>
+               <Label fx:id="subjectLabel1" prefHeight="46.0" prefWidth="271.0" text="Classroom Subject: " textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="19.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
       </children>
    </AnchorPane>
 

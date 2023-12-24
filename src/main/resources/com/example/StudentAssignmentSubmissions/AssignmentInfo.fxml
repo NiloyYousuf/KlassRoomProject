@@ -16,7 +16,7 @@
       </ImageView>
         <ScrollPane layoutX="54.0" layoutY="89.0" prefHeight="396.0" prefWidth="694.0">
             <content>
-                <TilePane fx:id="tilePane" hgap="10.0" prefColumns="1" vgap="10.0" />
+                <TilePane fx:id="tilePane" hgap="10.0" prefColumns="1" prefHeight="394.0" prefWidth="692.0" vgap="10.0" />
             </content>
         </ScrollPane>
       <Button layoutX="21.0" layoutY="27.0" mnemonicParsing="false" onAction="#back_pressed" styleClass="back-button" stylesheets="@../styles.css" text="Back" />

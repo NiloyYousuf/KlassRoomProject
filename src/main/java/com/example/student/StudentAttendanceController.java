@@ -34,7 +34,7 @@ public class StudentAttendanceController {
     private TableColumn<AttendanceRecord, LocalDate> dateColumn;
 
     @FXML
-    private TableColumn<AttendanceRecord, Boolean> statusColumn;
+    private TableColumn<AttendanceRecord, String> statusColumn;
 
     @FXML
     private Label errorLabel;
@@ -47,45 +47,45 @@ public class StudentAttendanceController {
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         attendanceTable.setItems(attendanceRecords);
+        loadAttendanceData();
     }
 
     @FXML
     private void loadAttendanceData() {
-        LocalDate selectedDate = datePicker.getValue();
-        if (selectedDate != null) {
-            ObservableList<AttendanceRecord> data = fetchAttendanceDataFromDatabase(selectedDate);
+            ObservableList<AttendanceRecord> data = fetchAttendanceDataFromDatabase();
             displayAttendanceData(data);
-        }
     }
 
     // Other methods for displaying monthly attendance data
 
-    private ObservableList<AttendanceRecord> fetchAttendanceDataFromDatabase(LocalDate selectedDate) {
+    private ObservableList<AttendanceRecord> fetchAttendanceDataFromDatabase() {
         ObservableList<AttendanceRecord> data = FXCollections.observableArrayList();
 
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {
+            Connection connection = DatabaseConnection.getConnection();
             String classroomCode = CurrentClassroom.classroomCode;
             String studentUsername =  CurrentStudent.CurrentStudentUsername;
-            System.out.println("Finding Attendance record for classroom and student" + studentUsername + classroomCode);
+         //   System.out.println("Finding Attendance record for classroom and student" + studentUsername + classroomCode);
             // Extract month and year from the selected date
-            int selectedMonth = selectedDate.getMonthValue();
-            int selectedYear = selectedDate.getYear();
+
 
             String sql = "SELECT Date, is_present FROM attendance " +
-                    "WHERE classroom_code = ? AND student_username = ? " +
-                    "AND MONTH(Date) = ? AND YEAR(Date) = ?";
+                    "WHERE classroom_code = ? AND student_username = ? ";
 
+            DatabaseConnection.establishConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, classroomCode);
             preparedStatement.setString(2, studentUsername);
-            preparedStatement.setInt(3, selectedMonth);
-            preparedStatement.setInt(4, selectedYear);
-
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Date date = resultSet.getDate("Date");
                 boolean isPresent = resultSet.getBoolean("is_present");
-                data.add(new AttendanceRecord(date.toLocalDate(), isPresent));
+                if(isPresent==true)
+                data.add(new AttendanceRecord(date.toLocalDate(), "Present"));
+                else{
+                    data.add(new AttendanceRecord(date.toLocalDate(), "Absent"));
+                }
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -101,9 +101,9 @@ public class StudentAttendanceController {
 
     public static class AttendanceRecord {
         private final LocalDate date;
-        private final boolean status;
+        private final String status;
 
-        public AttendanceRecord(LocalDate date, boolean status) {
+        public AttendanceRecord(LocalDate date, String status) {
             this.date = date;
             this.status = status;
         }
@@ -112,25 +112,21 @@ public class StudentAttendanceController {
             return date;
         }
 
-        public boolean isStatus() {
+        public String isStatus() {
             return status;
         }
     }
 
 
     public void backbutton_clicked() throws IOException {
-
         GlobalFxmlString.FXML_to_load="src/main/resources/com/example/klassroom/classroomStudent.fxml";
         FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/StudentFinalDashboard.fxml").toURL());
-        Parent root = loader.load();
-
         // Get the current stage (assuming you have a reference to the current stage)
-        Stage stage = (Stage)errorLabel.getScene().getWindow();
 
-        // Set the new FXML content on the current stage
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        Parent post = loader.load();
+        // Get the current scene and set the student login content
+        Scene currentScene =attendanceTable.getScene();
+        currentScene.setRoot(post);
 
     }
 }

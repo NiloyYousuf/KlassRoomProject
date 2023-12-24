@@ -10,8 +10,8 @@ public class CommentNotificationTrigger {
 
     public static void main(String[] args) {
 
-        try (Connection connection = DatabaseConnection.getConnection();
-             Statement statement = connection.createStatement()) {
+        try {Connection connection = DatabaseConnection.getConnection();
+             Statement statement = connection.createStatement();
 
             // Drop the trigger if it already exists
             String dropTriggerSQL = "DROP TRIGGER IF EXISTS after_insert_comment";

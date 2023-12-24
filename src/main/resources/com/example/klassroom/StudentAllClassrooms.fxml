@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="617.0" prefWidth="852.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.StudentMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.StudentMenuController">
     <children>
-        <ScrollPane fx:id="classroomScrollPane" fitToHeight="false" fitToWidth="true" layoutX="22.0" layoutY="11.0" prefHeight="592.0" prefWidth="814.0">
+      <ImageView fitHeight="599.0" fitWidth="853.0" layoutX="-11.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Screenshot%202023-12-10%20163359.png" />
+         </image>
+      </ImageView>
+        <ScrollPane fx:id="classroomScrollPane" fitToHeight="false" fitToWidth="true" layoutX="44.0" layoutY="103.0" prefHeight="390.0" prefWidth="722.0">
             <content>
                 <TilePane fx:id="classroomTilePane" hgap="10.0" vgap="10.0" />
             </content>
         </ScrollPane>
+      <Label layoutX="304.0" layoutY="10.0" prefHeight="76.0" prefWidth="396.0" text="Classrooms" textFill="#460653">
+         <font>
+            <Font name="Gloucester MT Extra Condensed" size="60.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

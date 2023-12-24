@@ -88,22 +88,24 @@ public class StudentPostController implements Initializable {
     {
         try {
             // Load the new FXML file
-            GlobalFxmlString.FXML_to_load="src/main/resources/com/example/klassroom/classroomStudent.fxml";
+            GlobalFxmlString.FXML_to_load = "src/main/resources/com/example/klassroom/classroomStudent.fxml";
             FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/StudentFinalDashboard.fxml").toURL());
-            Parent root = loader.load();
-
             // Get the current stage (assuming you have a reference to the current stage)
-            Stage stage = (Stage) Download.getScene().getWindow();
 
-            // Set the new FXML content on the current stage
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            Parent post = loader.load();
+            // Get the current scene and set the student login content
+            Scene currentScene =Download.getScene();
+            currentScene.setRoot(post);
+
+
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
+
 
 
 

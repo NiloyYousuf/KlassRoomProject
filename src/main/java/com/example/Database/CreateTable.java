@@ -1,5 +1,7 @@
 package com.example.Database;
 
+import com.example.klassroom.DatabaseConnection;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -35,8 +37,10 @@ public class CreateTable {
     }
 
     public static void createTable(String url, String user, String password, String tableName, String tableDefinition) {
-        try (Connection connection = DriverManager.getConnection(url, user, password);
-             Statement statement = connection.createStatement()) {
+        try {
+            Connection connection = DriverManager.getConnection(url, user, password);
+            DatabaseConnection.establishConnection();
+            Statement statement = connection.createStatement();
             String sql = "CREATE TABLE " + tableName + " (" + tableDefinition + ")";
             statement.executeUpdate(sql);
             System.out.println("Table " + tableName + " created successfully.");
@@ -45,7 +49,7 @@ public class CreateTable {
         }
     }
 
-    public static void createAssignmentsTable(String url, String user, String password) {
+        public static void createAssignmentsTable(String url, String user, String password) {
         String tableName = "assignments";
         String tableDefinition = "`Assignment_ID` int NOT NULL AUTO_INCREMENT, " +
                 "`Assignment_Text` text, " +

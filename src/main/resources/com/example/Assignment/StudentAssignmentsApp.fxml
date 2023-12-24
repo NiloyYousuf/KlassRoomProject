@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="495.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.StudentAssignmentsAppController">
-    <ComboBox fx:id="statusFilterComboBox" prefWidth="150.0" promptText="Filter Status" />
-    <ScrollPane prefHeight="506.0" prefWidth="802.0">
-        <content>
-            <!-- Add any other layout or UI elements you need here -->
-            <VBox fx:id="assignmentTilesContainer" prefHeight="164.0" prefWidth="798.0" />
-        </content>
-    </ScrollPane>
-    <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-</VBox>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.StudentAssignmentsAppController">
+   <children>
+      <ImageView fitHeight="598.0" fitWidth="824.0" layoutX="-8.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../klassroom/Screenshot%202023-12-10%20163359.png" />
+         </image>
+      </ImageView>
+       <ComboBox fx:id="statusFilterComboBox" layoutX="593.0" layoutY="64.0" prefWidth="150.0" promptText="Filter Status" />
+      <VBox layoutX="76.0" layoutY="100.0" prefHeight="366.0" prefWidth="666.0">
+          <ScrollPane prefHeight="366.0" prefWidth="653.0">
+              <content>
+                  <!-- Add any other layout or UI elements you need here -->
+                  <VBox fx:id="assignmentTilesContainer" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="207.0" prefWidth="644.0" />
+              </content>
+          </ScrollPane>
+      </VBox>
+      <Label layoutX="295.0" layoutY="14.0" prefHeight="76.0" prefWidth="298.0" text="Assignments" textFill="#460653">
+         <font>
+            <Font name="Gloucester MT Extra Condensed" size="60.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

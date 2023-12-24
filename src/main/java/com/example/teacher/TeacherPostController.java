@@ -132,6 +132,7 @@ public class TeacherPostController implements Initializable {
     private void deletePost(int postId) {
         try {
             Connection connection = DatabaseConnection.getConnection();
+            DatabaseConnection.establishConnection();
 
             // SQL query to delete the post
             String deleteSql = "DELETE FROM posts WHERE post_id = ?";
@@ -142,9 +143,9 @@ public class TeacherPostController implements Initializable {
             int rowsDeleted = deleteStatement.executeUpdate();
 
             if (rowsDeleted > 0) {
-                System.out.println("Post deleted successfully.");
+                //System.out.println("Post deleted successfully.");
             } else {
-                System.out.println("Failed to delete the post.");
+                //System.out.println("Failed to delete the post.");
             }
 
             // Close the resources

@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -11,30 +13,74 @@
     <children>
       <AnchorPane prefHeight="412.0" prefWidth="695.0">
          <children>
+            <ImageView fitHeight="489.0" fitWidth="679.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../klassroom/Screenshot%202023-12-10%20163359.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="205.0" fitWidth="605.0" layoutX="35.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../klassroom/images/Purplebg.png" />
+               </image>
+            </ImageView>
               <VBox spacing="10" />
-              <VBox layoutX="66.0" layoutY="72.0" prefHeight="175.0" prefWidth="538.0" spacing="5">
-                  <Label fx:id="assignmentTextLabel" alignment="TOP_LEFT" prefHeight="112.0" prefWidth="538.0" text="Assignment Text: " wrapText="true" />
+              <VBox layoutX="36.0" layoutY="60.0" prefHeight="184.0" prefWidth="606.0" spacing="5">
                <HBox prefHeight="50.0" prefWidth="538.0">
                   <children>
-                        <Label fx:id="assignDateLabel" prefHeight="50.0" prefWidth="538.0" text="Assign Date: " />
-                        <Label fx:id="deadlineLabel" prefHeight="44.0" prefWidth="538.0" text="Deadline: " />
+                        <Label fx:id="assignDateLabel" prefHeight="50.0" prefWidth="538.0" text="Assign Date: " textFill="WHITE">
+                        <font>
+                           <Font name="System Bold Italic" size="12.0" />
+                        </font></Label>
+                        <Label fx:id="deadlineLabel" prefHeight="50.0" prefWidth="520.0" text="Deadline: " textFill="WHITE">
+                        <font>
+                           <Font name="System Bold Italic" size="12.0" />
+                        </font></Label>
                   </children>
                </HBox>
+                  <Label fx:id="assignmentTextLabel" alignment="TOP_LEFT" prefHeight="122.0" prefWidth="603.0" text="Assignment: " textFill="WHITE" wrapText="true" />
               </VBox>
-               <Button layoutX="78.0" layoutY="299.0" mnemonicParsing="false" onAction="#uploadAssignment" text="Upload Assignment" />
-               <Label fx:id="statusLabel" layoutX="34.0" layoutY="258.0" prefHeight="18.0" prefWidth="225.0" />
-            <Button fx:id="Download" layoutX="453.0" layoutY="312.0" mnemonicParsing="false" onAction="#downloadAttachment" text="Download Attachment" />
-            <Label fx:id="attachmentStatusLabel" layoutX="464.0" layoutY="290.0" text="Available Attachment" />
-             <Label fx:id="uploadedFileNameLabel" layoutX="74.0" layoutY="277.0" text="Name of File Uploaded: " />
-             <Button fx:id="unsubmitButton" layoutX="104.0" layoutY="334.0" mnemonicParsing="false" onAction="#unsubmitAssignment" text="Unsubmit" />
+               <Button layoutX="152.0" layoutY="288.0" mnemonicParsing="false" onAction="#uploadAssignment" prefHeight="74.0" prefWidth="92.0" styleClass="button-gradient-square" stylesheets="@../styles.css">
+               <graphic>
+                  <ImageView fitHeight="56.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../klassroom/images/Screenshot_2023-12-13_001817-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+               <Label fx:id="statusLabel" alignment="CENTER" layoutX="84.0" layoutY="421.0" prefHeight="18.0" prefWidth="229.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Button fx:id="Download" layoutX="479.0" layoutY="283.0" mnemonicParsing="false" onAction="#downloadAttachment" prefHeight="74.0" prefWidth="92.0" styleClass="button-gradient-square" stylesheets="@../styles.css">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../klassroom/images/Screenshot_2023-12-11_150301-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label fx:id="attachmentStatusLabel" layoutX="470.0" layoutY="253.0" text="Available Attachment">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+             <Label fx:id="uploadedFileNameLabel" alignment="CENTER" layoutX="35.0" layoutY="252.0" prefHeight="34.0" prefWidth="332.0" text="Name of File Uploaded: " textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+             <Button fx:id="unsubmitButton" layoutX="155.0" layoutY="376.0" mnemonicParsing="false" onAction="#unsubmitAssignment" styleClass="backred-button" stylesheets="@../styles.css" text="Unsubmit" />
                <Label fx:id="classroomCodeLabel" layoutX="351.0" layoutY="16.0" prefHeight="34.0" prefWidth="238.0" text="Classroom Code: ">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-               <Label fx:id="teacherUsernameLabel" layoutX="66.0" layoutY="16.0" prefHeight="34.0" prefWidth="250.0" text="Teacher's Username: ">
+               <Label fx:id="teacherUsernameLabel" layoutX="37.0" layoutY="16.0" prefHeight="34.0" prefWidth="279.0" text="Teacher: ">
                <font>
                   <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="177.0" layoutY="349.0" prefHeight="18.0" prefWidth="46.0" text="Upload" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
                </font>
             </Label>
          </children>

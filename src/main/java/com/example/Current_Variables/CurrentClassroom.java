@@ -50,10 +50,11 @@ public class CurrentClassroom {
 
 
     public static void fetchClassroomDetails(String classroomcode) {
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {
+            Connection connection = DatabaseConnection.getConnection();
             DatabaseConnection.establishConnection();
             String sql = "SELECT * FROM classrooms WHERE classroom_code = ?";
-            classroomCode=classroomcode;
+            classroomCode = classroomcode;
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setString(1, classroomCode);
 
@@ -68,9 +69,9 @@ public class CurrentClassroom {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Handle the exception (log or throw as appropriate)
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
         }
     }
+
 }

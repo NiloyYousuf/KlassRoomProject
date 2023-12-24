@@ -42,7 +42,7 @@ public class  TeacherAssignmentTileController {
 
     public void view_submissions_buttonclicked() throws IOException {
         current_Assignment.current_assignment_ID=Integer.parseInt(Assignment_ID.getText());
-        System.out.println("Current Assignment ID : " + current_Assignment.current_assignment_ID);
+        //System.out.println("Current Assignment ID : " + current_Assignment.current_assignment_ID);
         GlobalFxmlString.FXML_to_load="src/main/resources/com/example/StudentAssignmentSubmissions/AssignmentInfo.fxml";
         FXMLLoader loader = new FXMLLoader(new File ("src/main/resources/com/example/Dashboards/TeacherFinalDashboard.fxml").toURL());
         Parent studentLogin = loader.load();

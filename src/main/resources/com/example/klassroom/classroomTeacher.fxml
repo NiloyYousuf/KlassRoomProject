@@ -13,19 +13,24 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teacher.ClassroomTeacherController">
    <children>
+      <TextField editable="false" layoutX="375.0" layoutY="44.0" prefHeight="34.0" prefWidth="343.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Teacher's Name:">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="teacherNameTextField" editable="false" layoutX="360.0" layoutY="29.0" prefHeight="34.0" prefWidth="78.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Teacher's Name:">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </TextField>
       <ImageView fitHeight="613.0" fitWidth="849.0" layoutX="-38.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Screenshot%202023-12-10%20163359.png" />
          </image>
       </ImageView>
       <TextArea fx:id="post" layoutX="85.0" layoutY="103.0" prefHeight="81.0" prefWidth="632.0" promptText="Make a Post" wrapText="true" />
-      <VBox layoutX="238.0" prefHeight="103.0" prefWidth="201.0">
+      <VBox layoutX="238.0" layoutY="21.0" prefHeight="82.0" prefWidth="202.0">
          <children>
-            <TextField fx:id="teacherNameTextField" editable="false" prefHeight="34.0" prefWidth="343.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Teacher's Name:">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </TextField>
             <TextField fx:id="courseCodeTextField" editable="false" prefHeight="34.0" prefWidth="312.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Couse Code:">
                <font>
                   <Font name="System Bold" size="25.0" />
@@ -82,13 +87,8 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </TextField>
-      <VBox layoutX="85.0" prefHeight="103.0" prefWidth="150.0">
+      <VBox layoutX="85.0" layoutY="21.0" prefHeight="82.0" prefWidth="150.0">
          <children>
-            <TextField editable="false" prefHeight="34.0" prefWidth="343.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Teacher's Name:">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </TextField>
             <TextField editable="false" prefHeight="34.0" prefWidth="312.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Couse Code:">
                <font>
                   <Font name="System Bold" size="25.0" />

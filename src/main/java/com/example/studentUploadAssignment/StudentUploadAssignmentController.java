@@ -92,10 +92,11 @@ public class StudentUploadAssignmentController {
             String submissionDate = sdf.format(new Date());
 
             // Update the status label
-            statusLabel.setText("Uploading...");
+            //statusLabel.setText("Uploading...");
 
             // Upload the assignment to the database
-            try (Connection connection = DatabaseConnection.getConnection()) {
+            try {
+                Connection connection = DatabaseConnection.getConnection();
                 String sql = "INSERT INTO student_assignment_junction (Assignment_ID, Student_Username, Submission_Date, Submission_Status, Original_Filename, Uploaded_Assignment) VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setInt(1, assignmentID);
@@ -108,6 +109,7 @@ public class StudentUploadAssignmentController {
                 int rows = preparedStatement.executeUpdate();
                 if (rows > 0) {
                     statusLabel.setText("Assignment uploaded successfully.");
+                    fetchUploadedFileName();
                 } else {
                     statusLabel.setText("Failed to upload assignment.");
                 }
@@ -122,7 +124,7 @@ public class StudentUploadAssignmentController {
         int assignmentID = current_Assignment.current_assignment_ID;
         String username = CurrentStudent.CurrentStudentUsername;
 
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {Connection connection = DatabaseConnection.getConnection();
             String sql = "SELECT COUNT(*) FROM student_assignment_junction WHERE Assignment_ID = ? AND Student_Username = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, assignmentID);
@@ -146,7 +148,7 @@ public class StudentUploadAssignmentController {
         int assignmentID = current_Assignment.current_assignment_ID;
         String studentUsername = CurrentStudent.CurrentStudentUsername;
 
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {Connection connection = DatabaseConnection.getConnection();
             // Fetch assignment details from the assignments table
             String assignmentDetailsSQL = "SELECT Assignment_Text, Assign_Date, Deadline, Teacher_Username, Classroom_Code FROM assignments WHERE Assignment_ID = ?";
             PreparedStatement assignmentDetailsStatement = connection.prepareStatement(assignmentDetailsSQL);
@@ -253,7 +255,7 @@ public class StudentUploadAssignmentController {
                 int assignmentID = current_Assignment.current_assignment_ID;
                 String studentUsername = CurrentStudent.CurrentStudentUsername;
 
-                try (Connection connection = DatabaseConnection.getConnection()) {
+                try {Connection connection = DatabaseConnection.getConnection();
                     String sql = "DELETE FROM student_assignment_junction WHERE Assignment_ID = ? AND Student_Username = ?";
                     PreparedStatement preparedStatement = connection.prepareStatement(sql);
                     preparedStatement.setInt(1, assignmentID);
@@ -262,6 +264,7 @@ public class StudentUploadAssignmentController {
                     int rows = preparedStatement.executeUpdate();
                     if (rows > 0) {
                         statusLabel.setText("Assignment unsubmitted successfully.");
+                        uploadedFileNameLabel.setText("");
                         fetchUploadedFileName(); // Refresh the uploaded file name label
                     } else {
                         statusLabel.setText("Failed to unsubmit assignment.");
@@ -281,8 +284,9 @@ public class StudentUploadAssignmentController {
 
        // System.out.println("Debug--" + assignmentID + studentUsername);
 
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {Connection connection = DatabaseConnection.getConnection();
             String sql = "SELECT Original_Filename FROM student_assignment_junction WHERE Assignment_ID = ? AND Student_Username = ?";
+           DatabaseConnection.establishConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, assignmentID);
             preparedStatement.setString(2, studentUsername);

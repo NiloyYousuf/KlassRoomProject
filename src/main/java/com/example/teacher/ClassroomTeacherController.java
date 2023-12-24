@@ -90,26 +90,44 @@ public class ClassroomTeacherController implements Initializable {
     private TextArea post;
     @FXML
     private void make_post_button_clicked() throws FileNotFoundException, MalformedURLException {
-        long millis=System.currentTimeMillis();
-        java.sql.Date date = new java.sql.Date(millis);
-        System.out.println(date);
-        String location = new String();
-// Get the current time
-        LocalTime currentTime = LocalTime.now();
+        if (post.getText().trim().isEmpty()) {
+            // Show alert for empty post field
+            showAlert("Empty Post Field", "Post field cannot be empty.");
+            return; // Exit the method without making the post
+        }
 
-// Format the time to HH:MM:SS
+        long millis = System.currentTimeMillis();
+        java.sql.Date date = new java.sql.Date(millis);
+        LocalTime currentTime = LocalTime.now();
         String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 
-
         if (selectedFile != null) {
-            //FileInputStream fileInputStream = new FileInputStream(selectedFile);
             ClassroomPostsDAO.insertPost(CurrentClassroom.getClassroomId(), formattedTime, date.toString(), post.getText(), selectedFile, originalFilename);
         } else {
-            // Handle the case where no file is attached
             ClassroomPostsDAO.insertPost(CurrentClassroom.getClassroomId(), formattedTime, date.toString(), post.getText(), null, originalFilename);
         }
+
+        // Show alert for post success
+        showAlert("Post Updated", "Post updated successfully!");
+
+        // Clear post field and selected file
+        post.clear();
+        selectedFile = null;
+        originalFilename = null;
+        selectedFileLabel.setText(""); // Clear the label text
+
         refreshPostContainer();
     }
+
+
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
 
     private void refreshPostContainer() throws MalformedURLException {
         List<Post> posts = ClassroomPostsDAO.getPostsByClassroom(CurrentClassroom.getClassroomId());
@@ -153,7 +171,7 @@ private  Button attendance;
     @FXML
     private  void  Post_assignment_button_clicked() throws IOException {
         TeacherTakingStudentAttendanceListController.classroomCode=CurrentClassroom.classroomCode;
-        System.out.println(TeacherTakingStudentAttendanceListController.classroomCode);
+      //  System.out.println(TeacherTakingStudentAttendanceListController.classroomCode);
         GlobalFxmlString.FXML_to_load="src/main/resources/com/example/Assignment/AssignmentPostForm.fxml";
         FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/TeacherFinalDashboard.fxml").toURL());
         Parent studentLogin = loader.load();

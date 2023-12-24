@@ -26,6 +26,6 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button layoutX="480.0" layoutY="440.0" mnemonicParsing="false" styleClass="button-gradient" stylesheets="@../styles.css" text="Generate CSV report" />
+      <Button layoutX="480.0" layoutY="440.0" mnemonicParsing="false" onAction="#generateCSVReportButtonClicked" styleClass="button-gradient" stylesheets="@../styles.css" text="Generate CSV report" />
     </children>
 </AnchorPane>

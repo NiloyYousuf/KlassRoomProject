@@ -1,6 +1,5 @@
 package com.example.student;
 
-import com.example.teacher.AssignmentTileController;
 import com.example.klassroom.DatabaseConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -69,7 +68,7 @@ public class StudentAssignmentsAppController {
         List<String> classroomCodes = new ArrayList<>();
 
         // Connect to the database and retrieve classroom codes for the student
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {Connection connection = DatabaseConnection.getConnection();
             DatabaseConnection.establishConnection();
             String classroomQuery = "SELECT classroom_code FROM classroom_student_junction WHERE student_username = ?";
             PreparedStatement classroomStatement = connection.prepareStatement(classroomQuery);
@@ -87,7 +86,7 @@ public class StudentAssignmentsAppController {
         // Now, you have a list of classroom codes that the student is enrolled in
         // Use this list to fetch assignments for those classrooms
         for (String classroomCode : classroomCodes) {
-            try (Connection connection = DatabaseConnection.getConnection()) {
+            try {Connection connection = DatabaseConnection.getConnection();
                 DatabaseConnection.establishConnection();
                 String sql = "SELECT Assignment_ID, Assignment_Text, Assign_Date, Deadline, Attachment, Marks, Teacher_Username, Classroom_Code FROM assignments WHERE Classroom_Code = ?";
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -163,11 +162,13 @@ public class StudentAssignmentsAppController {
                             preparedStatement.setString(2, CurrentStudent.CurrentStudentUsername);
                             break;
                         case "Due":
-                            sql = "SELECT Assignment_ID, Assignment_Text, Assign_Date, Deadline, Attachment, Marks, Teacher_Username, Classroom_Code " +
+                            sql =  "SELECT Assignment_ID, Assignment_Text, Assign_Date, Deadline, Attachment, Marks, Teacher_Username, Classroom_Code " +
                                     "FROM assignments a " +
                                     "WHERE Classroom_Code = ? AND Deadline >= CURRENT_DATE AND " +
                                     "NOT EXISTS (SELECT 1 FROM student_assignment_junction saj " +
-                                    "            WHERE saj.Assignment_ID = a.Assignment_ID AND saj.Student_Username = ? AND saj.Submission_Status = 'Submitted' || saj.Submission_Status='Marked')";
+                                    "WHERE saj.Assignment_ID = a.Assignment_ID " +
+                                    "AND saj.Student_Username = ? " +
+                                    "AND (saj.Submission_Status = 'Submitted' OR saj.Submission_Status = 'Marked'))";
                             preparedStatement = connection.prepareStatement(sql);
                             preparedStatement.setString(1, classroomCode);
                             preparedStatement.setString(2, CurrentStudent.CurrentStudentUsername);

@@ -46,7 +46,7 @@ public class StudentPostTileController {
     public  void see_full_post_clicked() throws IOException {
         current_post= ClassroomPostsDAO.getPostById(Integer.parseInt(Post_Id.getText()));
         currentPost.currentPostId=Integer.parseInt(Post_Id.getText());
-        System.out.println(Post_Id.getText());
+       // System.out.println(Post_Id.getText());
         GlobalFxmlString.FXML_to_load="src/main/resources/com/example/Post/StudentPost.fxml";
         FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/StudentFinalDashboard.fxml").toURL());
         Parent post = loader.load();

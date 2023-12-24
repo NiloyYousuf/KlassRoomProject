@@ -52,18 +52,18 @@ public class DatabaseConnection {
 
     public static void establishConnection() {
 
-        try {
-                connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-            } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//                connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+//            } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     private static void scheduleConnectionCheck() {
         executorService.scheduleAtFixedRate(() -> {
             try {
                 if (connection == null || connection.isClosed()) {
-                    System.out.println("Reconnecting to the database...");
+                    //System.out.println("Reconnecting to the database...");
                     establishConnection();
                 }
             } catch (SQLException e) {

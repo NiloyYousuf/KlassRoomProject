@@ -34,7 +34,8 @@ public class StudentProfileController {
         String studentUsername = currentStudentusername;
 
         // Connect to the database and retrieve student information
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {
+            Connection connection = DatabaseConnection.getConnection();
             String sql = "SELECT student_username, student_email, photo FROM students WHERE student_username = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, studentUsername);
@@ -70,7 +71,7 @@ public class StudentProfileController {
 
         if (file != null) {
             // Process the uploaded image and save it to the database
-            try (Connection connection = DatabaseConnection.getConnection()) {
+            try {Connection connection = DatabaseConnection.getConnection();
                 String studentUsername = CurrentStudent.CurrentStudentUsername; // Get the student's username
                 String sql = "UPDATE students SET photo = ? WHERE student_username = ?";
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);

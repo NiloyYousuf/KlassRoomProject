@@ -53,7 +53,7 @@ public class JoinClassroomController {
     // Implement methods to interact with your database to check and add students to classrooms.
     // Replace these methods with your actual database logic.
     private boolean checkClassroomInDatabase(String code, String password) {
-        try (Connection conn = DatabaseConnection.getConnection()) {
+        try {Connection conn = DatabaseConnection.getConnection();
             DatabaseConnection.establishConnection();
             String query = "SELECT * FROM classrooms WHERE classroom_code = ? AND classroom_password = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(query);
@@ -69,7 +69,7 @@ public class JoinClassroomController {
 
 
     private boolean checkStudentInClassroom(String studentUsername, String code) {
-        try (Connection conn = DatabaseConnection.getConnection()) {
+        try {Connection conn = DatabaseConnection.getConnection();
             String query = "SELECT * FROM classroom_student_junction WHERE student_username = ? AND classroom_code = ?";
             DatabaseConnection.establishConnection();
             PreparedStatement preparedStatement = conn.prepareStatement(query);
@@ -84,7 +84,7 @@ public class JoinClassroomController {
     }
 
     private void addStudentToClassroom(String studentUsername, String code) {
-        try (Connection conn = DatabaseConnection.getConnection()) {
+        try {Connection conn = DatabaseConnection.getConnection();
             String query = "INSERT INTO classroom_student_junction (student_username, classroom_code) VALUES (?, ?)";
             DatabaseConnection.establishConnection();
             PreparedStatement preparedStatement = conn.prepareStatement(query);

@@ -25,14 +25,18 @@ public class ClassroomTileTeacherController {
     @FXML
     private Label subjectLabel;
 
+    @FXML
+    private Label passwordLabel;
+
     int classroomId;
 
     private TeacherMenuController teacherMenuController;
 
-    public void initializeTile(String classroomCode, String subjectName,int classroomId) {
+    public void initializeTile(String classroomCode, String subjectName, int classroomId, String classroomPassword) {
         classroomCodeLabel.setText(classroomCode);
         subjectLabel.setText(subjectName);
         this.classroomId=classroomId;
+        passwordLabel.setText(classroomPassword);
         // You can customize the tile further if needed
     }
 
@@ -54,7 +58,7 @@ public class ClassroomTileTeacherController {
         }
         catch (Exception e)
         {
-            System.out.println("scene");
+          //  System.out.println("scene");
         }
 
     }
@@ -76,7 +80,7 @@ public class ClassroomTileTeacherController {
     }
 
     private void deleteClassroomFromDatabase() {
-        try (Connection conn = DatabaseConnection.getConnection()) {
+        try {Connection conn = DatabaseConnection.getConnection();
             String query = "DELETE FROM classrooms WHERE classroom_id = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(query);
             preparedStatement.setInt(1, classroomId);

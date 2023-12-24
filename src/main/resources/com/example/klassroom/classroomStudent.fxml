@@ -7,21 +7,40 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.classroomStudentController">
    <children>
-      <ImageView fitHeight="577.0" fitWidth="892.0" layoutX="-9.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="studentNameTextField" editable="false" layoutX="33.0" layoutY="40.0" />
+      <ImageView fitHeight="604.0" fitWidth="838.0" layoutX="-13.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/ImageAbstractBackground.jpg" />
+            <Image url="@Screenshot%202023-12-10%20163359.png" />
          </image>
       </ImageView>
-      <TextField fx:id="courseCodeTextField" editable="false" layoutX="216.0" layoutY="40.0" />
-      <TextField fx:id="subjectNameTextField" editable="false" layoutX="404.0" layoutY="40.0" />
-      <ScrollPane fx:id="scrollPane" layoutX="23.0" layoutY="115.0" prefHeight="387.0" prefWidth="765.0">
+      <VBox layoutX="160.0" layoutY="39.0">
+         <children>
+            <TextField fx:id="courseCodeTextField" editable="false" styleClass="custom-text-field" stylesheets="@../styles.css" text="Course Code" />
+            <TextField fx:id="subjectNameTextField" editable="false" styleClass="custom-text-field" stylesheets="@../styles.css" text="Subject Name" />
+         </children>
+      </VBox>
+      <ScrollPane fx:id="scrollPane" layoutX="55.0" layoutY="114.0" prefHeight="387.0" prefWidth="697.0">
          <content>
-            <VBox fx:id="postContainer" prefHeight="142.0" prefWidth="762.0" spacing="10.0" />
+            <VBox fx:id="postContainer" prefHeight="138.0" prefWidth="672.0" spacing="10.0" />
          </content></ScrollPane>
-      <TextField fx:id="studentNameTextField" editable="false" layoutX="33.0" layoutY="40.0" />
-      <Button layoutX="612.0" layoutY="32.0" mnemonicParsing="false" onAction="#view_attendance_clicked" styleClass="button-gradient" stylesheets="@../styles.css" text="View Attendance" />
+      <Button layoutX="608.0" layoutY="45.0" mnemonicParsing="false" onAction="#view_attendance_clicked" styleClass="button-gradient" stylesheets="@../styles.css" text="View Attendance" />
+      <VBox layoutX="47.0" layoutY="36.0" prefHeight="74.0" prefWidth="150.0">
+         <children>
+            <TextField editable="false" prefHeight="34.0" prefWidth="312.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Couse Code:">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </TextField>
+            <TextField editable="false" prefHeight="34.0" prefWidth="299.0" styleClass="custom-text-field" stylesheets="@../styles.css" text="Subject Name:">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </TextField>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

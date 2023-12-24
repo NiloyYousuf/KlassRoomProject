@@ -53,12 +53,12 @@ public class classroomStudentController implements Initializable {
             studentNameTextField.setText(StudentMenuController.student_username);
             courseCodeTextField.setText(CurrentClassroom.classroomCode);
             subjectNameTextField.setText(CurrentClassroom.getSubjectName());
-            System.out.println(CurrentClassroom.getClassroomId());
+
 
             List<Post> posts = ClassroomPostsDAO.getPostsByClassroom(CurrentClassroom.getClassroomId());
 
             postContainer.getChildren().clear();
-            scheduler.scheduleAtFixedRate(this::refreshPostContainer, 0, 5, TimeUnit.SECONDS);
+            //scheduler.scheduleAtFixedRate(this::refreshPostContainer, 0, 5, TimeUnit.SECONDS);
 
             for (Post post : posts) {
                 loadPostTile(post);
@@ -66,25 +66,25 @@ public class classroomStudentController implements Initializable {
         });
     }
 
-    private void refreshPostContainer() {
-        List<Post> posts = ClassroomPostsDAO.getPostsByClassroom(CurrentClassroom.getClassroomId());
-
-        Platform.runLater(() -> {
-            postContainer.getChildren().clear();
-
-            for (Post post : posts) {
-                loadPostTile(post);
-            }
-
-            // Refresh the scene
-            Scene scene = postContainer.getScene();
-            if (scene != null) {
-                scene.getRoot().requestLayout();
-            }
-
-          //  System.out.println("Posts refreshed");
-        });
-    }
+//    private void refreshPostContainer() {
+//        List<Post> posts = ClassroomPostsDAO.getPostsByClassroom(CurrentClassroom.getClassroomId());
+//
+//        Platform.runLater(() -> {
+//            postContainer.getChildren().clear();
+//
+//            for (Post post : posts) {
+//                loadPostTile(post);
+//            }
+//
+//            // Refresh the scene
+//            Scene scene = postContainer.getScene();
+//            if (scene != null) {
+//                scene.getRoot().requestLayout();
+//            }
+//
+//          //  System.out.println("Posts refreshed");
+//        });
+//    }
 
 
 
@@ -128,12 +128,15 @@ public class classroomStudentController implements Initializable {
     public void view_attendance_clicked() throws IOException {
         GlobalFxmlString.FXML_to_load = "src/main/resources/com/example/Attendance/Student Attendance.fxml";
         FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/StudentFinalDashboard.fxml").toURL());
-        Parent root = loader.load();
-        Stage stage = (Stage) studentNameTextField.getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        // Get the current stage (assuming you have a reference to the current stage)
+
+        Parent post = loader.load();
+        // Get the current scene and set the student login content
+        Scene currentScene =studentNameTextField.getScene();
+        currentScene.setRoot(post);
     }
+
+
 
 
 }

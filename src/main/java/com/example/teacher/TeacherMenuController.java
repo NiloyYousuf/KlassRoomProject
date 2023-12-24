@@ -36,7 +36,7 @@ public class TeacherMenuController {
         Connection connection = DatabaseConnection.getConnection();
         if (connection != null) {
             try {
-                String sql = "SELECT classroom_code, subject_name, classroom_id FROM classrooms WHERE teacher_username = ?";
+                String sql = "SELECT classroom_code, subject_name, classroom_id,classroom_password FROM classrooms WHERE teacher_username = ?";
                 DatabaseConnection.establishConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, teacher_username);
@@ -49,8 +49,9 @@ public class TeacherMenuController {
                         ClassroomTileTeacherController tileController = loader.getController();
                         String classroomCode = resultSet.getString("classroom_code");
                         String subjectName = resultSet.getString("subject_name");
+                        String classroomPassword=resultSet.getString("classroom_password");
                         int classroomId = resultSet.getInt("classroom_id");
-                        tileController.initializeTile(classroomCode, subjectName, classroomId);
+                        tileController.initializeTile(classroomCode, subjectName, classroomId,classroomPassword);
                         tileController.setTeacherMenuController(this);
                         classroomTilePane.getChildren().add(tileNode);
                     } catch (IOException e) {

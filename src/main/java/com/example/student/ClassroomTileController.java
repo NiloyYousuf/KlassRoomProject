@@ -52,7 +52,7 @@ public class ClassroomTileController {
         }
         catch (Exception e)
         {
-            System.out.println("scene");
+          //  System.out.println("scene");
         }
 
     }

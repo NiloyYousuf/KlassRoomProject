@@ -12,6 +12,7 @@ public class PostNotificationTrigger {
         try {
             Connection connection = DatabaseConnection.getConnection();
             Statement statement = connection.createStatement();
+            DatabaseConnection.establishConnection();
 
             // Drop the trigger if it already exists
             String dropTriggerSQL = "DROP TRIGGER IF EXISTS post_notification_trigger";

@@ -43,7 +43,7 @@ public class TeacherLoginController {
 
         // Fetch teacher information from the database using the provided DatabaseConnection class
         Connection connection = DatabaseConnection.getConnection();
-        if (connection != null) {
+        DatabaseConnection.establishConnection();
             try {
 
                 // Define the SQL query to retrieve teacher information based on ID and password
@@ -57,7 +57,7 @@ public class TeacherLoginController {
                 if (resultSet.next()) {
                     errorMessageText.setText("Login successful"); // Clear any previous error message
                     CurrentTeacher.current_teacher_username=teacher_username;
-                    System.out.println(CurrentTeacher.current_teacher_username);
+                  //  System.out.println(CurrentTeacher.current_teacher_username);
                     Current_User.is_student=false;
                     FXMLLoader loader = new FXMLLoader(new File("src/main/resources/com/example/Dashboards/TeacherFinalDashboard.fxml").toURL());
                     Parent studentLogin = loader.load();
@@ -74,19 +74,14 @@ public class TeacherLoginController {
                     errorMessageText.setText("Invalid teacher ID or password");
                 }
 
-                // Close the result set and statement
-                resultSet.close();
-                preparedStatement.close();
             } catch (SQLException e) {
                 e.printStackTrace();
                 errorMessageText.setText("Database error");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        } else {
-            errorMessageText.setText("Failed to obtain a database connection.");
         }
-    }
+
 
 
     public  void Back_button_clicked() throws IOException {

@@ -13,6 +13,7 @@ import java.io.IOException;
 import static com.example.student.classroomStudentController.stopScheduler;
 
 public class KlassroomMain extends Application {
+
     @Override
     public void start(Stage primaryStage) {
         try {

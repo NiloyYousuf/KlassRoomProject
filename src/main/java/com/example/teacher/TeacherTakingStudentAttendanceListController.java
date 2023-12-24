@@ -69,8 +69,8 @@ public class TeacherTakingStudentAttendanceListController implements Initializab
         // Define your SQL query to fetch student usernames from the junction table
         String query = "SELECT student_username FROM classroom_student_junction WHERE classroom_code = ?";
 
-        try (
-             PreparedStatement statement = connection.prepareStatement(query)) {
+        try {
+             PreparedStatement statement = connection.prepareStatement(query);
 
             statement.setString(1, classroomCode);
             ResultSet resultSet = statement.executeQuery();
@@ -188,6 +188,12 @@ public class TeacherTakingStudentAttendanceListController implements Initializab
         // Create the chart for the current year and month
         StudentsMonthlyAttendanceChart chart = new StudentsMonthlyAttendanceChart(classroomCode);
         chart.generateMonthlyAttendanceChart();
+    }
+
+    @FXML
+    private void generateCSVReportButtonClicked() {
+        String classroomCode = CurrentClassroom.classroomCode;
+        CSVReportGenerator.generateCSVReport(classroomCode, (Stage) generate_report.getScene().getWindow());
     }
 
 

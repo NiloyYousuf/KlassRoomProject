@@ -42,13 +42,14 @@ public class StudentLoginController {
         String student_username = studentIDTextArea.getText();
         String password = passwordTextArea.getText();
 
-        System.out.println(StudentMenuController.student_username);
+        //System.out.println(StudentMenuController.student_username);
 
         // Fetch student information from the database using the provided DatabaseConnection class
         Connection connection = DatabaseConnection.getConnection();
         if (connection != null) {
             try {
                 // Define the SQL query to retrieve student information based on ID and password
+                DatabaseConnection.establishConnection();
                 String sql = "SELECT * FROM students WHERE student_username = ? AND student_password = ?";
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, student_username);
@@ -90,9 +91,7 @@ public class StudentLoginController {
                     errorMessageText.setText("Invalid student ID or password");
                 }
 
-                // Close the result set and statement
-                resultSet.close();
-                preparedStatement.close();
+
             } catch (SQLException e) {
                 e.printStackTrace();
                 errorMessageText.setText("Database error");

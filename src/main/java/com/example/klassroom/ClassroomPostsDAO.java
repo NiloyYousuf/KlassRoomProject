@@ -22,7 +22,8 @@ public class ClassroomPostsDAO {
     // Insert a new post into the database
     public static void insertPost(int classroomId, String postTime, String postDate, String postText, byte[] attachment) {
         Connection connection=DatabaseConnection.getConnection();
-        try (PreparedStatement statement = connection.prepareStatement(INSERT_POST)) {
+        DatabaseConnection.establishConnection();
+        try {PreparedStatement statement = connection.prepareStatement(INSERT_POST) ;
             statement.setInt(1, classroomId);
             statement.setString(2, postTime);
             statement.setString(3, postDate);
@@ -64,7 +65,7 @@ public class ClassroomPostsDAO {
 
     public static Post getPostById(int postId) {
         Connection connection =DatabaseConnection.getConnection();
-        try (PreparedStatement statement = connection.prepareStatement(GET_POST_BY_ID)) {
+        try {PreparedStatement statement = connection.prepareStatement(GET_POST_BY_ID);
             statement.setInt(1, postId);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
@@ -94,7 +95,7 @@ public class ClassroomPostsDAO {
                 fileInputStream = new FileInputStream(selectedFile);
             }
 
-            try (PreparedStatement statement = connection.prepareStatement(INSERT_POST2)) {
+            try {PreparedStatement statement = connection.prepareStatement(INSERT_POST2);
                 statement.setInt(1, classroomId);
                 statement.setString(2, postTime);
                 statement.setString(3, postDate);
@@ -109,6 +110,8 @@ public class ClassroomPostsDAO {
                 statement.setString(6, originalFilename);
 
                 statement.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
         } catch (Exception e) {
             e.printStackTrace();

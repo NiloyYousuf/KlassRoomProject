@@ -72,7 +72,7 @@ public class TeacherProfileController {
 
         if (file != null) {
             // Process the uploaded image and save it to the database
-            try (Connection connection = DatabaseConnection.getConnection()) {
+            try {Connection connection = DatabaseConnection.getConnection();
                 String teacherUsername = CurrentTeacher.current_teacher_username; // Get the teacher's username
                 String sql = "UPDATE teachers SET photo = ? WHERE teacher_username = ?";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {

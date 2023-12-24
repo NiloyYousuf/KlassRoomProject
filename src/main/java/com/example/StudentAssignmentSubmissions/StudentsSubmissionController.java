@@ -60,7 +60,7 @@ public class StudentsSubmissionController implements Initializable {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-           if (resultSet.next()) {
+           while (resultSet.next()) {
                 String studentUsername = resultSet.getString("Student_Username");
                 String submissionDate = resultSet.getString("Submission_Date");
                 byte[] photoBytes = resultSet.getBytes("photo");
@@ -113,7 +113,7 @@ public class StudentsSubmissionController implements Initializable {
                 writer.write(data.getStudentUsername() + "," + data.getMarksObtained() + "\n");
             }
 
-            System.out.println("CSV report generated successfully.");
+          //  System.out.println("CSV report generated successfully.");
         } catch (IOException | SQLException e) {
             e.printStackTrace();
             // Handle exceptions

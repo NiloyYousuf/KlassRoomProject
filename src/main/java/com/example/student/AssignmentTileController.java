@@ -1,4 +1,4 @@
-package com.example.teacher;
+package com.example.student;
 import com.example.Current_Variables.current_Assignment;
 import com.example.klassroom.DatabaseConnection;
 import com.example.student.CurrentStudent;
@@ -38,7 +38,7 @@ public class AssignmentTileController {
     private Button see_assignment;
 
     public void setAssignmentData(String assignmentText, String assignDate, String deadline) {
-        assignmentTextLabel.setText("Assignment Text: " + assignmentText);
+        assignmentTextLabel.setText("Assignment : " + assignmentText);
         assignDateLabel.setText("Assign Date: " + assignDate);
         deadlineLabel.setText("Deadline: " + deadline);
 
@@ -46,12 +46,12 @@ public class AssignmentTileController {
 
 
     public void setAssignmentData(String assignmentText, String assignDate, String deadline, int assignment_ID,  String assignment_classroomcode) {
-        assignmentTextLabel.setText("Assignment Text: " + assignmentText);
+        assignmentTextLabel.setText("Assignment: " + assignmentText);
         assignDateLabel.setText("Assign Date: " + assignDate);
         deadlineLabel.setText("Deadline: " + deadline);
       assignmentIdLabel.setText(Integer.toString(assignment_ID));
       classroomCode.setText("Classroom Code: " +assignment_classroomcode);
-      status.setText("Submission Status : " + getSubmissionStatus(CurrentStudent.CurrentStudentUsername,assignment_ID));
+      status.setText(getSubmissionStatus(CurrentStudent.CurrentStudentUsername,assignment_ID));
 
 
 
@@ -86,7 +86,7 @@ public class AssignmentTileController {
 
     private String getSubmissionStatus(String studentUsername, int assignmentID) {
         // Implement a database query to get the submission status
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {Connection connection = DatabaseConnection.getConnection();
             DatabaseConnection.establishConnection();
             String sql = "SELECT Submission_Status FROM student_assignment_junction WHERE Student_Username = ? AND Assignment_ID = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);

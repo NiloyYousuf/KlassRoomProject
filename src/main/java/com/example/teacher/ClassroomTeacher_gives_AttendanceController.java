@@ -46,7 +46,7 @@ public class ClassroomTeacher_gives_AttendanceController {
         // You can access the TableView's items to get the data
         // For example:
         for (StudentAttendance student : studentTable.getItems()) {
-            System.out.println("Student: " + student.getStudentName() + ", Attendance: " + student.isAttendance());
+            //System.out.println("Student: " + student.getStudentName() + ", Attendance: " + student.isAttendance());
         }
     }
 
@@ -61,7 +61,7 @@ public class ClassroomTeacher_gives_AttendanceController {
             studentTable.getItems().setAll(students);
         } else {
             // Handle the case where no students were found for the given classroom code
-            System.out.println("No students found for classroom code: " + classroomCode);
+           // System.out.println("No students found for classroom code: " + classroomCode);
         }
     }
 

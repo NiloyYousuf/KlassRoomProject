@@ -49,7 +49,7 @@ public class StudentTileController {
 
         int existingMarks = fetchMarksFromDatabase(studentUsername, current_Assignment.current_assignment_ID);
 
-        System.out.println("existing mark is debug / "+existingMarks);
+        //System.out.println("existing mark is debug / "+existingMarks);
         if (existingMarks != 0) {
             // If marks exist, update the Marks text field and mark as "Marked"
             Markstextfield.setText(String.valueOf(existingMarks));
@@ -84,17 +84,17 @@ public class StudentTileController {
             if (attachmentBytes != null) {
                 try (OutputStream os = new FileOutputStream(file)) {
                     os.write(attachmentBytes);
-                    System.out.println("Attachment saved successfully to " + file.getAbsolutePath());
+                   // System.out.println("Attachment saved successfully to " + file.getAbsolutePath());
                 } catch (IOException e) {
                     e.printStackTrace();
                     // Handle the error
                 }
             } else {
-                System.out.println("Attachment not found or couldn't be retrieved.");
+                //System.out.println("Attachment not found or couldn't be retrieved.");
                 // Handle the case where the attachment is not found or couldn't be retrieved.
             }
         } else {
-            System.out.println("No file selected for saving.");
+           // System.out.println("No file selected for saving.");
             // Handle the case where the user didn't select a file to save.
         }
     }
@@ -117,7 +117,7 @@ public class StudentTileController {
             preparedStatement.setString(1, usernameLabel.getText());
             preparedStatement.setInt(2, current_Assignment.current_assignment_ID);
 
-            System.out.println("---"+usernameLabel.getText() + current_Assignment.current_assignment_ID+"----");
+          //  System.out.println("---"+usernameLabel.getText() + current_Assignment.current_assignment_ID+"----");
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -179,7 +179,7 @@ public class StudentTileController {
         // Validate the marks (you may add additional validation as needed)
         if (!marks.matches("\\d+")) {
             // Show an error message or handle invalid input
-            System.out.println("Invalid marks input");
+           // System.out.println("Invalid marks input");
             return;
         }
 
@@ -240,14 +240,14 @@ public class StudentTileController {
             preparedStatement.setString(2, studentUsername);
             preparedStatement.setInt(3, current_Assignment.current_assignment_ID);
 
-            System.out.println("Debug ");
+            //System.out.println("Debug ");
             // Execute the update query
             int rowsUpdated = preparedStatement.executeUpdate();
 
             if (rowsUpdated > 0) {
                 showConfirmationAlert("Marks Updated", "Marks have been updated successfully.");
             } else {
-                System.out.println("Failed to update marks.");
+                //System.out.println("Failed to update marks.");
                 // Handle the case where the update was not successful
             }
 

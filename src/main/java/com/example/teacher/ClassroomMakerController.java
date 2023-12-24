@@ -44,7 +44,6 @@ public class ClassroomMakerController {
                 preparedStatement.setString(3, password);
                 preparedStatement.setString(4, classroomName);
                 preparedStatement.executeUpdate();
-                conn.close();
 
                 // Show a success message
                 showAlert("Classroom created successfully.");

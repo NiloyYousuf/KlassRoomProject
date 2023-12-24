@@ -20,7 +20,7 @@ public class AttachmentDAO {
     public static byte[] getAttachment(int postId) {
         byte[] attachment = null;
 
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {Connection connection = DatabaseConnection.getConnection();
             DatabaseConnection.establishConnection();
             String sql = "SELECT attachment FROM posts WHERE post_id = ?";
              PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -39,7 +39,7 @@ public class AttachmentDAO {
     public static String getOriginalFilename(int postId) {
         String originalFilename = null;
 
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {Connection connection = DatabaseConnection.getConnection();
             DatabaseConnection.establishConnection();
             String sql = "SELECT original_filename FROM posts WHERE post_id = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -59,7 +59,7 @@ public class AttachmentDAO {
     }
 
     public static void downloadAttachment(int postId, Window ownerWindow) {
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try {Connection connection = DatabaseConnection.getConnection();
             String sql = "SELECT attachment, original_filename FROM posts WHERE post_id = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setInt(1, postId);
@@ -79,7 +79,7 @@ public class AttachmentDAO {
                             if (selectedFile != null) {
                                 try (InputStream inputStream = new ByteArrayInputStream(attachment)) {
                                     Files.copy(inputStream, selectedFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                                    System.out.println("Attachment downloaded successfully.");
+                                  //  System.out.println("Attachment downloaded successfully.");
                                 }
                             }
                         }

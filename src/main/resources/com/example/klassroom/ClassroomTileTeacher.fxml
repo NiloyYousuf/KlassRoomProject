@@ -37,7 +37,7 @@
                      <Font size="19.0" />
                   </font>
                </Label>
-               <Label fx:id="subjectLabel11" prefHeight="26.0" prefWidth="292.0" text="Password" textFill="WHITE">
+               <Label fx:id="passwordLabel" prefHeight="26.0" prefWidth="292.0" text="Password" textFill="WHITE">
                   <font>
                      <Font size="19.0" />
                   </font>
